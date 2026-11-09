@@ -3,6 +3,7 @@
 Uso:
     python -m scripts.captura diaria      # lo corre GitHub Actions cada día
     python -m scripts.captura historico   # descarga la serie histórica (una vez)
+    python -m scripts.captura denue       # vuelve a tomar la fotografía del DENUE
 
 Cada fuente corre de forma independiente: si una falla, las demás siguen y
 el fallo queda en data/bitacora/ejecuciones.csv (insumo de fiabilidad en E1).
@@ -66,8 +67,12 @@ def historico():
     return resultados
 
 
+def solo_denue():
+    return [correr("denue", "fotografia", denue.capturar)]
+
+
 if __name__ == "__main__":
     modo = sys.argv[1] if len(sys.argv) > 1 else "diaria"
-    resultados = {"diaria": diaria, "historico": historico}[modo]()
+    resultados = {"diaria": diaria, "historico": historico, "denue": solo_denue}[modo]()
     # Falla el job solo si TODAS las fuentes fallaron (así la bitácora siempre se guarda)
     sys.exit(0 if any(resultados) else 1)

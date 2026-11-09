@@ -8,11 +8,11 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: "diaria o historico"
+        description: "diaria, historico o denue"
         required: true
         default: "diaria"
         type: choice
-        options: [diaria, historico]
+        options: [diaria, historico, denue]
 
 permissions:
   contents: write

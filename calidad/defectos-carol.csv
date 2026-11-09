@@ -9,3 +9,4 @@ numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_ori
 8,2026-11-08,entorno,planeacion,pruebas,25,,El robots.txt de Open-Meteo (y de la alternativa NASA POWER) prohibe el acceso; el extractor se detuvo solo y la fuente de clima se desactivo para E0
 9,2026-11-09,entorno,pruebas,revision,5,,Al limpiar los datos de prueba con git clean se borraron los .gitkeep de la estructura data/ (aun no estaban en un commit); se recrearon antes del primer commit
 10,2026-11-09,entorno,integracion,integracion,15,,La integracion continua fallo al descargar gitleaks con gitleaks-action (HTTP 504 repetido); se cambio a descarga directa desde el repositorio oficial con reintentos
+11,2026-11-09,entorno,integracion,pruebas,10,,El historico en GitHub Actions no pudo consultar el DENUE porque faltaba el secreto INEGI_TOKEN en el repositorio; se agrego el secreto y un modo de captura solo para el DENUE
