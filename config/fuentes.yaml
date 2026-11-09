@@ -1,0 +1,73 @@
+# Configuración de fuentes del Observatorio Antojo Colima
+# Todo lo que cambia entre ejecuciones vive aquí, no en el código.
+
+proyecto:
+  nombre: "Observatorio Antojo Colima"
+  # CAMBIAR: correo de contacto del equipo. Se envía en el User-Agent
+  # para que los administradores de cada sitio sepan quién consulta.
+  contacto: "23460709@colima.tecnm.mx"
+  pausa_segundos: 1.5          # mínimo 1 s entre peticiones al mismo dominio (regla del proyecto)
+
+colima:
+  entidad_inegi: "06"
+  latitud: 19.2433             # centro de la ciudad de Colima
+  longitud: -103.7250
+  zona_horaria: "America/Mexico_City"
+
+sniim:
+  base_url: "https://www.economia-sniim.gob.mx/NUEVO/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas"
+  pagina_consulta: "/ConsultaFrutasYHortalizas.aspx"
+  pagina_resultados: "/ResultadosConsultaFechaFrutasYHortalizas.aspx"
+  # El filtro de destino del SNIIM no funciona (diagnóstico del 8 de noviembre): se piden
+  # todos los mercados y aquí se conservan solo las filas cuyo destino contiene este texto.
+  destino_texto: "Colima:"
+  # Insumos de taquería que SÍ reporta el mercado de Colima (diagnóstico del 8 de noviembre).
+  # Se buscan dentro del nombre del producto del SNIIM (sin acentos, minúsculas).
+  productos_clave:
+    - "limon c/semilla # 5"
+    - "aguacate hass - primera"
+    - "tomate saladette"
+    - "tomate verde"
+    - "cebolla bola - primera"
+    - "chile serrano"
+    - "chile jalapeno"
+    - "papa alpha"
+  historico_desde: "2020-01-01"
+  bloque_dias: 92              # rango de fechas por consulta
+  precios_por_id: "2"          # 2 = precio por kilogramo
+  registros_por_pagina: 10000  # alto porque se piden todos los mercados
+
+clima:
+  # DESACTIVADA: el robots.txt de api.open-meteo.com y archive-api.open-meteo.com dice
+  # "Disallow: /" (revisado el 8 de noviembre). Regla del proyecto: se busca otra fuente.
+  activo: false
+  archivo_url: "https://archive-api.open-meteo.com/v1/archive"
+  pronostico_url: "https://api.open-meteo.com/v1/forecast"
+  variables_diarias:
+    - "temperature_2m_max"
+    - "temperature_2m_min"
+    - "temperature_2m_mean"
+    - "precipitation_sum"
+    - "relative_humidity_2m_mean"
+  historico_desde: "2018-01-01"
+  dias_recientes: 7
+
+denue:
+  base_url: "https://www.inegi.org.mx/app/api/denue/v1/consulta"
+  sector: "72"
+  subsector: "722"             # Servicios de preparación de alimentos y bebidas
+  tamano_pagina: 1000
+  # Columnas que se ELIMINAN antes de guardar en bronce (LFPDPPP):
+  columnas_personales:
+    - "Razon_social"
+    - "Telefono"
+    - "Correo_e"
+    - "Sitio_internet"
+
+inegi:
+  base_url: "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR"
+  # Series del INPC para la integración de E1. Los identificadores se
+  # obtienen en el Constructor de Consultas del Banco de Indicadores
+  # (https://www.inegi.org.mx/servicios/api_indicadores.html).
+  # Formato: - {id: "000000", nombre: "inpc_loncherias", banco: "BIE", geo: "00"}
+  series: []
