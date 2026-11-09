@@ -1,4 +1,10 @@
 name: Captura diaria (bronce)
+# El nombre de cada corrida dice de dónde vino: programada (schedule de GitHub),
+# cron externo (cron-job.org, respaldo porque el schedule de GitHub no se disparó; defecto 14)
+# o manual.
+run-name: >-
+  Captura ${{ inputs.modo || 'diaria' }}
+  (${{ github.event_name == 'schedule' && 'programada' || inputs.origen || 'manual' }})
 
 on:
   schedule:
@@ -17,6 +23,11 @@ on:
         default: "diaria"
         type: choice
         options: [diaria, historico, denue]
+      origen:
+        description: "quién la dispara: manual o cron externo"
+        required: false
+        default: "manual"
+        type: string
 
 permissions:
   contents: write
