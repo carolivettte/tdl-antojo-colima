@@ -1,0 +1,56 @@
+name: Captura diaria (bronce)
+
+on:
+  schedule:
+    # Una vez al día: 16:15 UTC = 10:15 hora de Colima.
+    # Cada corrida pide los últimos 3 días del SNIIM, así que no se pierde ninguna publicación.
+    - cron: "15 16 * * *"
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "diaria o historico"
+        required: true
+        default: "diaria"
+        type: choice
+        options: [diaria, historico]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: captura
+  cancel-in-progress: false
+
+jobs:
+  captura:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Capturar
+        env:
+          INEGI_TOKEN: ${{ secrets.INEGI_TOKEN }}
+        run: python -m scripts.captura "${{ github.event.inputs.modo || 'diaria' }}"
+
+      - name: Guardar evidencia de robots.txt (solo histórico)
+        if: always() && github.event.inputs.modo == 'historico'
+        run: python -m scripts.verificar_robots || true
+
+      - name: Guardar datos y bitácora en el repositorio
+        if: always()
+        run: |
+          git config user.name "tdl-captura-bot"
+          git config user.email "tdl-captura-bot@users.noreply.github.com"
+          git add data/bronce data/bitacora docs/etica/robots
+          git diff --cached --quiet || git commit -m "captura: ${{ github.event.inputs.modo || 'diaria' }} $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase --autostash
+          git push
