@@ -48,6 +48,6 @@ No aplica (primera entrega).
 ## Uso de IA generativa
 
 - Claude (Anthropic): apoyo en la selección del sector del observatorio, en el desarrollo y la depuración de los extractores (SNIIM y DENUE), del flujo de GitHub Actions y de las pruebas automáticas, y en la redacción de borradores de la propuesta y de la ficha de entrega.
-- ChatGPT (OpenAI): apoyo en la verificación de la serie histórica y en la redacción de las respuestas de la entrevista a partir de las notas del equipo.
+- ChatGPT (OpenAI): apoyo en la verificación de la serie histórica, la redacción de respuestas a partir de las notas de entrevista, la revisión documental de E0 y la organización de registros PSP con los horarios proporcionados por el equipo.
 
 Las decisiones del proyecto (sector, fuentes, preguntas analíticas, descarte de fuentes por robots.txt) fueron del equipo. Todo el contenido fue revisado por ambos integrantes y cada uno puede explicar su parte y la del compañero.

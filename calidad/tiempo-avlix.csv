@@ -1,4 +1,7 @@
-fecha,inicio,fin,interrupcion_min,fase,actividad
-06/11/2026,18:00,19:30,0,planeacion,Busqueda individual de ideas de observatorio (por separado): autos seminuevos y academias de idiomas
-07/11/2026,13:10,17:40,180,planeacion,Presentacion de ideas con Carol y eleccion del observatorio (taquerias y cafeterias en Colima)
-08/11/2026,03:06,04:45,30,documentacion,"Revision y ajuste de propuesta E0 y objetivos de calidad; definicion de roles, preguntas analiticas y metricas; commit y subida de rama para revision."
+"fecha","inicio","fin","interrupcion_min","fase","actividad"
+"2026-11-06","18:00","19:30","0","planeacion","Busqueda individual de ideas de observatorio (por separado): autos seminuevos y academias de idiomas"
+"2026-11-07","13:10","17:40","180","planeacion","Presentacion de ideas con Carol y eleccion del observatorio (taquerias y cafeterias en Colima)"
+"2026-11-08","03:06","04:45","30","revision","Revision y ajuste de propuesta E0 y objetivos de calidad; definicion de roles, preguntas analiticas y metricas; commit y subida de rama para revision."
+2026-11-09,03:00,04:30,0,pruebas,Preparacion del entorno y ejecucion de 10 pruebas; verificacion de cobertura historica del SNIIM (division horaria estimada)
+2026-11-09,04:30,04:42,0,integracion,Commit y subida del verificador y reporte historico en la rama avlix/serie-historica (division horaria estimada)
+2026-11-09,04:50,05:23,7,integracion,Integracion y revision de respuestas de la entrevista en la propuesta E0; commit y subida de la rama avlix/entrevista

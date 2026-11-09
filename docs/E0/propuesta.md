@@ -19,7 +19,7 @@
 | **Cliente potencial** | Taquerías y cafeterías pequeñas y medianas de Colima; personas que quieren abrir un negocio de comida; CANIRAC Colima; Secretaría de Desarrollo Económico del estado |
 | **Producto** | Tablero público con el "calendario de temporadas" de insumos, pronóstico de precios y mapa de competencia, más un reporte mensual de inteligencia |
 | **Modelo de negocio** | Reporte por suscripción para negocios y asociaciones; convenio institucional con la dependencia estatal o con la cámara del sector |
-| **Motivo para pagar (evidencia)** | En la entrevista de campo, la supervisora de una cafetería de Colima confirmó que usarían un reporte de insumos y competencia; el pago dependería del nivel de detalle. Hoy ajustan precios "dos veces al año" sin datos de costos y sus insumos más caros (carnes frías) suben sin aviso |
+| **Motivo para pagar (evidencia)** | En la entrevista de campo, la supervisora de una cafetería de Colima confirmó que usarían un reporte de insumos y competencia; el pago dependería del nivel de detalle. Ajustan precios dos veces al año por decisión de los dueños; no se documentó cómo calculan esos ajustes. Las carnes frías presentan aumentos problemáticos |
 
 ### ¿Por qué importa?
 
@@ -48,11 +48,9 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 ### Aprendizajes
 
-1. **Taquerías y cafeterías se abastecen por canales distintos.** La cafetería compra café, leche y carnes frías en una tienda de club (Sam's Club) cada 15 días, no en la central de abasto. El SNIIM sirve para la canasta taquera; para la canasta cafetera usaremos desde E1 el INPC del INEGI (café, leche, jamón y salchichas).
+1. **Taquerías y cafeterías se abastecen por canales distintos.** La cafetería compra café, leche dorada y carnes frías en una tienda de club (Sam's Club) cada 15 días, no en la central de abasto. El SNIIM sirve para la canasta taquera; para la canasta cafetera usaremos desde E1 el INPC del INEGI (café, leche, jamón y salchichas).
 2. **El calendario del cliente importa tanto como el precio.** La temporada baja es septiembre y octubre (mitad del semestre escolar) y la afluencia cae al arrancar la feria de Colima a finales de octubre; la lluvia baja la afluencia, aunque las ventas se compensan después. En E1 agregaremos al pronóstico y al calendario de promociones variables de calendario: periodo escolar, feria y temporada de lluvias.
-3. **Quien decide es el dueño y ajusta precios dos veces al año.** Los aumentos se hacen a inicios y a mediados de año, y la promoción más pedida es el 2x1 de happy hour (4 a 6 p. m.). El reporte debe llegar antes de esas dos fechas de ajuste y dirigirse a los dueños; el experimento de E2 (ruta de negocio) queda sujeto a su autorización, por lo que mantenemos la ruta de ingeniería como respaldo. Además, la competencia que perciben es una cadena (Starbucks), así que en E3 compararemos negocios de cadena contra independientes usando el tamaño del establecimiento del DENUE.
-
----
+3. **Quien decide es el dueño y ajusta precios dos veces al año.** Los aumentos se hacen a inicios y a mediados de año, y la promoción más pedida es el 2x1 de happy hour (4 a 6 p. m.). El reporte debe llegar antes de esas dos fechas de ajuste y dirigirse a los dueños; el experimento de E2 (ruta de negocio) queda sujeto a su autorización, por lo que mantenemos la ruta de ingeniería como respaldo. Además, la competencia que perciben es una cadena (Starbucks), así que en E3 evaluaremos una comparación entre cadenas e independientes solo si contamos con una clasificación verificable; el tamaño del establecimiento del DENUE por sí solo no identifica pertenencia a una cadena.
 
 ---
 
@@ -64,8 +62,8 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 - A partir de esos precios se construirá un **Índice de Costo del Taco** (canasta ponderada de insumos, con ponderaciones informadas por la entrevista).
 - Serie histórica: registros desde enero de 2020, agregados a mensual (el mínimo pedido es 36 periodos; el conteo real por producto queda en [serie_historica.md](serie_historica.md)).
-- **Canasta cafetera:** la entrevista mostró que la cafetería compra café, leche y carnes frías en tiendas de club, no en la central de abasto. Para esa canasta se usará el INPC del INEGI (café, leche, jamón y salchichas) a partir de E1.
-- Modelos a comparar: suavizamiento exponencial, Holt-Winters (estacionalidad de 12 meses) y ARIMA/SARIMA; se elige el de menor error de validación (MAPE/RMSE), no por gusto.
+- **Canasta cafetera:** la entrevista mostró que la cafetería compra café, leche dorada y carnes frías en tiendas de club, no en la central de abasto. Para esa canasta se usará el INPC del INEGI (café, leche, jamón y salchichas) a partir de E1.
+- Modelos a comparar en E1: suavizamiento exponencial simple, Holt, Holt-Winters y ARIMA/SARIMA. Se reservarán los últimos periodos como prueba y se compararán MAE, RMSE y MAPE cuando sea aplicable.
 - Pregunta: *¿En qué meses de 2027 se espera que suba o baje el costo de los insumos y, por lo tanto, cuándo conviene hacer promociones?*
 - En E1 se integrará como serie de contraste el INPC del genérico "loncherías, fondas, torterías y taquerías" (API del INEGI).
 
@@ -103,7 +101,7 @@ Pregunta: *¿Los municipios de Colima tienen perfiles de competencia distintos a
 | 2 | **DENUE**, INEGI | Negocios del subsector 722 en Colima: giro, tamaño, ubicación y coordenadas | JSON | Actualización periódica del directorio (fotografía) | API oficial con token gratuito | Grupos y variables de E3 |
 | 3 | **Banco de Indicadores**, INEGI (INPC) | Índices de precios de loncherías y taquerías, restaurantes y café; INPC de la ciudad de Colima | JSON | Quincenal y mensual | API oficial con token gratuito | Integración y contraste en E1 |
 
-Todos los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` tal como llegaron, con un archivo `.meta.json` que registra URL (sin token), fecha y hora UTC de captura, número de registros, columnas, huella SHA-256 y User-Agent. Cada ejecución se anota en `data/bitacora/ejecuciones.csv`.
+Los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` conservando el contenido de origen salvo la eliminación previa de datos personales del DENUE, con un archivo `.meta.json` que registra URL (sin token), fecha y hora UTC de captura, número de registros, columnas, huella SHA-256 y User-Agent. Cada ejecución se anota en `data/bitacora/ejecuciones.csv`.
 
 ### 4.2 Análisis ético y legal
 
@@ -135,7 +133,7 @@ Todos los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` tal como 
 
 Registros individuales (PSP): `calidad/tiempo-carol.csv`, `calidad/tiempo-avlix.csv`, `calidad/defectos-carol.csv` y `calidad/defectos-avlix.csv`. Los objetivos de calidad medibles están en [`calidad/objetivos.md`](../../calidad/objetivos.md):
 
-1. Disponibilidad de la captura diaria ≥ 95%.
+1. Tasa de éxito de las ejecuciones de captura programadas ≥ 95%, medida por fuente.
 2. Cero secretos expuestos y cero datos personales en el repositorio.
 3. Completitud y validez de los registros de precios ≥ 98% (cuarentena ≤ 2%).
 
