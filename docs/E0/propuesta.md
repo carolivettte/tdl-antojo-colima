@@ -121,7 +121,7 @@ Los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` conservando el 
 
 ## 5. Máquina de captura (capa bronce)
 
-- **Automatización:** `.github/workflows/captura.yml` corre todos los días a las 10:15 (hora de Colima) y guarda datos y bitácora en el repositorio. También se puede lanzar a mano en modo `historico`.
+- **Automatización:** `.github/workflows/captura.yml` corre todos los días: con el `schedule` de GitHub a las 10:15 y, como respaldo, con un disparador externo (cron-job.org) a las 10:30, hora de Colima y guarda datos y bitácora en el repositorio. También se puede lanzar a mano en modo `historico`.
 - **Extractor ético:** `extractores/base.py`, basado en el Kit de arranque (robots.txt, `Crawl-delay`, User-Agent con contacto del equipo, pausa mínima y espera exponencial).
 - **Tolerancia a fallos:** cada fuente corre por separado; si una falla, las demás continúan y el error queda en la bitácora, que es la base para medir fiabilidad y disponibilidad en E1.
 - **Serie histórica:** SNIIM desde 2020-01-01.
