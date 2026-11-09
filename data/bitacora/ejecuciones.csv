@@ -2,3 +2,4 @@ inicio_utc,fin_utc,fuente,modo,estado,registros,duracion_s,mensaje
 2026-11-09T07:43:38.395177+00:00,2026-11-09T08:04:51.056838+00:00,sniim,historico,ok,5125,1272.7,
 2026-11-09T08:04:51.057005+00:00,2026-11-09T08:04:51.057477+00:00,denue,historico,error,0,0.0,RuntimeError: Falta la variable de entorno INEGI_TOKEN (secreto de GitHub).
 2026-11-09T08:04:51.057558+00:00,2026-11-09T08:04:51.057609+00:00,inegi,historico,vacio,0,0.0,
+2026-11-09T08:12:19.955784+00:00,2026-11-09T08:12:42.780777+00:00,denue,fotografia,ok,7397,22.8,
