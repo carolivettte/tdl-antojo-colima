@@ -6,6 +6,8 @@
 
 ---
 
+> **En un minuto.** Vamos a demostrar **en qué meses le conviene a una taquería o cafetería de Colima hacer promociones o ajustar precios**. Para la canasta taquera usamos los precios oficiales de 8 insumos (limón, aguacate, tomates, cebolla, chiles y papa) en los Centros de distribución de Colima (SNIIM), capturados solos todos los días y con historia desde 2020; para medir la competencia, los 7,397 negocios de comida del estado (DENUE). Le sirve al dueño de un negocio pequeño que hoy decide precios "al tanteo", y a quien quiere abrir uno.
+
 ## 1. Ficha del observatorio
 
 | Campo | Definición |
@@ -17,6 +19,7 @@
 | **Cliente potencial** | Taquerías y cafeterías pequeñas y medianas de Colima; personas que quieren abrir un negocio de comida; CANIRAC Colima; Secretaría de Desarrollo Económico del estado |
 | **Producto** | Tablero público con el "calendario de temporadas" de insumos, pronóstico de precios y mapa de competencia, más un reporte mensual de inteligencia |
 | **Modelo de negocio** | Reporte por suscripción para negocios y asociaciones; convenio institucional con la dependencia estatal o con la cámara del sector |
+| **Motivo para pagar (evidencia)** | En la entrevista de campo, la supervisora de una cafetería de Colima confirmó que usarían un reporte de insumos y competencia; el pago dependería del nivel de detalle. Hoy ajustan precios "dos veces al año" sin datos de costos y sus insumos más caros (carnes frías) suben sin aviso |
 
 ### ¿Por qué importa?
 
@@ -45,9 +48,11 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 ### Aprendizajes
 
-1. _Aprendizaje 1 y cómo cambia el plan._
-2. _Aprendizaje 2._
-3. _Aprendizaje 3._
+1. **Taquerías y cafeterías se abastecen por canales distintos.** La cafetería compra café, leche y carnes frías en una tienda de club (Sam's Club) cada 15 días, no en la central de abasto. El SNIIM sirve para la canasta taquera; para la canasta cafetera usaremos desde E1 el INPC del INEGI (café, leche, jamón y salchichas).
+2. **El calendario del cliente importa tanto como el precio.** La temporada baja es septiembre y octubre (mitad del semestre escolar) y la afluencia cae al arrancar la feria de Colima a finales de octubre; la lluvia baja la afluencia, aunque las ventas se compensan después. En E1 agregaremos al pronóstico y al calendario de promociones variables de calendario: periodo escolar, feria y temporada de lluvias.
+3. **Quien decide es el dueño y ajusta precios dos veces al año.** Los aumentos se hacen a inicios y a mediados de año, y la promoción más pedida es el 2x1 de happy hour (4 a 6 p. m.). El reporte debe llegar antes de esas dos fechas de ajuste y dirigirse a los dueños; el experimento de E2 (ruta de negocio) queda sujeto a su autorización, por lo que mantenemos la ruta de ingeniería como respaldo. Además, la competencia que perciben es una cadena (Starbucks), así que en E3 compararemos negocios de cadena contra independientes usando el tamaño del establecimiento del DENUE.
+
+---
 
 ---
 
@@ -55,11 +60,12 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 ### E1 · Variable a pronosticar (series de tiempo)
 
-**Precio frecuente mensual (MXN/kg) de los insumos clave en los Centros de Distribución de Colima**, reportado por el SNIIM, con horizonte de 3 a 6 meses. Productos: limón, aguacate, tomate saladette, tomate verde, cebolla, chiles serrano y jalapeño, cilantro y papa.
+**Precio frecuente mensual (MXN/kg) de los insumos clave en los Centros de distribución de Colima**, reportado por el SNIIM, con horizonte de 3 a 6 meses. Productos que Colima sí reporta (diagnóstico del 8 de noviembre): limón con semilla #5, aguacate Hass, tomate saladette, tomate verde, cebolla bola, chiles serrano y jalapeño, y papa alpha. Colima publica unas dos veces por semana.
 
 - A partir de esos precios se construirá un **Índice de Costo del Taco** (canasta ponderada de insumos, con ponderaciones informadas por la entrevista).
-- Serie histórica prevista: datos diarios desde enero de 2018, agregados a frecuencia mensual. La cobertura real se verificará después de la descarga, contando meses con observaciones válidas e identificando meses faltantes. Para E0 se requiere una serie de al menos 36 periodos comparables.
-- Modelos a comparar en E1: suavizamiento exponencial simple, Holt, Holt-Winters y ARIMA/SARIMA. Se reservarán los últimos periodos como conjunto de prueba y se compararán MAE, RMSE y MAPE cuando sea aplicable. La selección se justificará con los resultados de validación.
+- Serie histórica: registros desde enero de 2020, agregados a mensual (el mínimo pedido es 36 periodos; el conteo real por producto queda en [serie_historica.md](serie_historica.md)).
+- **Canasta cafetera:** la entrevista mostró que la cafetería compra café, leche y carnes frías en tiendas de club, no en la central de abasto. Para esa canasta se usará el INPC del INEGI (café, leche, jamón y salchichas) a partir de E1.
+- Modelos a comparar: suavizamiento exponencial, Holt-Winters (estacionalidad de 12 meses) y ARIMA/SARIMA; se elige el de menor error de validación (MAPE/RMSE), no por gusto.
 - Pregunta: *¿En qué meses de 2027 se espera que suba o baje el costo de los insumos y, por lo tanto, cuándo conviene hacer promociones?*
 - En E1 se integrará como serie de contraste el INPC del genérico "loncherías, fondas, torterías y taquerías" (API del INEGI).
 
@@ -93,10 +99,9 @@ Pregunta: *¿Los municipios de Colima tienen perfiles de competencia distintos a
 
 | # | Fuente | Qué aporta | Estructura y formato | Frecuencia | Método de acceso | Uso |
 |---|---|---|---|---|---|---|
-| 1 | **SNIIM**, Secretaría de Economía | Precios mínimo, máximo y frecuente por producto, presentación, origen y destino | Tabla HTML; fecha, presentación, origen, destino, precios (texto) | Diaria (días hábiles) | Scraping ético de la consulta pública por fechas | **Captura diaria automática** y serie histórica 2018 a la fecha |
-| 2 | **Open-Meteo** (ERA5 y pronóstico) | Temperatura máxima, mínima y media, lluvia y humedad diarias en Colima | JSON (arreglos por variable) | Diaria | API REST sin llave | **Segunda captura diaria automática**; covariable de estacionalidad |
-| 3 | **DENUE**, INEGI | Negocios del subsector 722 en Colima: giro, tamaño, ubicación y coordenadas | JSON | Actualización periódica del directorio (fotografía) | API oficial con token gratuito | Grupos y variables de E3 |
-| 4 | **Banco de Indicadores**, INEGI (INPC) | Índices de precios de loncherías y taquerías, restaurantes y café; INPC de la ciudad de Colima | JSON | Quincenal y mensual | API oficial con token gratuito | Integración y contraste en E1 |
+| 1 | **SNIIM**, Secretaría de Economía | Precios mínimo, máximo y frecuente por producto, presentación, origen y destino | Tabla HTML; fecha, presentación, origen, destino, precios (texto) | Dos veces por semana en Colima | Scraping ético de la consulta pública por fechas | **Captura diaria automática** y serie histórica desde 2020 |
+| 2 | **DENUE**, INEGI | Negocios del subsector 722 en Colima: giro, tamaño, ubicación y coordenadas | JSON | Actualización periódica del directorio (fotografía) | API oficial con token gratuito | Grupos y variables de E3 |
+| 3 | **Banco de Indicadores**, INEGI (INPC) | Índices de precios de loncherías y taquerías, restaurantes y café; INPC de la ciudad de Colima | JSON | Quincenal y mensual | API oficial con token gratuito | Integración y contraste en E1 |
 
 Todos los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` tal como llegaron, con un archivo `.meta.json` que registra URL (sin token), fecha y hora UTC de captura, número de registros, columnas, huella SHA-256 y User-Agent. Cada ejecución se anota en `data/bitacora/ejecuciones.csv`.
 
@@ -105,7 +110,8 @@ Todos los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` tal como 
 | Fuente | robots.txt | Términos de uso | Datos personales | Decisión |
 |---|---|---|---|---|
 | SNIIM | El extractor lo lee **antes de cada sesión** y se detiene si la ruta está prohibida (`PermissionError`). Se guarda copia fechada en `docs/etica/robots/`. | Información pública del Gobierno de México; se cita la fuente en el tablero y el reporte. | No contiene. | Scraping permitido con User-Agent honesto, pausa ≥ 1.5 s, reintentos con espera exponencial y consultas en bloques trimestrales para no saturar el sitio. |
-| Open-Meteo | No aplica (API documentada). Se respeta su límite de uso. | Gratuito para uso no comercial por debajo de 10,000 llamadas diarias; datos bajo CC BY 4.0 con atribución. | No contiene. | 1 o 2 llamadas diarias; atribución visible en el tablero. Si el observatorio se comercializa, se pasa al plan de pago o a otra fuente. |
+| Open-Meteo (clima) | `api.open-meteo.com` y `archive-api.open-meteo.com` responden `Disallow: /`. El extractor ético **se detuvo solo** con `PermissionError`. | Gratuito para uso no comercial. | No contiene. | **Descartada.** Aunque la API está documentada, el proyecto exige respetar robots.txt sin excepciones. |
+| NASA POWER (clima, alternativa) | `power.larc.nasa.gov` responde `Disallow: /api/`. | Datos públicos de la NASA. | No contiene. | **Descartada** por la misma regla. El clima se retomará en E1 con una fuente que lo permita (por ejemplo, estaciones del Servicio Meteorológico Nacional). |
 | DENUE | API oficial; el acceso se autoriza con token personal. | Términos de libre uso de la información del INEGI: se permite usar y redistribuir citando la fuente. | **Sí contiene**: razón social (puede ser el nombre de una persona física), teléfono, correo y sitio web. | Esas 4 columnas **se eliminan antes de guardar** en bronce (prueba automática `test_denue_elimina_datos_personales`). Se conserva solo el nombre comercial, el giro, el tamaño y la ubicación del establecimiento. |
 | INEGI Indicadores | API oficial con token. | Términos de libre uso de la información del INEGI. | No contiene. | Uso directo con atribución. |
 
@@ -116,12 +122,12 @@ Todos los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` tal como 
 ---
 
 ## 5. Máquina de captura (capa bronce)
-Estado al preparar esta propuesta: captura automática y descarga histórica pendientes de ejecución y verificación. La configuración descrita es la prevista; su funcionamiento y la cobertura real se documentarán con evidencias.
 
-- **Automatización:** `.github/workflows/captura.yml` corre todos los días a las 20:15 (hora de Colima) y guarda datos y bitácora en el repositorio. También se puede lanzar a mano en modo `historico`.
+- **Automatización:** `.github/workflows/captura.yml` corre todos los días a las 10:15 (hora de Colima) y guarda datos y bitácora en el repositorio. También se puede lanzar a mano en modo `historico`.
 - **Extractor ético:** `extractores/base.py`, basado en el Kit de arranque (robots.txt, `Crawl-delay`, User-Agent con contacto del equipo, pausa mínima y espera exponencial).
 - **Tolerancia a fallos:** cada fuente corre por separado; si una falla, las demás continúan y el error queda en la bitácora, que es la base para medir fiabilidad y disponibilidad en E1.
-- **Serie histórica prevista:** precios del SNIIM y clima desde 2018-01-01, sujetos a disponibilidad y verificación después de la descarga.
+- **Serie histórica:** SNIIM desde 2020-01-01.
+- **Hallazgo técnico:** el filtro de mercado del SNIIM no funciona (pedir solo Colima regresa 0 filas). El extractor pide todos los mercados con un límite de 10,000 filas por consulta, conserva solo las filas de Colima y avisa si una consulta llega al límite (posible truncamiento).
 
 ---
 
@@ -129,7 +135,7 @@ Estado al preparar esta propuesta: captura automática y descarga histórica pen
 
 Registros individuales (PSP): `calidad/tiempo-carol.csv`, `calidad/tiempo-avlix.csv`, `calidad/defectos-carol.csv` y `calidad/defectos-avlix.csv`. Los objetivos de calidad medibles están en [`calidad/objetivos.md`](../../calidad/objetivos.md):
 
-1. Tasa de éxito de las ejecuciones de captura programadas ≥ 95%, medida por fuente.
+1. Disponibilidad de la captura diaria ≥ 95%.
 2. Cero secretos expuestos y cero datos personales en el repositorio.
 3. Completitud y validez de los registros de precios ≥ 98% (cuarentena ≤ 2%).
 
