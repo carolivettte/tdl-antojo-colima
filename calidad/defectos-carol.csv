@@ -1,0 +1,10 @@
+numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
+1,2026-11-07,datos,diseno,pruebas,20,,La consulta de prueba al DENUE devolvio razon social con nombre de persona telefono y correo; se agrega eliminacion de columnas personales antes de bronce
+2,2026-11-07,documentacion,planeacion,planeacion,10,,El enlace para generar el token de la API de Indicadores era antiguo (endpoint not found); se uso el enlace vigente y se confirmo que un solo token sirve para DENUE e Indicadores
+3,2026-11-08,funcion,codificacion,revision,30,,El manejo del error 429 no respetaba la cabecera Retry-After (visto en la sesion 12); se corrigio y se agrego una prueba automatica
+4,2026-11-08,entorno,codificacion,revision,10,,El token no se podia leer desde un archivo .env como en las sesiones 41 y 42; se agrego python-dotenv y .env.example
+5,2026-11-08,funcion,diseno,revision,15,,El horario de la captura (20:15) hacia que la primera ejecucion programada ocurriera despues de la entrega; se movio a las 10:15
+6,2026-11-08,funcion,diseno,pruebas,40,,El filtro de mercado destino del SNIIM no funciona (DestinoId de Colima regresa 0 filas); se piden todos los mercados con limite de 10000 filas y se filtra Colima en el codigo
+7,2026-11-08,datos,diseno,pruebas,5,,La clave de producto papa tambien seleccionaba papaya; se cambio a coincidencia por palabra completa con prueba automatica
+8,2026-11-08,entorno,planeacion,pruebas,25,,El robots.txt de Open-Meteo (y de la alternativa NASA POWER) prohibe el acceso; el extractor se detuvo solo y la fuente de clima se desactivo para E0
+9,2026-11-09,entorno,pruebas,revision,5,,Al limpiar los datos de prueba con git clean se borraron los .gitkeep de la estructura data/ (aun no estaban en un commit); se recrearon antes del primer commit
