@@ -1,0 +1,34 @@
+{
+  "fuente": "sniim",
+  "archivo": "sniim_historico_20261109T080451Z.csv",
+  "capturado_utc": "2026-11-09T08:04:51.041523+00:00",
+  "registros": 5125,
+  "columnas": [
+    "producto",
+    "producto_id",
+    "fecha",
+    "presentacion",
+    "origen",
+    "destino",
+    "precio_min",
+    "precio_max",
+    "precio_frec",
+    "obs"
+  ],
+  "sha256": "ccd01f300f6f6962b0a337b9b729720d0dd6357ee6d98a25bdb7375a3295eede",
+  "url": "https://www.economia-sniim.gob.mx/NUEVO/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ResultadosConsultaFechaFrutasYHortalizas.aspx",
+  "rango": "2020-01-01..2026-11-09",
+  "destino": "Colima:",
+  "productos": [
+    "Aguacate Hass - Primera",
+    "Cebolla Bola - Primera",
+    "Chile Jalapeño - Primera",
+    "Chile Serrano - Primera",
+    "Limón c/semilla # 5 - Primera",
+    "Papa Alpha - Primera",
+    "Tomate Saladette - Primera",
+    "Tomate Verde - Primera"
+  ],
+  "avisos": [],
+  "user_agent": "TDL-Observatorio/1.0 (proyecto academico TecNM Colima; contacto: 23460709@colima.tecnm.mx)"
+}
