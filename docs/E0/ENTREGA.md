@@ -25,7 +25,7 @@ Equipo: Carol Ivette Rodríguez Lepe · Avlix Eduardo Jiménez Cuevas · Etiquet
 
 | Criterio de la rúbrica | Evidencia (enlace) | Nota del equipo |
 |---|---|---|
-| Pregunta central del observatorio | [propuesta.md §1](propuesta.md#1-ficha-del-observatorio) · [entrevista §2](propuesta.md#2-entrevista-de-campo) | Cliente con motivo para pagar respaldado por la entrevista |
+| Pregunta central del observatorio | [propuesta.md §1](propuesta.md#1-ficha-del-observatorio) · [entrevista §2](propuesta.md#2-entrevista-de-campo) | Dos entrevistas de campo: una cafetería (8 de noviembre) y una taquería en Manzanillo (9 de noviembre, 22 min); 6 aprendizajes que cambian el plan |
 | Tres preguntas analíticas (E1, E2, E3) | [propuesta.md §3](propuesta.md#3-las-tres-preguntas-analíticas) | E1 pronóstico, E2 factorial 2³, E3 PCA y MANOVA |
 | Serie histórica identificada y descargada (≥ 36 periodos) | [serie_historica.md](serie_historica.md) · [data/bronce/sniim/](../../data/bronce/sniim/) | 8 de 8 insumos con 36 o más meses |
 

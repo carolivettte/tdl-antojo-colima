@@ -29,6 +29,10 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 ## 2. Entrevista de campo
 
+Se hicieron dos entrevistas: una a una cafetería y otra a una taquería, los dos tipos de negocio del observatorio.
+
+### Entrevista 1: cafetería
+
 | Campo | Dato |
 |---|---|
 | Fecha | 8 de noviembre de 2026 |
@@ -36,7 +40,7 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 | Perfil de la entrevistada | Persona con puesto de supervisión en una cafetería del estado de Colima. Se omiten su nombre y el del establecimiento para preservar el anonimato |
 | Entrevistadores | Carol Ivette Rodríguez Lepe y Avlix Eduardo Jiménez Cuevas |
 
-### Preguntas y respuestas
+#### Preguntas y respuestas
 
 | # | Pregunta | Qué alimenta | Respuesta (resumen) |
 |---|---|---|---|
@@ -46,12 +50,37 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 | 4 | ¿Qué promociones ofrecen? ¿Cuáles funcionan mejor? ¿Cómo las anuncian? ¿Aceptarían probar nuevas promociones? | Experimento factorial (E2) | Ofrecen 2x1 en happy hour de 4:00 a 6:00 p. m. y 20 pesos de descuento en frappés los sábados. La promoción más solicitada es happy hour. Se anuncian mediante redes sociales y un cartel afuera del local. Existe posibilidad de probar propuestas del equipo, sujeta a revisión y autorización de los dueños. |
 | 5 | ¿Quién es su competencia? ¿Por qué eligieron la ubicación? ¿Usarían un reporte de insumos y competencia y cuánto pagarían? | Competencia (E3) y modelo de negocio | Identifican principalmente a Starbucks como competencia. La entrevistada desconoce por qué los dueños eligieron la ubicación. Sí utilizarían un reporte; el pago dependería de su nivel de detalle. No se estableció un monto. |
 
+### Entrevista 2: taquería
+
+| Campo | Dato |
+|---|---|
+| Fecha | 9 de noviembre de 2026 |
+| Duración | 22 minutos (10:12 a 10:34) |
+| Perfil del entrevistado | Persona responsable de una taquería en Manzanillo, Colima, con 6 años de operación. Se omiten su nombre y el del establecimiento para preservar el anonimato |
+| Entrevistadores | Carol Ivette Rodríguez Lepe y Avlix Eduardo Jiménez Cuevas |
+
+#### Preguntas y respuestas
+
+| # | Pregunta | Qué alimenta | Respuesta (resumen) |
+|---|---|---|---|
+| 1 | ¿Cuáles son los 3 ingredientes que más le cuestan? ¿Cuál sube de precio de repente? ¿Dónde y cada cuánto compra? | Selección de insumos y fuentes | La carne, el gas y la verdura. Las verduras son las que más problemas dan por subir de repente. Compra con una proveedora cada semana. |
+| 2 | ¿En qué meses vende más y en cuáles menos? ¿Le afectan el clima y las fiestas? | Estacionalidad y pronóstico (E1) | Vende más de noviembre a marzo y menos de julio a octubre, lo que atribuye a la temporada de lluvias. Las lluvias son lo que más afecta. En diciembre aumentan las ventas. |
+| 3 | ¿Cada cuánto sube sus precios? ¿Cómo decide? ¿Ha perdido clientes? | Pregunta central | Sube precios una vez al año, según el aumento de sus insumos. Algunos clientes se retiran al momento del ajuste, pero regresan después de un tiempo. |
+| 4 | ¿Ha hecho promociones? ¿Por dónde las anuncia? ¿Nos permitiría probar 2 o 3 versiones? | Experimento factorial (E2) | Nunca ha hecho promociones y no usa redes sociales ni letreros. Aceptó probar promociones en redes sociales: considera que sería una buena idea empezar a promocionar el negocio. |
+| 5 | ¿Quién es su competencia? ¿Por qué eligió la ubicación? ¿Usaría un reporte y cuánto pagaría? | Competencia (E3) y modelo de negocio | Considera que no tiene competencia directa en su zona. Eligió la ubicación porque no paga renta. Sí usaría el reporte; no especificó un monto. |
+
 ### Aprendizajes
 
 1. **Taquerías y cafeterías se abastecen por canales distintos.** La cafetería compra café, leche dorada y carnes frías en una tienda de club (Sam's Club) cada 15 días, no en la central de abasto. El SNIIM sirve para la canasta taquera; para la canasta cafetera usaremos desde E1 el INPC del INEGI (café, leche, jamón y salchichas).
 2. **El calendario del cliente importa tanto como el precio.** La temporada baja es septiembre y octubre (mitad del semestre escolar) y la afluencia cae al arrancar la feria de Colima a finales de octubre; la lluvia baja la afluencia, aunque las ventas se compensan después. En E1 agregaremos al pronóstico y al calendario de promociones variables de calendario: periodo escolar, feria y temporada de lluvias.
 3. **Quien decide es el dueño y ajusta precios dos veces al año.** Los aumentos se hacen a inicios y a mediados de año, y la promoción más pedida es el 2x1 de happy hour (4 a 6 p. m.). El reporte debe llegar antes de esas dos fechas de ajuste y dirigirse a los dueños; el experimento de E2 (ruta de negocio) queda sujeto a su autorización, por lo que mantenemos la ruta de ingeniería como respaldo. Además, la competencia que perciben es una cadena (Starbucks), así que en E3 evaluaremos una comparación entre cadenas e independientes solo si contamos con una clasificación verificable; el tamaño del establecimiento del DENUE por sí solo no identifica pertenencia a una cadena.
 
+
+Aprendizajes de la entrevista 2 (taquería):
+
+4. **La taquería confirma la canasta del SNIIM y la amplía.** Su insumo más inestable son las verduras, justo lo que medimos en el SNIIM, y compra cada semana con una proveedora, por lo que el precio mayorista es una buena referencia. También mencionó la carne y el gas: en E1 agregaremos a la canasta taquera los índices del INPC de carne de res y de cerdo y de gas doméstico LP.
+5. **Hay un patrón de temporada común: las lluvias.** La taquería vende menos de julio a octubre y más de noviembre a marzo, con un pico en diciembre; la cafetería también reportó septiembre y octubre como su temporada baja. En E1 la temporada de lluvias será una variable del calendario de promociones.
+6. **La taquería es el socio natural para el experimento de E2.** Nunca ha hecho promociones, no usa redes sociales y aceptó probar versiones de una promoción, sin depender de la autorización de terceros como en la cafetería. Además, dice no tener competencia directa en su zona; en E3 lo verificaremos con la densidad de taquerías del DENUE alrededor de su ubicación. Ninguno de los dos negocios dio un monto que pagaría por el reporte, así que el precio se validará con un prototipo.
 ---
 
 ## 3. Las tres preguntas analíticas
@@ -69,7 +98,7 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 ### E2 · Factores a experimentar (diseño factorial)
 
-**Ruta de negocio (preferente, si el negocio entrevistado acepta):** diseño 2³ sobre publicaciones de promociones en redes sociales del negocio.
+**Ruta de negocio (preferente; la taquería de la entrevista 2 aceptó probar promociones en redes sociales):** diseño 2³ sobre publicaciones de promociones en redes sociales del negocio.
 
 | Factor | Nivel bajo (−) | Nivel alto (+) |
 |---|---|---|
