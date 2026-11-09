@@ -1,0 +1,8 @@
+fecha,inicio,fin,interrupcion_min,fase,actividad
+2026-11-06,12:00,14:30,0,planeacion,Busqueda individual de ideas de observatorio (por separado)
+2026-11-07,12:50,13:10,0,planeacion,Lectura del documento del proyecto y de la entrega E0
+2026-11-07,13:10,17:40,180,planeacion,Presentacion de ideas con Avlix y eleccion del observatorio (taquerias y cafeterias en Colima)
+2026-11-07,20:10,20:40,5,planeacion,Registro de tokens del INEGI (DENUE e Indicadores) y pruebas de las APIs
+2026-11-07,20:40,21:20,10,planeacion,Creacion del repositorio en GitHub y alta de colaboradores
+2026-11-08,21:00,23:30,15,pruebas,Configuracion local y pruebas de extraccion (SNIIM DENUE y diagnosticos de fuentes)
+2026-11-09,00:35,01:30,10,planeacion,Revision de rubrica E0 y preparacion de commits
