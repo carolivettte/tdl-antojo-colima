@@ -1,7 +1,13 @@
-"fecha","inicio","fin","interrupcion_min","fase","actividad"
-"2026-11-06","18:00","19:30","0","planeacion","Busqueda individual de ideas de observatorio (por separado): autos seminuevos y academias de idiomas"
-"2026-11-07","13:10","17:40","180","planeacion","Presentacion de ideas con Carol y eleccion del observatorio (taquerias y cafeterias en Colima)"
-"2026-11-08","03:06","04:45","30","revision","Revision y ajuste de propuesta E0 y objetivos de calidad; definicion de roles, preguntas analiticas y metricas; commit y subida de rama para revision."
-2026-11-09,03:00,04:30,0,pruebas,Preparacion del entorno y ejecucion de 10 pruebas; verificacion de cobertura historica del SNIIM (division horaria estimada)
-2026-11-09,04:30,04:42,0,integracion,Commit y subida del verificador y reporte historico en la rama avlix/serie-historica (division horaria estimada)
+fecha,inicio,fin,interrupcion_min,fase,actividad
+2026-11-06,18:00,19:30,0,planeacion,Busqueda individual de ideas de observatorio (por separado): autos seminuevos y academias de idiomas
+2026-11-07,13:10,17:40,180,planeacion,Presentacion de ideas con Carol y eleccion del observatorio (taquerias y cafeterias en Colima)
+2026-11-08,15:30,16:45,10,revision,Revision y ajuste de propuesta E0 y objetivos de calidad; definicion de roles y metricas; primer commit de la rama avlix/propuesta-calidad
+2026-11-08,21:40,22:00,5,planeacion,Entrevista de campo a una cafeteria de Colima (toma de notas y control del tiempo)
+2026-11-09,02:20,03:00,0,revision,Trabajo en llamada con Carol: actualizacion de la propuesta con el zip final y registro PSP
+2026-11-09,03:00,04:30,0,pruebas,Preparacion del entorno y ejecucion de 10 pruebas; verificacion de cobertura historica del SNIIM
+2026-11-09,04:30,04:42,0,integracion,Commit y subida del verificador y reporte historico en la rama avlix/serie-historica
 2026-11-09,04:50,05:23,7,integracion,Integracion y revision de respuestas de la entrevista en la propuesta E0; commit y subida de la rama avlix/entrevista
+2026-11-09,07:20,07:55,5,revision,Revision de calidad E0 con lista de comprobacion; correccion de formato de fechas en registros PSP
+2026-11-09,10:12,10:34,0,planeacion,Entrevista de campo a una taqueria de Manzanillo
+2026-11-09,16:15,16:25,0,integracion,Integracion de la entrevista a la taqueria y sus aprendizajes en la propuesta; commit y pull request
+2026-11-09,16:30,17:00,5,revision,Registro PSP final y revision final del repositorio antes de la etiqueta e0

@@ -1,3 +1,5 @@
 numero,fecha,tipo,fase_introducido,fase_eliminado,minutos_correccion,defecto_origen,descripcion
-1,2026-11-08,documentacion,,revision,,,La propuesta omitia Holt entre los cuatro modelos requeridos para E1; se agrego el modelo; fase de introduccion y minutos de correccion no registrados
-2,2026-11-08,documentacion,,revision,,,El objetivo de captura mezclaba ejecuciones exitosas con disponibilidad por dias; se definio tasa de exito por ejecucion; fase de introduccion y minutos de correccion no registrados
+1,2026-11-08,documentacion,planeacion,revision,10,,La propuesta omitia Holt entre los cuatro modelos requeridos para E1; se agrego el modelo
+2,2026-11-08,documentacion,planeacion,revision,15,,El objetivo de captura mezclaba ejecuciones exitosas con disponibilidad por dias; se definio tasa de exito por ejecucion
+3,2026-11-09,documentacion,integracion,revision,20,,La entrevista se subio sobre una version anterior de la propuesta (fuentes desactualizadas y sin ENTREGA.md); se integro sobre la version final
+4,2026-11-09,datos,revision,revision,10,,Las fechas del registro de tiempo quedaron en formato DD/MM/AAAA al editar el CSV; se corrigieron a AAAA-MM-DD para que se puedan analizar
