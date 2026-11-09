@@ -23,6 +23,18 @@ jobs:
       - name: Pruebas (pytest)
         run: pytest -q
       - name: Secretos expuestos (gitleaks)
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Defecto 10: la descarga de gitleaks fallaba con HTTP 504. Se intenta desde tres
+        # orígenes oficiales; si encuentra un secreto, el paso falla (código de salida 1).
+        run: |
+          VERSION=8.24.3
+          OPCIONES="git --redact --verbose"
+          if curl -sSfL --retry 5 --retry-delay 10 --retry-all-errors -o gitleaks.tar.gz \
+              "https://github.com/gitleaks/gitleaks/releases/download/v${VERSION}/gitleaks_${VERSION}_linux_x64.tar.gz"; then
+            tar -xzf gitleaks.tar.gz gitleaks
+            ./gitleaks $OPCIONES .
+          else
+            echo "Descarga directa falló; uso la imagen oficial de contenedor"
+            DOCKER="docker run --rm -v $PWD:/repo -e GIT_CONFIG_COUNT=1 -e GIT_CONFIG_KEY_0=safe.directory -e GIT_CONFIG_VALUE_0=*"
+            $DOCKER ghcr.io/gitleaks/gitleaks:v${VERSION} $OPCIONES /repo \
+              || $DOCKER zricethezav/gitleaks:v${VERSION} $OPCIONES /repo
+          fi
