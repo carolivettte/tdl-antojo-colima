@@ -26,24 +26,22 @@ En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y dec
 
 ## 2. Entrevista de campo
 
-> **PENDIENTE DE LLENAR TRAS LA ENTREVISTA** (mínimo 15 minutos).
-
 | Campo | Dato |
 |---|---|
-| Fecha y hora | AAAA-MM-DD, HH:MM a HH:MM (duración: __ min) |
-| Perfil del entrevistado (sin nombre) | Ej. "Dueño de taquería pequeña en Villa de Álvarez, 8 años operando, 4 empleados" |
-| Entrevistadores | Carol Rodríguez · Avlix Jiménez |
-| Consentimiento | Se explicó el propósito académico; no se publican nombres ni datos del negocio. Grabación: sí / no |
+| Fecha | 8 de noviembre de 2026 |
+| Duración | 16 minutos transcurridos: 11 minutos de conversación efectiva y 5 minutos de interrupciones por atención a clientes |
+| Perfil de la entrevistada | Persona con puesto de supervisión en una cafetería del estado de Colima. Se omiten su nombre y el del establecimiento para preservar el anonimato |
+| Entrevistadores | Carol Ivette Rodríguez Lepe y Avlix Eduardo Jiménez Cuevas |
 
 ### Preguntas y respuestas
 
 | # | Pregunta | Qué alimenta | Respuesta (resumen) |
 |---|---|---|---|
-| 1 | ¿Cuáles son los 3 ingredientes que más le cuestan? ¿Cuál le ha dado más sustos de precio? ¿Dónde y cada cuánto compra? | Selección de productos del SNIIM | |
-| 2 | ¿En qué meses o temporadas vende más y en cuáles menos? ¿Por qué? ¿Le afectan el calor, las lluvias o las fiestas? | Estacionalidad y pronóstico (E1) | |
-| 3 | ¿Cada cuánto sube precios y cómo decide cuándo y cuánto? ¿Alguna vez perdió clientes por subir? | Pregunta central | |
-| 4 | ¿Ha hecho promociones? ¿Cuál funcionó? ¿Por qué medio las anuncia? ¿Nos dejaría probar 2 o 3 versiones en sus redes? | Experimento factorial (E2) | |
-| 5 | ¿Quién es su competencia y cómo eligió su ubicación? ¿Usaría un reporte mensual de insumos y competencia? ¿Cuánto pagaría? | Análisis multivariado (E3) y modelo de negocio | |
+| 1 | ¿Cuáles son los ingredientes que más cuestan? ¿Cuál presenta aumentos repentinos? ¿Dónde y cada cuánto compran? | Selección de insumos y fuentes | Los tres ingredientes señalados son café, leche dorada y carnes frías para sándwiches. Las carnes frías presentan los aumentos más problemáticos. Compran en Sam's Club cada 15 días. |
+| 2 | ¿En qué temporadas venden más o menos? ¿Cómo afectan las lluvias y festividades? | Estacionalidad y pronóstico (E1) | Septiembre y octubre son la temporada más baja; la entrevistada lo atribuye al periodo de mediados del semestre escolar. Durante la lluvia disminuye la afluencia, aunque después las ventas suelen compensarse. Al iniciar la feria a finales de octubre disminuye notablemente la afluencia. No se identificaron meses específicos de mayor venta. |
+| 3 | ¿Cada cuánto ajustan los precios? ¿Quién decide los aumentos? ¿Han perdido clientes por ello? | Pregunta central | Ajustan precios aproximadamente dos veces al año: a inicios y a mediados de año. Los dueños deciden cuándo y cuánto aumentar. No se profundizó en la pérdida de clientes por aumentos de precios. |
+| 4 | ¿Qué promociones ofrecen? ¿Cuáles funcionan mejor? ¿Cómo las anuncian? ¿Aceptarían probar nuevas promociones? | Experimento factorial (E2) | Ofrecen 2x1 en happy hour de 4:00 a 6:00 p. m. y 20 pesos de descuento en frappés los sábados. La promoción más solicitada es happy hour. Se anuncian mediante redes sociales y un cartel afuera del local. Existe posibilidad de probar propuestas del equipo, sujeta a revisión y autorización de los dueños. |
+| 5 | ¿Quién es su competencia? ¿Por qué eligieron la ubicación? ¿Usarían un reporte de insumos y competencia y cuánto pagarían? | Competencia (E3) y modelo de negocio | Identifican principalmente a Starbucks como competencia. La entrevistada desconoce por qué los dueños eligieron la ubicación. Sí utilizarían un reporte; el pago dependería de su nivel de detalle. No se estableció un monto. |
 
 ### Aprendizajes
 
