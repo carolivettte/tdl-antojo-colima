@@ -11,10 +11,9 @@ on:
     # Una vez al día: 16:15 UTC = 10:15 hora de Colima.
     # Cada corrida pide los últimos 3 días del SNIIM, así que no se pierde ninguna publicación.
     - cron: "15 16 * * *"
-    # PROVISIONAL (entrega E0): la ejecución programada de las 10:15 del 9 de noviembre no se
-    # disparó (GitHub puede retrasar o saltar ejecuciones programadas con mucha carga).
-    # Cada 30 minutos para asegurar evidencia de ejecución automática. Quitar después de la entrega.
-    - cron: "17,47 * * * *"
+    # Respaldo: cron-job.org dispara este workflow (workflow_dispatch, origen "cron externo")
+    # todos los días a las 10:30, porque el schedule de GitHub no se disparó el 9 de noviembre
+    # (defecto 14 de Carol).
   workflow_dispatch:
     inputs:
       modo:

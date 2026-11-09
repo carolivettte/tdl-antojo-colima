@@ -15,9 +15,11 @@ Equipo: Carol Ivette Rodríguez Lepe · Avlix Eduardo Jiménez Cuevas · Etiquet
 | Plan de recopilación (estructura, formato, frecuencia, acceso) | [propuesta.md §4.1](propuesta.md#41-fuentes) | SNIIM y DENUE activas, INPC para E1; Open-Meteo y NASA POWER descartadas por su robots.txt |
 | Análisis ético y legal (robots.txt y términos) | [propuesta.md §4.2](propuesta.md#42-análisis-ético-y-legal) · [docs/etica/robots/](../etica/robots/) | Copia fechada de cada robots.txt; el DENUE se guarda sin razón social, teléfono, correo ni sitio web |
 | Extractor ético | [extractores/base.py](../../extractores/base.py) | robots.txt, User-Agent con contacto del equipo, pausa ≥ 1.5 s, Retry-After en 429 y espera exponencial |
-| Captura programada con GitHub Actions | [.github/workflows/captura.yml](../../.github/workflows/captura.yml) · [pestaña Actions](https://github.com/carolivettte/tdl-antojo-colima/actions) | Diaria a las 10:15 (hora de Colima); modos manuales `historico` y `denue` |
+| Captura programada con GitHub Actions | [.github/workflows/captura.yml](../../.github/workflows/captura.yml) · [pestaña Actions](https://github.com/carolivettte/tdl-antojo-colima/actions) | Diaria y automática: `schedule` de GitHub a las 10:15 y disparador externo de respaldo (cron-job.org) a las 10:30, hora de Colima. Las corridas automáticas se llaman "Captura diaria (cron externo)". Ver nota abajo |
 | Datos en bronce con metadatos de captura | [data/bronce/](../../data/bronce/) | Cada CSV tiene su `.meta.json` (URL sin token, fecha UTC, registros, SHA-256) |
 | Dos fuentes funcionando | [extractores/sniim.py](../../extractores/sniim.py) · [extractores/denue.py](../../extractores/denue.py) | SNIIM (scraping, programado) y DENUE (API, 7,397 negocios) |
+
+> **Nota sobre la captura automática (defectos 12 a 14 de Carol).** El 9 de noviembre el `schedule` de GitHub Actions nunca se disparó: la API de GitHub reportó el workflow activo y 0 ejecuciones programadas, incluso con un horario provisional cada 30 minutos. Para no depender de él, se agregó un disparador externo (cron-job.org) que llama a la API `workflow_dispatch` de GitHub con un token limitado a este repositorio y solo al permiso de Actions. La captura sigue corriendo en GitHub Actions, sin intervención humana; cada corrida automática se identifica en su nombre como "(cron externo)" y queda en la bitácora.
 
 ## Análisis Estadístico
 
