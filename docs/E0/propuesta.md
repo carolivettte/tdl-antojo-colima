@@ -23,7 +23,7 @@
 
 ### ¿Por qué importa?
 
-En Colima la mayoría de los negocios de comida son micro (0 a 5 personas) y deciden precios y promociones "al tanteo". Cuando el limón, el aguacate o el tomate se disparan, el margen se pierde sin aviso. Los datos para anticiparlo ya existen y son públicos (SNIIM e INEGI), pero están dispersos y nadie los traduce a decisiones concretas para un taquero o un dueño de cafetería. Además, la comida fuera de casa es de los rubros que más empujan la inflación: el INEGI reporta de forma recurrente al genérico "loncherías, fondas, torterías y taquerías" entre los de mayor incidencia en el INPC.
+La mayoría de los negocios de comida de Colima son micro (0 a 5 personas) y deciden precios y promociones "al tanteo": cuando el limón, el aguacate o el tomate se disparan, pierden margen sin aviso. Los datos para anticiparlo son públicos (SNIIM e INEGI), pero nadie los traduce a decisiones para un taquero o un dueño de cafetería.
 
 ---
 
@@ -44,11 +44,11 @@ Se hicieron dos entrevistas: una a una cafetería y otra a una taquería, los do
 
 | # | Pregunta | Qué alimenta | Respuesta (resumen) |
 |---|---|---|---|
-| 1 | ¿Cuáles son los ingredientes que más cuestan? ¿Cuál presenta aumentos repentinos? ¿Dónde y cada cuánto compran? | Selección de insumos y fuentes | Los tres ingredientes señalados son café, leche dorada y carnes frías para sándwiches. Las carnes frías presentan los aumentos más problemáticos. Compran en Sam's Club cada 15 días. |
-| 2 | ¿En qué temporadas venden más o menos? ¿Cómo afectan las lluvias y festividades? | Estacionalidad y pronóstico (E1) | Septiembre y octubre son la temporada más baja; la entrevistada lo atribuye al periodo de mediados del semestre escolar. Durante la lluvia disminuye la afluencia, aunque después las ventas suelen compensarse. Al iniciar la feria a finales de octubre disminuye notablemente la afluencia. No se identificaron meses específicos de mayor venta. |
-| 3 | ¿Cada cuánto ajustan los precios? ¿Quién decide los aumentos? ¿Han perdido clientes por ello? | Pregunta central | Ajustan precios aproximadamente dos veces al año: a inicios y a mediados de año. Los dueños deciden cuándo y cuánto aumentar. No se profundizó en la pérdida de clientes por aumentos de precios. |
-| 4 | ¿Qué promociones ofrecen? ¿Cuáles funcionan mejor? ¿Cómo las anuncian? ¿Aceptarían probar nuevas promociones? | Experimento factorial (E2) | Ofrecen 2x1 en happy hour de 4:00 a 6:00 p. m. y 20 pesos de descuento en frappés los sábados. La promoción más solicitada es happy hour. Se anuncian mediante redes sociales y un cartel afuera del local. Existe posibilidad de probar propuestas del equipo, sujeta a revisión y autorización de los dueños. |
-| 5 | ¿Quién es su competencia? ¿Por qué eligieron la ubicación? ¿Usarían un reporte de insumos y competencia y cuánto pagarían? | Competencia (E3) y modelo de negocio | Identifican principalmente a Starbucks como competencia. La entrevistada desconoce por qué los dueños eligieron la ubicación. Sí utilizarían un reporte; el pago dependería de su nivel de detalle. No se estableció un monto. |
+| 1 | Insumos más caros, cuál sube de repente, dónde y cada cuánto compra | Selección de insumos y fuentes | Los tres ingredientes señalados son café, leche dorada y carnes frías para sándwiches. Las carnes frías presentan los aumentos más problemáticos. Compran en Sam's Club cada 15 días. |
+| 2 | Temporadas de más y menos venta; efecto del clima y las fiestas | Estacionalidad y pronóstico (E1) | Septiembre y octubre son la temporada más baja; la entrevistada lo atribuye al periodo de mediados del semestre escolar. Durante la lluvia disminuye la afluencia, aunque después las ventas suelen compensarse. Al iniciar la feria a finales de octubre disminuye notablemente la afluencia. No se identificaron meses específicos de mayor venta. |
+| 3 | Cada cuánto sube precios, quién decide, si pierde clientes | Pregunta central | Ajustan precios aproximadamente dos veces al año: a inicios y a mediados de año. Los dueños deciden cuándo y cuánto aumentar. No se profundizó en la pérdida de clientes por aumentos de precios. |
+| 4 | Promociones, canales de anuncio y disposición a probar nuevas | Experimento factorial (E2) | Ofrecen 2x1 en happy hour de 4:00 a 6:00 p. m. y 20 pesos de descuento en frappés los sábados. La promoción más solicitada es happy hour. Se anuncian mediante redes sociales y un cartel afuera del local. Existe posibilidad de probar propuestas del equipo, sujeta a revisión y autorización de los dueños. |
+| 5 | Competencia, ubicación, uso del reporte y cuánto pagaría | Competencia (E3) y modelo de negocio | Identifican principalmente a Starbucks como competencia. La entrevistada desconoce por qué los dueños eligieron la ubicación. Sí utilizarían un reporte; el pago dependería de su nivel de detalle. No se estableció un monto. |
 
 ### Entrevista 2: taquería
 
@@ -63,11 +63,11 @@ Se hicieron dos entrevistas: una a una cafetería y otra a una taquería, los do
 
 | # | Pregunta | Qué alimenta | Respuesta (resumen) |
 |---|---|---|---|
-| 1 | ¿Cuáles son los 3 ingredientes que más le cuestan? ¿Cuál sube de precio de repente? ¿Dónde y cada cuánto compra? | Selección de insumos y fuentes | La carne, el gas y la verdura. Las verduras son las que más problemas dan por subir de repente. Compra con una proveedora cada semana. |
-| 2 | ¿En qué meses vende más y en cuáles menos? ¿Le afectan el clima y las fiestas? | Estacionalidad y pronóstico (E1) | Vende más de noviembre a marzo y menos de julio a octubre, lo que atribuye a la temporada de lluvias. Las lluvias son lo que más afecta. En diciembre aumentan las ventas. |
-| 3 | ¿Cada cuánto sube sus precios? ¿Cómo decide? ¿Ha perdido clientes? | Pregunta central | Sube precios una vez al año, según el aumento de sus insumos. Algunos clientes se retiran al momento del ajuste, pero regresan después de un tiempo. |
-| 4 | ¿Ha hecho promociones? ¿Por dónde las anuncia? ¿Nos permitiría probar 2 o 3 versiones? | Experimento factorial (E2) | Nunca ha hecho promociones y no usa redes sociales ni letreros. Aceptó probar promociones en redes sociales: considera que sería una buena idea empezar a promocionar el negocio. |
-| 5 | ¿Quién es su competencia? ¿Por qué eligió la ubicación? ¿Usaría un reporte y cuánto pagaría? | Competencia (E3) y modelo de negocio | Considera que no tiene competencia directa en su zona. Eligió la ubicación porque no paga renta. Sí usaría el reporte; no especificó un monto. |
+| 1 | Insumos más caros, cuál sube de repente, dónde y cada cuánto compra | Selección de insumos y fuentes | La carne, el gas y la verdura. Las verduras son las que más problemas dan por subir de repente. Compra con una proveedora cada semana. |
+| 2 | Temporadas de más y menos venta; efecto del clima y las fiestas | Estacionalidad y pronóstico (E1) | Vende más de noviembre a marzo y menos de julio a octubre, lo que atribuye a la temporada de lluvias. Las lluvias son lo que más afecta. En diciembre aumentan las ventas. |
+| 3 | Cada cuánto sube precios, quién decide, si pierde clientes | Pregunta central | Sube precios una vez al año, según el aumento de sus insumos. Algunos clientes se retiran al momento del ajuste, pero regresan después de un tiempo. |
+| 4 | Promociones, canales de anuncio y disposición a probar nuevas | Experimento factorial (E2) | Nunca ha hecho promociones y no usa redes sociales ni letreros. Aceptó probar promociones en redes sociales: considera que sería una buena idea empezar a promocionar el negocio. |
+| 5 | Competencia, ubicación, uso del reporte y cuánto pagaría | Competencia (E3) y modelo de negocio | Considera que no tiene competencia directa en su zona. Eligió la ubicación porque no paga renta. Sí usaría el reporte; no especificó un monto. |
 
 ### Aprendizajes
 
@@ -144,43 +144,18 @@ Los datos se guardan en `data/bronce/<fuente>/fecha=AAAA-MM-DD/` conservando el 
 
 **Reglas comunes:** el token del INEGI vive solo en el secreto `INEGI_TOKEN` de GitHub y se oculta (`***`) en cualquier metadato o bitácora; ningún dato personal llega al repositorio; si un sitio prohíbe el acceso, se busca otra fuente.
 
-> _Hallazgo de la primera prueba (7 de noviembre de 2026):_ una consulta de prueba al DENUE alrededor del centro de Colima devolvió una razón social con nombre de persona, teléfonos y correos. Se registró como defecto 1 en `calidad/defectos-carol.csv` y motivó la regla de eliminación.
 
 ---
 
-## 5. Máquina de captura (capa bronce)
+## 5. Máquina de captura y sistema de calidad
 
-- **Automatización:** `.github/workflows/captura.yml` corre todos los días: con el `schedule` de GitHub a las 10:15 y, como respaldo, con un disparador externo (cron-job.org) a las 10:30, hora de Colima y guarda datos y bitácora en el repositorio. También se puede lanzar a mano en modo `historico`.
-- **Extractor ético:** `extractores/base.py`, basado en el Kit de arranque (robots.txt, `Crawl-delay`, User-Agent con contacto del equipo, pausa mínima y espera exponencial).
-- **Tolerancia a fallos:** cada fuente corre por separado; si una falla, las demás continúan y el error queda en la bitácora, que es la base para medir fiabilidad y disponibilidad en E1.
-- **Serie histórica:** SNIIM desde 2020-01-01.
-- **Hallazgo técnico:** el filtro de mercado del SNIIM no funciona (pedir solo Colima regresa 0 filas). El extractor pide todos los mercados con un límite de 10,000 filas por consulta, conserva solo las filas de Colima y avisa si una consulta llega al límite (posible truncamiento).
+- **Captura:** `.github/workflows/captura.yml` corre todos los días con el `schedule` de GitHub (10:15) y un disparador externo de respaldo (cron-job.org, 10:30). El extractor ético (`extractores/base.py`, basado en el Kit) respeta robots.txt y `Crawl-delay`, se identifica con un User-Agent con contacto y espera entre peticiones. Cada fuente corre por separado y todo queda en la bitácora.
+- **Hallazgo técnico:** el filtro de mercado del SNIIM no funciona (pedir solo Colima regresa 0 filas); el extractor pide todos los mercados y conserva solo las filas de Colima.
+- **Calidad:** registros PSP individuales en `calidad/` y tres objetivos medibles en [`calidad/objetivos.md`](../../calidad/objetivos.md): éxito de la captura programada ≥ 95%, cero secretos y cero datos personales, y completitud de precios ≥ 98%.
 
----
-
-## 6. Sistema de calidad inicial
-
-Registros individuales (PSP): `calidad/tiempo-carol.csv`, `calidad/tiempo-avlix.csv`, `calidad/defectos-carol.csv` y `calidad/defectos-avlix.csv`. Los objetivos de calidad medibles están en [`calidad/objetivos.md`](../../calidad/objetivos.md):
-
-1. Tasa de éxito de las ejecuciones de captura programadas ≥ 95%, medida por fuente.
-2. Cero secretos expuestos y cero datos personales en el repositorio.
-3. Completitud y validez de los registros de precios ≥ 98% (cuarentena ≤ 2%).
-
----
-
-## 7. Riesgos y mitigación
-
-| Riesgo | Mitigación |
-|---|---|
-| El SNIIM cambia el formato de su página o bloquea las IP de GitHub Actions | Prueba automática del parser con HTML de ejemplo; la bitácora detecta el fallo el mismo día; respaldo: descarga manual fechada documentada |
-| El INPC por genérico no se publica para la ciudad de Colima | Usar el genérico nacional más el INPC general de Colima |
-| No se consigue negocio para el experimento de E2 | Ruta de ingeniería sobre el extractor |
-| Datos personales en fuentes nuevas (redes sociales en E2) | Eliminación o anonimización en bronce y prueba automática por fuente |
-
-## 8. Roles
+## 6. Roles
 
 | Rol | Integrante | Responde también por |
 |---|---|---|
 | Data Engineer | Carol Ivette Rodríguez Lepe | Explicar cualquier análisis estadístico |
-| Data Statistician | Avlix Eduardo Jiménez Cuevas | Explicar cualquier extractor o regla de limpieza |
-| Quality Lead (E0) | Avlix Eduardo Jiménez Cuevas | Revisar el trabajo del compañero con lista de comprobación |
+| Data Statistician y Quality Lead (E0) | Avlix Eduardo Jiménez Cuevas | Explicar cualquier extractor o regla de limpieza |
