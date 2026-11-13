@@ -27,7 +27,7 @@ def frase_cliente(ultimo: pd.Series, siguiente: pd.Series) -> str:
     texto = (
         f"**Para {siguiente['mes']}** esperamos que tus insumos cuesten alrededor de **{abs(cambio):.0f} % {direccion}** "
         f"que en {ultimo['mes']}. Con 95 % de confianza, el índice quedará entre {siguiente['li_95']:.0f} y "
-        f"{siguiente['ls_95']:.0f} (hoy está en {ultimo['valor']:.0f}). "
+        f"{siguiente['ls_95']:.0f} (en {ultimo['mes']} estuvo en {ultimo['valor']:.0f}). "
     )
     if siguiente["ls_95"] < ultimo["valor"]:
         return texto + "Es muy probable que baje: **buen momento para una promoción**."
@@ -137,7 +137,9 @@ with tab_pron:
         banda = alt.Chart(pro_linea).mark_area(color=NARANJA, opacity=0.18).encode(x="mes:T", y="li_95:Q", y2="ls_95:Q")
         linea = (
             alt.Chart(pro_linea)
-            .mark_line(color=NARANJA, strokeWidth=2, strokeDash=[6, 3], point=alt.OverlayMarkDef(size=60))
+            .mark_line(
+                color=NARANJA, strokeWidth=2, strokeDash=[6, 3], point=alt.OverlayMarkDef(size=60, color=NARANJA, filled=True)
+            )
             .encode(
                 x="mes:T",
                 y="valor:Q",
@@ -240,9 +242,26 @@ with tab_cal:
         )
     if fiab:
         st.subheader("Fiabilidad de la captura diaria")
-        f1, f2, f3, f4 = st.columns(4)
-        f1.metric("Tasa de éxito", f"{fiab['tasa_exito'] * 100:.1f}%", help=f"Objetivo ≥ {fiab['objetivo']:.0%}")
+        objetivo = fiab["objetivo"]
+        f0, f1, f2, f3, f4 = st.columns(5)
+        if fiab.get("tasa_exito_ejecucion") is not None:
+            f0.metric(
+                "Éxito por ejecución",
+                f"{fiab['tasa_exito_ejecucion'] * 100:.1f}%",
+                f"{fiab['ejecuciones_exitosas']} de {fiab['ejecuciones_totales']}",
+                delta_color="off",
+            )
+        f1.metric(
+            "Éxito por día",
+            f"{fiab['tasa_exito'] * 100:.1f}%",
+            f"{fiab['dias_exitosos']} de {fiab['dias_esperados']} días",
+            delta_color="off",
+        )
         f2.metric("MTBF", f"{fiab['mtbf_h']} h" if fiab["mtbf_h"] else "sin fallas")
         f3.metric("MTTR", f"{fiab['mttr_h']} h")
-        f4.metric("Disponibilidad", f"{fiab['disponibilidad'] * 100:.1f}%")
+        f4.metric("Disponibilidad A", f"{fiab['disponibilidad'] * 100:.1f}%", f"objetivo ≥ {objetivo:.0%}", delta_color="off")
+        st.caption(
+            f"Objetivo de E0: éxito ≥ {objetivo:.0%}. La captura programada opera desde el {fiab['periodo']['desde']}; "
+            "A = MTBF / (MTBF + MTTR). Se recalcula con la bitácora en cada captura."
+        )
         st.dataframe(pd.DataFrame(fiab["dias"]), hide_index=True, use_container_width=True)
