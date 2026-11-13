@@ -11,3 +11,5 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-09,10:12,10:34,0,planeacion,Entrevista de campo a una taqueria de Manzanillo
 2026-11-09,16:15,16:25,0,integracion,Integracion de la entrevista a la taqueria y sus aprendizajes en la propuesta; commit y pull request
 2026-11-09,16:30,17:00,5,revision,Registro PSP final y revision final del repositorio antes de la etiqueta e0
+2026-11-12,21:00,22:45,0,revision,Revision de instrucciones y material E1; planificacion de la integracion
+2026-11-13,00:00,02:25,15,integracion,Incorporacion del paquete E1; instalacion de dependencias; ejecucion del pipeline y pruebas con cobertura; revision de estilo y preparacion de commits y documentacion
