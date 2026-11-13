@@ -1,4 +1,4 @@
-"""Ejecuta el pipeline completo: bronce -> plata (puerta de calidad) -> oro.
+"""Ejecuta el pipeline completo: bronce -> plata (puerta de calidad) -> oro -> pronóstico.
 
 Uso:
     python -m pipeline.ejecutar            # lo corre GitHub Actions después de cada captura
@@ -12,6 +12,7 @@ import sys
 from extractores.base import logger
 from pipeline.oro import construir_oro
 from pipeline.plata import construir_plata
+from pipeline.pronostico import construir_pronostico
 
 UMBRAL_VALIDEZ = 0.98
 
@@ -27,6 +28,13 @@ def main(verificar: bool = False) -> int:
             logger.info(f"[CUARENTENA] {fuente}: {n} por '{motivo}'")
     tablas = construir_oro()
     logger.info(f"[ORO] tablas: {tablas}")
+    try:
+        modelos = construir_pronostico()
+        elegido = modelos[modelos["elegido"]].iloc[0]
+        logger.info(f"[PRONOSTICO] elegido {elegido['modelo']} (RMSE {elegido['rmse']}, MAPE {elegido['mape']}%)")
+    except Exception:
+        # Si el pronóstico falla, el tablero conserva el último publicado y el error queda en el log.
+        logger.exception("[PRONOSTICO] no se pudo actualizar")
     if verificar:
         bajos = {
             f: r["tasa_validez"]

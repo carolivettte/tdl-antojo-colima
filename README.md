@@ -28,7 +28,7 @@ data/plata/    datos limpios que pasaron la puerta + reporte de la puerta
 data/cuarentena/ registros rechazados con su motivo
 data/oro/      modelo integrado: precios mensuales, índice de costo del taco, competencia
 data/bitacora/ ejecuciones de la captura, puerta de calidad, respaldos y fiabilidad
-laboratorio/   notebooks de series, experimento y multivariado
+laboratorio/   cuadernos: limpieza y pronóstico (E1), experimento (E2) y multivariado (E3)
 tablero/       tablero Streamlit (tablero/app.py)
 calidad/       registros PSP de tiempo y defectos, objetivos de calidad
 docs/          fichas de entrega, propuesta, relatorías y ética
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 cp .env.example .env                    # y pega tu token en .env (no se sube a GitHub)
 python -m scripts.captura historico     # serie histórica (una vez)
 python -m scripts.captura diaria        # captura del día
-python -m pipeline.ejecutar             # bronce -> plata (puerta de calidad) -> oro
+python -m pipeline.ejecutar             # bronce -> plata (puerta de calidad) -> oro -> pronóstico
 python -m scripts.respaldo              # respaldo de bronce con restauración de prueba
 python -m scripts.fiabilidad            # tasa de éxito, MTBF, MTTR y disponibilidad
 pytest -q --cov=pipeline && ruff check . && pip-audit -r requirements.txt
