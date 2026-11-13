@@ -46,8 +46,10 @@ def clima_activo():
 def diaria():
     hoy = date.today()
     resultados = [
-        # Últimos 3 días para cubrir publicaciones tardías del SNIIM (los duplicados se depuran en plata)
-        correr("sniim", "diaria", lambda: sniim.ejecutar(hoy - timedelta(days=3), hoy, "sniim_diario")),
+        # Últimos 7 días: el SNIIM publica martes y viernes, así que con 3 días hubo corridas sin
+        # datos (defecto 15). Con 7 siempre entra al menos una publicación; los duplicados se
+        # resuelven en la puerta de calidad (capa plata).
+        correr("sniim", "diaria", lambda: sniim.ejecutar(hoy - timedelta(days=7), hoy, "sniim_diario")),
     ]
     if clima_activo():
         resultados.append(correr("clima", "diaria", clima.recientes))
