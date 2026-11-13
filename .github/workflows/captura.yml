@@ -9,7 +9,7 @@ run-name: >-
 on:
   schedule:
     # Una vez al día: 16:15 UTC = 10:15 hora de Colima.
-    # Cada corrida pide los últimos 3 días del SNIIM, así que no se pierde ninguna publicación.
+    # Cada corrida pide los últimos 7 días del SNIIM (publica martes y viernes; defecto 15).
     - cron: "15 16 * * *"
     # Respaldo: cron-job.org dispara este workflow (workflow_dispatch, origen "cron externo")
     # todos los días a las 10:30, porque el schedule de GitHub no se disparó el 9 de noviembre
@@ -55,6 +55,27 @@ jobs:
           INEGI_TOKEN: ${{ secrets.INEGI_TOKEN }}
         run: python -m scripts.captura "${{ github.event.inputs.modo || 'diaria' }}"
 
+      - name: Pipeline bronce -> plata -> oro (puerta de calidad)
+        if: always()
+        run: python -m pipeline.ejecutar
+
+      - name: Respaldo de bronce verificado
+        if: always()
+        run: python -m scripts.respaldo
+
+      - name: Fiabilidad y disponibilidad (MTBF, MTTR, A)
+        if: always()
+        run: python -m scripts.fiabilidad
+
+      - name: Subir respaldo (90 días)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: respaldo-bronce-${{ github.run_id }}
+          path: respaldos/*.zip
+          retention-days: 90
+          if-no-files-found: warn
+
       - name: Guardar evidencia de robots.txt (solo histórico)
         if: always() && github.event.inputs.modo == 'historico'
         run: python -m scripts.verificar_robots || true
@@ -64,7 +85,7 @@ jobs:
         run: |
           git config user.name "tdl-captura-bot"
           git config user.email "tdl-captura-bot@users.noreply.github.com"
-          git add data/bronce data/bitacora docs/etica/robots
+          git add data/bronce data/bitacora data/plata data/oro data/cuarentena docs/E1/diccionario_oro.md calidad/fiabilidad.md docs/etica/robots
           git diff --cached --quiet || git commit -m "captura: ${{ github.event.inputs.modo || 'diaria' }} $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash
           git push

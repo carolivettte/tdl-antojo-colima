@@ -20,8 +20,16 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Linter (ruff)
         run: ruff check .
-      - name: Pruebas (pytest)
-        run: pytest -q
+      - name: Pruebas con cobertura mínima de 80% en el pipeline
+        run: pytest -q --cov=pipeline --cov-report=term-missing --cov-fail-under=80
+      - name: Puerta de calidad sobre los datos del repositorio
+        # Corre bronce -> plata -> oro y falla si algún origen queda por debajo de 98% de validez
+        # (objetivo de calidad 3).
+        run: python -m pipeline.ejecutar --verificar
+      - name: Respaldo de bronce restaurable
+        run: python -m scripts.respaldo
+      - name: Vulnerabilidades en dependencias (pip-audit)
+        run: pip-audit -r requirements.txt --progress-spinner off
       - name: Secretos expuestos (gitleaks)
         # Defecto 10: la descarga de gitleaks fallaba con HTTP 504. Se intenta desde tres
         # orígenes oficiales; si encuentra un secreto, el paso falla (código de salida 1).
