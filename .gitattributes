@@ -1,0 +1,2 @@
+# Los datos se guardan byte por byte como se capturaron (sin convertir saltos de linea).
+data/** -text
