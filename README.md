@@ -21,12 +21,15 @@ Atribución: precios del SNIIM, Secretaría de Economía; DENUE e INPC, INEGI. O
 ```
 config/        parámetros de las fuentes (fuentes.yaml)
 extractores/   un módulo por fuente + extractor ético base
-scripts/       orquestador de captura y verificación de robots.txt
-pipeline/      bronce -> plata -> oro y puertas de calidad (E1)
-data/bronce/   datos crudos por fuente y fecha, con .meta.json
-data/bitacora/ ejecuciones de la captura (fiabilidad)
+scripts/       captura, respaldo de bronce, fiabilidad y verificación de robots.txt
+pipeline/      bronce -> plata -> oro con la puerta de calidad (esquemas Pandera)
+data/bronce/   datos crudos por fuente y fecha, con .meta.json (nunca se modifican)
+data/plata/    datos limpios que pasaron la puerta + reporte de la puerta
+data/cuarentena/ registros rechazados con su motivo
+data/oro/      modelo integrado: precios mensuales, índice de costo del taco, competencia
+data/bitacora/ ejecuciones de la captura, puerta de calidad, respaldos y fiabilidad
 laboratorio/   notebooks de series, experimento y multivariado
-tablero/       Streamlit (E1 en adelante)
+tablero/       tablero Streamlit (tablero/app.py)
 calidad/       registros PSP de tiempo y defectos, objetivos de calidad
 docs/          fichas de entrega, propuesta, relatorías y ética
 tests/         pruebas automáticas
@@ -39,7 +42,13 @@ pip install -r requirements.txt
 cp .env.example .env                    # y pega tu token en .env (no se sube a GitHub)
 python -m scripts.captura historico     # serie histórica (una vez)
 python -m scripts.captura diaria        # captura del día
-pytest -q && ruff check .
+python -m pipeline.ejecutar             # bronce -> plata (puerta de calidad) -> oro
+python -m scripts.respaldo              # respaldo de bronce con restauración de prueba
+python -m scripts.fiabilidad            # tasa de éxito, MTBF, MTTR y disponibilidad
+pytest -q --cov=pipeline && ruff check . && pip-audit -r requirements.txt
+
+pip install -r tablero/requirements.txt
+streamlit run tablero/app.py            # tablero en http://localhost:8501
 ```
 
-En GitHub, el token vive en **Settings → Secrets and variables → Actions → `INEGI_TOKEN`** y la captura corre sola todos los días (`.github/workflows/captura.yml`).
+En GitHub, el token vive en **Settings → Secrets and variables → Actions → `INEGI_TOKEN`** y la captura corre sola todos los días (`.github/workflows/captura.yml`): captura, puerta de calidad, capa oro, respaldo y fiabilidad, sin intervención.
