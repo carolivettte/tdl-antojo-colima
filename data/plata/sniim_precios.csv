@@ -655,9 +655,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.67,False
 2026-10-30,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.67,False
 2026-11-03,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
-2026-11-06,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-10,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-13,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,50.0,52.0,52.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.67,False
+2026-11-06,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-10,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,48.0,50.0,50.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-13,aguacate,fruta,taquera,Aguacate Hass - Primera,Kilogramo,kg,Jalisco,Colima,06002,50.0,52.0,52.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.67,False
 2020-01-03,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,15.0,20.0,20.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-07,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,15.0,17.0,17.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-10,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,15.0,18.0,18.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -1200,9 +1200,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,22.0,25.0,25.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,1.65,False
 2026-10-30,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,22.0,28.0,28.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.67,False
 2026-11-03,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,25.0,25.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
-2026-11-06,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.51,False
-2026-11-10,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,21.0,21.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.67,False
-2026-11-13,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,35.0,38.0,38.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.97,False
+2026-11-06,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.51,False
+2026-11-10,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,21.0,21.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.67,False
+2026-11-13,cebolla,verdura,taquera,Cebolla Bola - Primera,Kilogramo,kg,Jalisco,Colima,06002,35.0,38.0,38.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.97,False
 2020-01-03,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,18.0,20.0,20.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-07,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,20.5,20.5,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-10,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,24.0,24.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -1861,9 +1861,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
 2026-10-30,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
 2026-11-03,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
-2026-11-06,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-10,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-13,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,45.0,47.0,47.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,20.94,True
+2026-11-06,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-10,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-13,chile_jalapeno,chile,taquera,Chile Jalapeño - Primera,Kilogramo,kg,Jalisco,Colima,06002,45.0,47.0,47.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,20.94,True
 2020-01-03,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,20.5,20.5,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-07,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,20.5,20.5,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-10,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -2522,9 +2522,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,28.0,28.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.9,False
 2026-10-30,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,27.0,27.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.67,False
 2026-11-03,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.45,False
-2026-11-06,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.45,False
-2026-11-10,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,27.0,27.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.22,False
-2026-11-13,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,60.0,62.0,62.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,7.64,True
+2026-11-06,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.45,False
+2026-11-10,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,27.0,27.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.22,False
+2026-11-13,chile_serrano,chile,taquera,Chile Serrano - Primera,Kilogramo,kg,Jalisco,Colima,06002,60.0,62.0,62.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,7.64,True
 2020-04-17,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,25.0,28.0,28.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-04-21,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,18.0,28.0,28.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-04-24,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,23.0,28.0,28.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -3153,9 +3153,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,38.0,38.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.4,False
 2026-10-30,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,38.0,38.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.27,False
 2026-11-03,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,36.0,36.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.27,False
-2026-11-06,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,36.0,36.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.34,False
-2026-11-10,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,36.0,36.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.34,False
-2026-11-13,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-2.7,False
+2026-11-06,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,36.0,36.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.34,False
+2026-11-10,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,35.0,36.0,36.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.34,False
+2026-11-13,limon,fruta,taquera,Limón c/semilla # 5 - Primera,Kilogramo,kg,Colima,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-2.7,False
 2020-01-03,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,16.0,22.0,22.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-07,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,15.0,22.0,22.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-10,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,18.0,22.0,22.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -3814,9 +3814,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,28.0,28.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
 2026-10-30,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-1.93,False
 2026-11-03,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-1.35,False
-2026-11-06,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,27.0,27.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-10,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.67,False
-2026-11-13,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,3.37,False
+2026-11-06,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,27.0,27.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-10,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,25.0,26.0,26.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.67,False
+2026-11-13,papa,verdura,taquera,Papa Alpha - Primera,Kilogramo,kg,Jalisco,Colima,06002,30.0,32.0,32.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,3.37,False
 2020-01-03,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,25.0,25.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-07,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,23.0,25.0,25.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-10,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,22.0,25.0,25.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -4473,9 +4473,9 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.6,False
 2026-10-30,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.67,False
 2026-11-03,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,20.0,20.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.34,False
-2026-11-06,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.67,False
-2026-11-10,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,-0.51,False
-2026-11-13,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,40.0,41.0,41.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,3.37,False
+2026-11-06,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.67,False
+2026-11-10,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,-0.51,False
+2026-11-13,tomate_saladette,verdura,taquera,Tomate Saladette - Primera,Kilogramo,kg,Jalisco,Colima,06002,40.0,41.0,41.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,3.37,False
 2020-01-03,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,18.0,18.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-07,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,20.0,20.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
 2020-01-10,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,17.0,20.0,20.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,,False
@@ -5134,6 +5134,6 @@ fecha,insumo,tipo,canasta,producto_sniim,presentacion,unidad,origen,mercado,muni
 2026-10-27,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,21.0,21.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.17,False
 2026-10-30,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,0.0,False
 2026-11-03,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,21.0,21.0,,sniim_historico_20261109T080451Z.csv,2026-11-09 08:04:51+00:00,-0.17,False
-2026-11-06,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-10,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,0.0,False
-2026-11-13,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,35.0,38.0,38.0,,sniim_diario_20261113T180836Z.csv,2026-11-13 18:08:36+00:00,2.7,False
+2026-11-06,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-10,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,20.0,22.0,22.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,0.0,False
+2026-11-13,tomate_verde,verdura,taquera,Tomate Verde - Primera,Kilogramo,kg,Jalisco,Colima,06002,35.0,38.0,38.0,,sniim_diario_20261113T215740Z.csv,2026-11-13 21:57:40+00:00,2.7,False
