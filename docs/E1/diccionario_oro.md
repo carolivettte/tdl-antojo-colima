@@ -63,7 +63,7 @@ Filas: **80**
 | `variacion_mensual_pct` | float64 | Cambio porcentual contra el mes anterior. | 12.24 |
 | `variacion_anual_pct` | float64 | Cambio porcentual contra el mismo mes del año anterior. | -3.58 |
 | `costo_canasta_kg` | float64 | Suma de la mediana mensual de los 8 insumos (1 kg de cada uno, MXN). | 205.5 |
-| `insumos_imputados` | str | Insumos cuyo precio de ese mes fue imputado. |  |
+| `insumos_imputados` | object | Insumos cuyo precio de ese mes fue imputado. |  |
 
 ## `competencia_municipio.csv`
 
@@ -95,4 +95,4 @@ Filas: **116**
 | `ls_95` | float | Límite superior del intervalo de 95% (vacío en observados). |
 | `modelo` | texto | Modelo elegido (SES, Holt, Holt-Winters o ARIMA). |
 
-`comparacion_modelos.csv`: una fila por modelo con `modelo`, `mae`, `rmse`, `mape` (sobre el conjunto de prueba) y `elegido` (True en el de menor error).
+`comparacion_modelos.csv`: una fila por modelo con `modelo`, `mae`, `rmse`, `mape` (sobre los 12 meses de prueba), `aic`, `detalle` (orden del ARIMA) y `elegido` (True en el de menor RMSE). Los escribe `pipeline/pronostico.py`.

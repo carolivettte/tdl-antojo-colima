@@ -218,8 +218,8 @@ CONTRATO_PRONOSTICO = [
     "| `ls_95` | float | Límite superior del intervalo de 95% (vacío en observados). |",
     "| `modelo` | texto | Modelo elegido (SES, Holt, Holt-Winters o ARIMA). |",
     "",
-    "`comparacion_modelos.csv`: una fila por modelo con `modelo`, `mae`, `rmse`, `mape` "
-    "(sobre el conjunto de prueba) y `elegido` (True en el de menor error).",
+    "`comparacion_modelos.csv`: una fila por modelo con `modelo`, `mae`, `rmse`, `mape` (sobre los 12 meses de prueba), "
+    "`aic`, `detalle` (orden del ARIMA) y `elegido` (True en el de menor RMSE). Los escribe `pipeline/pronostico.py`.",
     "",
 ]
 
