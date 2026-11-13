@@ -21,6 +21,7 @@ Métodos de verificación: **P** = prueba automática (pytest, corre en CI), **A
 | RF-11 | El sistema debe comparar cuatro modelos de pronóstico y publicar el de menor error. | `comparacion_modelos.csv` tiene SES, Holt, Holt-Winters y ARIMA con MAE, RMSE y MAPE, y exactamente un `elegido = True`, el de menor RMSE. | P | `test_comparar_evalua_los_cuatro_y_elige_uno` · [E1_pronostico.ipynb](../../laboratorio/E1_pronostico.ipynb) |
 | RF-12 | El pronóstico debe publicarse con intervalo de 95 % y sin usar el mes en curso incompleto. | 3 meses pronosticados con `li_95 < valor < ls_95`; un mes con datos solo hasta antes del día 25 no entra al ajuste. | P | `test_pronostico_publica_intervalo_y_quita_mes_incompleto` |
 | RF-13 | El tablero debe mostrar el pronóstico elegido, la tabla de errores, la cuarentena con motivos y la fiabilidad. | Las cuatro secciones aparecen al abrir el tablero publicado. | D | [tablero/app.py](../../tablero/app.py) · enlace del tablero en [ENTREGA.md](ENTREGA.md) |
+| RF-15 | El parseo del HTML del SNIIM debe poder verificarse sin conexión a red. | Con las páginas reales guardadas en `tests/fixtures/` y la red bloqueada, se eligen los 8 insumos y se leen las filas de Colima; cualquier intento de conexión hace fallar la prueba. | P | `tests/test_sniim_html.py` (7 pruebas) · observación del docente en E0 |
 | RF-14 | El DENUE debe guardarse sin datos personales. | Bronce y plata no contienen razón social, teléfono, correo ni sitio web. | P | `test_denue_elimina_datos_personales` |
 
 ## No funcionales
@@ -63,6 +64,7 @@ Cada requerimiento se revisó con cuatro preguntas. Si alguna fallaba, se reescr
 | RF-11 | Gana el modelo con menor error, no el más sofisticado | Rúbrica: selección por error |
 | RF-12 | Un pronóstico sin intervalo promete de más; un mes incompleto lo sesga | Rúbrica: residuos y comunicación |
 | RF-13 | El cliente consulta el tablero, no el repositorio | Rúbrica: terminado cuando |
+| RF-15 | Si el SNIIM cambia su página, debe detectarse en las pruebas antes de que la captura falle | Observación del docente en E0 · RNF-08 |
 | RF-14 | La ley de datos personales y el compromiso ético de E0 | Objetivo 2 |
 | RNF-01 | El cliente necesita el dato cuando lo consulta | Objetivo 1 · rúbrica: fiabilidad |
 | RNF-02 | Una falla larga deja huecos que luego hay que imputar | Rúbrica: fiabilidad (MTTR) |

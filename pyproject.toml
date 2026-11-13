@@ -8,6 +8,7 @@ select = ["E", "F", "I", "B"]
 [tool.ruff.lint.per-file-ignores]
 # Los cuadernos agregan la raíz del repositorio a sys.path antes de importar el pipeline.
 "laboratorio/*.ipynb" = ["E402"]
+"docs/E1/*.ipynb" = ["E402"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
