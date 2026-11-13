@@ -1,22 +1,22 @@
 # Fiabilidad y disponibilidad de la captura
 
-Generado automáticamente por `scripts/fiabilidad.py` el 2026-11-13T08:32:13+00:00 a partir de `data/bitacora/ejecuciones.csv`. Se recalcula después de cada captura.
+Generado automáticamente por `scripts/fiabilidad.py` el 2026-11-13T16:29:51+00:00 a partir de `data/bitacora/ejecuciones.csv`. Se recalcula después de cada captura.
 
-Servicio medido: captura diaria del SNIIM en bronce. Periodo: 2026-11-09 a 2026-11-13T08:32+00:00 UTC (104.5 h).
+Servicio medido: captura diaria del SNIIM en bronce. Periodo: 2026-11-09 a 2026-11-13T16:29+00:00 UTC (112.5 h).
 
 Ventana que pide E1: 2026-11-06 a 2026-11-13. La captura programada empezó a operar el 2026-11-09: los días anteriores no había sistema que medir, así que la medición cubre 4 días y no 7.
 
 | Métrica | Valor | Cómo se calcula |
 |---|---|---|
-| **Tasa de éxito por ejecución** | **92.9 %** | 13 de 14 ejecuciones de todas las fuentes terminaron sin error |
-| Tasa de éxito de las ejecuciones programadas | 100.0 % | de 3 ejecuciones programadas del SNIIM |
+| **Tasa de éxito por ejecución** | **93.3 %** | 14 de 15 ejecuciones de todas las fuentes terminaron sin error |
+| Tasa de éxito de las ejecuciones programadas | 100.0 % | de 4 ejecuciones programadas del SNIIM |
 | Días esperados | 4 | Un día por cada ventana programada cerrada (16:00–18:00 UTC) |
 | Días exitosos | 3 | Ejecución programada con estado ok |
 | **Tasa de éxito por día** | **75.0 %** | exitosos / esperados (objetivo ≥ 95%: no cumple) |
 | Fallas | 1 | Días sin ejecución programada o con error |
-| **MTBF** | **99.2 h** | tiempo en operación / fallas |
+| **MTBF** | **107.16 h** | tiempo en operación / fallas |
 | **MTTR** | **5.34 h** | tiempo de reparación total / fallas |
-| **Disponibilidad A** | **94.9 %** | MTBF / (MTBF + MTTR) |
+| **Disponibilidad A** | **95.2 %** | MTBF / (MTBF + MTTR) |
 
 ## Fallas
 
@@ -44,4 +44,4 @@ Causas y acciones correctivas: `calidad/incidentes.csv`.
 | inegi | manual | vacio | 1 |
 | sniim | manual | ok | 7 |
 | sniim | manual | vacio | 1 |
-| sniim | programada | ok | 3 |
+| sniim | programada | ok | 4 |
