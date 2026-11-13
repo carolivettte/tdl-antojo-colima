@@ -15,7 +15,7 @@ Que cada captura viaje sola de bronce a oro con una puerta de calidad que rechac
 | 12 nov | Carol | Revisión sobre el repositorio actualizado; copia limpia, pruebas en Windows (defecto 18) y 8 commits | 55 min |
 | 12 nov | Avlix | Revisión de instrucciones y material E1; planificación de la integración | 105 min (21:00–22:45) |
 | 13 nov | Avlix | Incorporación del paquete; instalación de dependencias; ejecución del pipeline; 23 pruebas con 90 % de cobertura; Ruff y preparación de commits | 130 min efectivos (00:00–02:25; 15 min de interrupción) |
-| 13 nov | Los dos | Publicación del tablero, ajustes finales del tablero, fiabilidad final y etiqueta e1 | 116 min |
+| 13 nov | Carol | Publicación del tablero, ajustes del tablero y fiabilidad final; revisión final contra el PDF y la lista del docente, pruebas del SNIIM sin red (observación de E0) y etiqueta e1 | 193 min |
 
 Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](../calidad/tiempo-avlix.csv). El código se escribió con apoyo de un asistente de IA (declarado en la ficha); la revisión, las pruebas locales y las decisiones fueron del equipo.
 
