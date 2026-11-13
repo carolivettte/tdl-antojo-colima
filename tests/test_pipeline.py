@@ -232,3 +232,5 @@ def test_fiabilidad_cuenta_dia_sin_ejecucion_como_falla(tmp_path):
     assert r["dias_esperados"] == 2 and r["dias_exitosos"] == 1
     assert r["fallas"][0]["horas_reparacion"] == 5.33
     assert 0 < r["disponibilidad"] < 1
+    assert r["ejecuciones_totales"] == 2 and r["tasa_exito_ejecucion"] == 1.0
+    assert r["ejecuciones_programadas"] == 1

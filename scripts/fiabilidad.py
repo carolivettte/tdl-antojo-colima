@@ -37,6 +37,7 @@ INICIO_OPERACION = pd.Timestamp("2026-11-09", tz="UTC")  # primer día con captu
 HORA_ESPERADA = time(16, 15)
 VENTANA = (time(16, 0), time(18, 0))
 OBJETIVO = 0.95
+VENTANA_E1 = ("2026-11-06", "2026-11-13")  # ventana que pide la rúbrica de E1
 
 
 def cargar(ruta=BITACORA) -> pd.DataFrame:
@@ -85,6 +86,11 @@ def evaluar(df: pd.DataFrame, ahora: pd.Timestamp, fuente: str = "sniim") -> dic
     mttr = caido_h / n if n else 0.0
     disp = mtbf / (mtbf + mttr) if n else 1.0
     exitosos = sum(d["estado"] == "ok" for d in dias)
+    # Tasa por ejecución: cada corrida de cualquier fuente cuenta; éxito = terminó sin error.
+    total_ej = len(df)
+    ok_ej = int(df["estado"].isin(["ok", "vacio"]).sum())
+    prog = df[(df["fuente"] == fuente) & (df["tipo"] == "programada")]
+    ok_prog = int(prog["estado"].isin(["ok", "vacio"]).sum())
     return {
         "calculado_utc": ahora.isoformat(timespec="seconds"),
         "fuente": fuente,
@@ -93,6 +99,12 @@ def evaluar(df: pd.DataFrame, ahora: pd.Timestamp, fuente: str = "sniim") -> dic
             "hasta": ahora.isoformat(timespec="minutes"),
             "horas": round(periodo_h, 1),
         },
+        "ventana_pedida": {"desde": VENTANA_E1[0], "hasta": VENTANA_E1[1]},
+        "ejecuciones_totales": total_ej,
+        "ejecuciones_exitosas": ok_ej,
+        "tasa_exito_ejecucion": round(ok_ej / total_ej, 4) if total_ej else None,
+        "ejecuciones_programadas": len(prog),
+        "tasa_exito_programadas": round(ok_prog / len(prog), 4) if len(prog) else None,
         "dias_esperados": len(dias),
         "dias_exitosos": exitosos,
         "tasa_exito": round(exitosos / len(dias), 4) if dias else None,
@@ -125,11 +137,19 @@ def escribir_reporte(r: dict) -> None:
         f"Servicio medido: captura diaria del SNIIM en bronce. Periodo: {r['periodo']['desde']} a "
         f"{r['periodo']['hasta']} UTC ({r['periodo']['horas']} h).",
         "",
+        f"Ventana que pide E1: {r['ventana_pedida']['desde']} a {r['ventana_pedida']['hasta']}. La captura programada "
+        f"empezó a operar el {r['periodo']['desde']}: los días anteriores no había sistema que medir, así que "
+        f"la medición cubre {r['dias_esperados']} días y no 7.",
+        "",
         "| Métrica | Valor | Cómo se calcula |",
         "|---|---|---|",
+        f"| **Tasa de éxito por ejecución** | **{pct(r['tasa_exito_ejecucion'])}** | "
+        f"{r['ejecuciones_exitosas']} de {r['ejecuciones_totales']} ejecuciones de todas las fuentes terminaron sin error |",
+        f"| Tasa de éxito de las ejecuciones programadas | {pct(r['tasa_exito_programadas'])} | "
+        f"de {r['ejecuciones_programadas']} ejecuciones programadas del SNIIM |",
         f"| Días esperados | {r['dias_esperados']} | Un día por cada ventana programada cerrada (16:00–18:00 UTC) |",
         f"| Días exitosos | {r['dias_exitosos']} | Ejecución programada con estado ok |",
-        f"| **Tasa de éxito** | **{pct(r['tasa_exito'])}** | exitosos / esperados ({veredicto}) |",
+        f"| **Tasa de éxito por día** | **{pct(r['tasa_exito'])}** | exitosos / esperados ({veredicto}) |",
         f"| Fallas | {len(r['fallas'])} | Días sin ejecución programada o con error |",
         f"| **MTBF** | **{r['mtbf_h']} h** | tiempo en operación / fallas |",
         f"| **MTTR** | **{r['mttr_h']} h** | tiempo de reparación total / fallas |",

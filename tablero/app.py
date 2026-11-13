@@ -19,6 +19,26 @@ import streamlit as st
 DATA = Path(__file__).resolve().parents[1] / "data"
 AZUL, NARANJA, GRIS = "#2a78d6", "#eb6834", "#8a8984"
 
+
+def frase_cliente(ultimo: pd.Series, siguiente: pd.Series) -> str:
+    """Explica el pronóstico y su intervalo en palabras del taquero."""
+    cambio = (siguiente["valor"] / ultimo["valor"] - 1) * 100
+    direccion = "más" if cambio >= 0 else "menos"
+    texto = (
+        f"**Para {siguiente['mes']}** esperamos que tus insumos cuesten alrededor de **{abs(cambio):.0f} % {direccion}** "
+        f"que en {ultimo['mes']}. Con 95 % de confianza, el índice quedará entre {siguiente['li_95']:.0f} y "
+        f"{siguiente['ls_95']:.0f} (hoy está en {ultimo['valor']:.0f}). "
+    )
+    if siguiente["ls_95"] < ultimo["valor"]:
+        return texto + "Es muy probable que baje: **buen momento para una promoción**."
+    if siguiente["li_95"] > ultimo["valor"]:
+        return texto + "Es muy probable que suba: **cuida tus precios** antes de que te coma el margen."
+    return texto + (
+        "El rango incluye subir y bajar, así que la dirección no es segura: usa el valor central como guía, "
+        "no como promesa, y revisa la pestaña Insumos para ver qué producto se está moviendo."
+    )
+
+
 st.set_page_config(page_title="Observatorio Antojo Colima", layout="wide")
 
 
@@ -77,12 +97,20 @@ if len(indice):
                 f"Pronóstico {s['mes']}", f"{s['valor']:.1f}", f"{s['valor'] - ult['indice']:+.1f} puntos", delta_color="inverse"
             )
     sig = pronostico[pronostico["tipo"] == "pronostico"] if len(pronostico) else pd.DataFrame()
-    cambio = sig["valor"].iloc[0] - ult["indice"] if len(sig) else ult["variacion_mensual_pct"]
+    if len(sig):
+        s0 = sig.iloc[0]
+        lectura = (
+            "Promoción"
+            if s0["ls_95"] < ult["indice"]
+            else ("Cuidar precio" if s0["li_95"] > ult["indice"] else "Sin señal clara")
+        )
+    else:
+        lectura = "Promoción" if ult["variacion_mensual_pct"] < 0 else "Cuidar precio"
     c4.metric(
         "Lectura",
-        "Promoción" if cambio < 0 else "Cuidar precio",
-        help="Si se espera que la canasta baje, hay margen para promoción; si se espera que suba, conviene cuidar el precio. "
-        "Revisa el intervalo: si es muy ancho, la señal es débil.",
+        lectura,
+        help="Promoción: con 95 % de confianza la canasta baja. Cuidar precio: con 95 % de confianza sube. "
+        "Sin señal clara: el intervalo incluye subir y bajar.",
     )
 
 tab_pron, tab_ins, tab_comp, tab_cal = st.tabs(["Pronóstico", "Insumos", "Competencia", "Calidad de datos"])
@@ -124,10 +152,12 @@ with tab_pron:
         st.altair_chart((banda + base + linea).properties(height=360), use_container_width=True)
         modelo = pro["modelo"].iloc[0] if len(pro) else ""
         st.caption(f"Azul: observado. Naranja punteado: pronóstico del modelo **{modelo}** con intervalo de 95%.")
+        if len(pro):
+            st.info(frase_cliente(obs.iloc[-1], pro.iloc[0]))
         if len(modelos):
             st.markdown("**Selección del modelo por error en los 12 meses de prueba** (se elige el de menor RMSE)")
             columnas = [c for c in ["modelo", "mae", "rmse", "mape", "detalle", "elegido"] if c in modelos.columns]
-            st.dataframe(modelos.sort_values("rmse")[columnas], hide_index=True, use_container_width=True)
+            st.dataframe(modelos.sort_values("rmse")[columnas].fillna(""), hide_index=True, use_container_width=True)
     elif len(indice):
         st.info("Aún no hay pronóstico publicado (data/oro/pronostico.csv). Se muestra la serie observada.")
         st.altair_chart(
