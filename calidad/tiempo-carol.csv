@@ -19,3 +19,4 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-12,17:55,18:10,0,revision,Revision de la parte de E1 sobre el repositorio actualizado; ajustes antes del PR
 2026-11-12,21:50,22:30,0,pruebas,Copia limpia del repo, pruebas locales, defecto 18 (respaldo en Windows) y commits de E1
 2026-11-13,10:23,12:39,20,revision,Publicacion del tablero en Streamlit, corrida manual de fiabilidad, ajustes del tablero y cierre de E1
+2026-11-13,12:43,14:00,0,revision,Revision final contra el PDF y la lista del docente; cifras de la puerta; cuaderno en docs/E1; pruebas del SNIIM con paginas reales sin red (observacion de E0); commits y etiqueta e1
