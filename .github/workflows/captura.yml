@@ -56,8 +56,10 @@ jobs:
         run: python -m scripts.captura "${{ github.event.inputs.modo || 'diaria' }}"
 
       - name: Pipeline bronce -> plata -> oro (puerta de calidad)
+        # --verificar: si la validez de una fuente baja de 98 % la corrida queda en rojo
+        # (los datos y la cuarentena se guardan igual, para poder revisar el motivo).
         if: always()
-        run: python -m pipeline.ejecutar
+        run: python -m pipeline.ejecutar --verificar
 
       - name: Respaldo de bronce verificado
         if: always()

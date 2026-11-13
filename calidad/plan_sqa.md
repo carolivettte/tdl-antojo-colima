@@ -57,7 +57,7 @@ Las dos personas tienen el mismo peso en la decisión de liberar una entrega (et
 | Requerimientos verificables | `docs/E1/requerimientos.md` | Cada fila con método y evidencia |
 | Diccionario de datos de oro | `docs/E1/diccionario_oro.md` | Se **genera** desde el código en cada corrida: no puede desactualizarse |
 | Reporte de fiabilidad | `calidad/fiabilidad.md` | Se genera desde la bitácora en cada captura |
-| Cuadernos de limpieza y pronóstico | `laboratorio/E1_*.ipynb` | Se ejecutan completos antes del commit; ruff los revisa en CI |
+| Cuadernos de limpieza y pronóstico | `docs/E1/limpieza.ipynb` y `laboratorio/E1_pronostico.ipynb` | Se ejecutan completos antes del commit; ruff los revisa en CI |
 | Relatoría | `docs/relatoria-EN.md` (máximo 2 páginas) | Responde las 6 preguntas con fechas, responsables y evidencia |
 | README | `README.md` | Las instrucciones de ejecución se prueban en una copia limpia |
 

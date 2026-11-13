@@ -28,7 +28,7 @@ data/plata/    datos limpios que pasaron la puerta + reporte de la puerta
 data/cuarentena/ registros rechazados con su motivo
 data/oro/      modelo integrado: precios mensuales, índice de costo del taco, competencia
 data/bitacora/ ejecuciones de la captura, puerta de calidad, respaldos y fiabilidad
-laboratorio/   cuadernos: limpieza y pronóstico (E1), experimento (E2) y multivariado (E3)
+laboratorio/   cuadernos: pronóstico (E1), experimento (E2) y multivariado (E3); la limpieza de E1 está en docs/E1/limpieza.ipynb
 tablero/       tablero Streamlit (tablero/app.py)
 calidad/       registros PSP de tiempo y defectos, objetivos de calidad
 docs/          fichas de entrega, propuesta, relatorías y ética

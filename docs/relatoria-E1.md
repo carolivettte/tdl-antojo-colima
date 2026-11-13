@@ -31,6 +31,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 * **El respaldo fallaba en Windows** (Carol 18): git cambiaba los saltos de línea de bronce y las huellas SHA-256 no coincidían. Se corrigió con `.gitattributes` para que los datos nunca se conviertan.
 * **Los atípicos no se marcaban cuando el precio no se movía** (Carol 16, MAD = 0); lo encontró una prueba automática.
 * **Escribimos la interpretación de faltantes y del PCA antes de ver los datos** (Avlix 6). Los datos dijeron otra cosa: el hueco de la cebolla de 2021–2022 es probablemente MNAR (precios 51 % y 106 % arriba de lo normal en sus bordes) y PC1 solo explica 37 %. Se reescribió con las cifras reales.
+* **Observación de E0:** las pruebas del parseo del SNIIM usaban HTML escrito a mano (Carol 21). Ahora usan páginas reales guardadas y corren con la red bloqueada; así descubrimos que la página real tiene varias listas de destino y productos parecidos que no deben entrar.
 * **No alcanzamos 7 días de bitácora.** La captura empezó el 9 de noviembre y la rúbrica pide del 6 al 13. Medimos lo que hay (5 días): 80 % de días exitosos, 93.8 % de ejecuciones exitosas y A = 95.3 %, que ya alcanza el objetivo de E0 ([fiabilidad.md](../calidad/fiabilidad.md)).
 
 ## 5. ¿Qué aprendimos de cada materia?
@@ -43,8 +44,8 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 
 ## 6. Evidencias
 
-* Ficha: [docs/E1/ENTREGA.md](E1/ENTREGA.md) · Commits: `carol/e1-datos` y `avlix/e1-analisis` (PR en GitHub)
+* Ficha: [docs/E1/ENTREGA.md](E1/ENTREGA.md) · Pull requests con sus commits: [#15 datos (Carol)](https://github.com/carolivettte/tdl-antojo-colima/pull/15) · [#16 análisis (Avlix)](https://github.com/carolivettte/tdl-antojo-colima/pull/16) · [#17 cierre](https://github.com/carolivettte/tdl-antojo-colima/pull/17) · [#18 cifras](https://github.com/carolivettte/tdl-antojo-colima/pull/18) · [corridas de Actions](https://github.com/carolivettte/tdl-antojo-colima/actions)
 * Puerta: [reporte_puerta.json](../data/plata/reporte_puerta.json) · [cuarentena](../data/cuarentena/) · [puerta_calidad.csv](../data/bitacora/puerta_calidad.csv)
-* Cuadernos: [E1_limpieza.ipynb](../laboratorio/E1_limpieza.ipynb) · [E1_pronostico.ipynb](../laboratorio/E1_pronostico.ipynb)
+* Cuadernos: [limpieza.ipynb](E1/limpieza.ipynb) · [E1_pronostico.ipynb](../laboratorio/E1_pronostico.ipynb)
 * Pronóstico: [pronostico.csv](../data/oro/pronostico.csv) · [comparacion_modelos.csv](../data/oro/comparacion_modelos.csv) · tablero (enlace en la ficha)
 * Calidad: [fiabilidad.md](../calidad/fiabilidad.md) · [plan_sqa.md](../calidad/plan_sqa.md) · [requerimientos.md](E1/requerimientos.md) · [defectos-carol.csv](../calidad/defectos-carol.csv) · [defectos-avlix.csv](../calidad/defectos-avlix.csv)
