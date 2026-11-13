@@ -21,7 +21,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 
 ## 3. ¿Qué decidimos y por qué?
 
-1. **Marcar los atípicos, no borrarlos.** Descartamos el IQR global porque marcaba la temporada alta de 2022 completa del aguacate: un periodo de escasez real, que es justo lo que le importa al taquero. Usamos el z robusto contra los 120 días anteriores, y a cuarentena solo va lo imposible (mínimo > máximo): 3 de 5,133 registros.
+1. **Marcar los atípicos, no borrarlos.** Descartamos el IQR global porque marcaba la temporada alta de 2022 completa del aguacate: un periodo de escasez real, que es justo lo que le importa al taquero. Usamos el z robusto contra los 120 días anteriores, y a cuarentena solo va lo imposible (mínimo > máximo): 3 de 5,141 registros evaluados.
 2. **Interpolar los meses sin publicación.** Ocultamos meses conocidos y probamos 4 métodos: la interpolación lineal se equivocó 10 %, contra 13 a 24 % del arrastre, la media y la spline. Cada mes imputado queda marcado.
 3. **Elegir el modelo por RMSE fuera de muestra, no por complejidad.** Holt-Winters, el más complejo, fue el peor (RMSE 15.0) porque la serie casi no tiene estacionalidad (fuerza 0.00). Ganó ARIMA(2,1,0), con RMSE 10.7 y MAPE 7.8 %.
 
@@ -35,7 +35,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 
 ## 5. ¿Qué aprendimos de cada materia?
 
-**Ingeniería de Datos.** Una puerta solo es confiable si cuadra: bronce (5,189) = plata (5,130) + cuarentena (3) + duplicados resueltos (56). Si un registro no aparece en ninguno de los tres, se borró en silencio. Reconstruir plata y oro desde bronce en cada corrida resultó más simple y seguro que actualizarlos por partes.
+**Ingeniería de Datos.** Una puerta solo es confiable si cuadra: bronce (5,253) = plata (5,138) + cuarentena (3) + duplicados resueltos (112), al corte del 13 de noviembre. Si un registro no aparece en ninguno de los tres, se borró en silencio. Reconstruir plata y oro desde bronce en cada corrida resultó más simple y seguro que actualizarlos por partes.
 
 **Análisis Estadístico.** El mismo insumo tuvo un faltante MAR (cebolla 2020, con toda la canasta) y uno probablemente MNAR (2021–2022), y eso solo se vio mirando los precios en los bordes de cada hueco, porque el valor p (0.15) no alcanzaba con 4 puntos. También aprendimos que la descomposición aditiva se justifica con datos: la amplitud no crece con el nivel (correlación −0.73).
 
