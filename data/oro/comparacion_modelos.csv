@@ -1,0 +1,5 @@
+modelo,mae,rmse,mape,aic,detalle,elegido
+ARIMA,9.459,10.714,7.803,504.619,"orden (2, 1, 0)",True
+SES,9.338,11.876,7.909,518.098,,False
+Holt,9.339,11.945,7.918,524.044,,False
+Holt-Winters,12.204,15.028,10.265,533.906,,False

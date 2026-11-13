@@ -1,0 +1,117 @@
+municipio_clave,municipio,tipo_negocio,negocios,micro,semifijos,pct_micro,pct_del_municipio
+06001,Armería,taqueria,97,97,24,100.0,27.1
+06001,Armería,antojitos,74,74,5,100.0,20.7
+06001,Armería,mariscos,63,63,22,100.0,17.6
+06001,Armería,cafeteria,39,39,0,100.0,10.9
+06001,Armería,comida_rapida,37,36,4,97.3,10.3
+06001,Armería,otros_alimentos,14,14,0,100.0,3.9
+06001,Armería,restaurante_carta,13,13,0,100.0,3.6
+06001,Armería,otros_para_llevar,9,9,1,100.0,2.5
+06001,Armería,bar_cantina,6,6,0,100.0,1.7
+06001,Armería,autoservicio,3,3,1,100.0,0.8
+06001,Armería,eventos,2,2,0,100.0,0.6
+06001,Armería,comedor_empresas,1,1,0,100.0,0.3
+06002,Colima,taqueria,445,440,60,98.9,24.3
+06002,Colima,antojitos,296,292,10,98.6,16.1
+06002,Colima,cafeteria,259,251,22,96.9,14.1
+06002,Colima,restaurante_carta,197,149,2,75.6,10.7
+06002,Colima,comida_rapida,191,181,18,94.8,10.4
+06002,Colima,otros_alimentos,163,162,15,99.4,8.9
+06002,Colima,otros_para_llevar,119,118,4,99.2,6.5
+06002,Colima,mariscos,69,51,2,73.9,3.8
+06002,Colima,autoservicio,41,31,0,75.6,2.2
+06002,Colima,bar_cantina,36,29,0,80.6,2.0
+06002,Colima,eventos,11,11,0,100.0,0.6
+06002,Colima,centro_nocturno,4,1,0,25.0,0.2
+06002,Colima,comedor_empresas,2,1,0,50.0,0.1
+06003,Comala,taqueria,50,50,7,100.0,27.8
+06003,Comala,antojitos,32,32,2,100.0,17.8
+06003,Comala,restaurante_carta,29,25,1,86.2,16.1
+06003,Comala,cafeteria,22,22,1,100.0,12.2
+06003,Comala,comida_rapida,21,21,3,100.0,11.7
+06003,Comala,otros_alimentos,11,11,0,100.0,6.1
+06003,Comala,otros_para_llevar,7,7,2,100.0,3.9
+06003,Comala,mariscos,3,3,0,100.0,1.7
+06003,Comala,bar_cantina,2,2,0,100.0,1.1
+06003,Comala,unidades_moviles,2,2,1,100.0,1.1
+06003,Comala,autoservicio,1,1,0,100.0,0.6
+06004,Coquimatlán,taqueria,57,57,10,100.0,33.9
+06004,Coquimatlán,antojitos,24,24,0,100.0,14.3
+06004,Coquimatlán,cafeteria,23,22,0,95.7,13.7
+06004,Coquimatlán,comida_rapida,20,20,2,100.0,11.9
+06004,Coquimatlán,otros_alimentos,14,14,0,100.0,8.3
+06004,Coquimatlán,otros_para_llevar,10,10,0,100.0,6.0
+06004,Coquimatlán,restaurante_carta,9,9,1,100.0,5.4
+06004,Coquimatlán,mariscos,6,6,1,100.0,3.6
+06004,Coquimatlán,bar_cantina,3,3,0,100.0,1.8
+06004,Coquimatlán,autoservicio,1,1,0,100.0,0.6
+06004,Coquimatlán,eventos,1,1,0,100.0,0.6
+06005,Cuauhtémoc,taqueria,79,79,18,100.0,29.5
+06005,Cuauhtémoc,antojitos,52,52,2,100.0,19.4
+06005,Cuauhtémoc,cafeteria,43,43,0,100.0,16.0
+06005,Cuauhtémoc,comida_rapida,34,34,2,100.0,12.7
+06005,Cuauhtémoc,otros_alimentos,24,24,1,100.0,9.0
+06005,Cuauhtémoc,otros_para_llevar,13,13,0,100.0,4.9
+06005,Cuauhtémoc,mariscos,9,9,0,100.0,3.4
+06005,Cuauhtémoc,restaurante_carta,8,8,0,100.0,3.0
+06005,Cuauhtémoc,autoservicio,4,4,0,100.0,1.5
+06005,Cuauhtémoc,bar_cantina,2,2,0,100.0,0.7
+06006,Ixtlahuacán,taqueria,24,24,1,100.0,35.8
+06006,Ixtlahuacán,otros_alimentos,12,12,1,100.0,17.9
+06006,Ixtlahuacán,antojitos,10,10,0,100.0,14.9
+06006,Ixtlahuacán,comida_rapida,9,9,2,100.0,13.4
+06006,Ixtlahuacán,bar_cantina,3,3,0,100.0,4.5
+06006,Ixtlahuacán,cafeteria,3,3,0,100.0,4.5
+06006,Ixtlahuacán,otros_para_llevar,3,3,1,100.0,4.5
+06006,Ixtlahuacán,restaurante_carta,2,2,0,100.0,3.0
+06006,Ixtlahuacán,mariscos,1,1,0,100.0,1.5
+06007,Manzanillo,taqueria,489,477,72,97.5,28.5
+06007,Manzanillo,antojitos,314,312,22,99.4,18.3
+06007,Manzanillo,cafeteria,203,198,8,97.5,11.8
+06007,Manzanillo,restaurante_carta,158,127,3,80.4,9.2
+06007,Manzanillo,comida_rapida,146,140,16,95.9,8.5
+06007,Manzanillo,mariscos,127,114,17,89.8,7.4
+06007,Manzanillo,otros_alimentos,108,108,3,100.0,6.3
+06007,Manzanillo,otros_para_llevar,100,97,7,97.0,5.8
+06007,Manzanillo,autoservicio,31,23,1,74.2,1.8
+06007,Manzanillo,bar_cantina,31,23,2,74.2,1.8
+06007,Manzanillo,eventos,3,3,0,100.0,0.2
+06007,Manzanillo,comedor_empresas,2,2,0,100.0,0.1
+06007,Manzanillo,unidades_moviles,2,2,2,100.0,0.1
+06007,Manzanillo,centro_nocturno,1,0,0,0.0,0.1
+06008,Minatitlán,taqueria,36,36,8,100.0,39.1
+06008,Minatitlán,antojitos,19,19,3,100.0,20.7
+06008,Minatitlán,comida_rapida,10,10,0,100.0,10.9
+06008,Minatitlán,cafeteria,8,8,2,100.0,8.7
+06008,Minatitlán,restaurante_carta,7,7,1,100.0,7.6
+06008,Minatitlán,bar_cantina,3,3,0,100.0,3.3
+06008,Minatitlán,otros_alimentos,3,3,0,100.0,3.3
+06008,Minatitlán,mariscos,2,2,0,100.0,2.2
+06008,Minatitlán,otros_para_llevar,2,2,0,100.0,2.2
+06008,Minatitlán,autoservicio,1,1,1,100.0,1.1
+06008,Minatitlán,comedor_empresas,1,1,0,100.0,1.1
+06009,Tecomán,antojitos,428,425,14,99.3,30.3
+06009,Tecomán,taqueria,405,400,28,98.8,28.7
+06009,Tecomán,comida_rapida,147,146,5,99.3,10.4
+06009,Tecomán,cafeteria,126,124,3,98.4,8.9
+06009,Tecomán,otros_alimentos,82,82,1,100.0,5.8
+06009,Tecomán,mariscos,78,65,1,83.3,5.5
+06009,Tecomán,otros_para_llevar,62,61,0,98.4,4.4
+06009,Tecomán,restaurante_carta,55,52,2,94.5,3.9
+06009,Tecomán,bar_cantina,18,17,0,94.4,1.3
+06009,Tecomán,autoservicio,9,9,0,100.0,0.6
+06009,Tecomán,centro_nocturno,1,0,0,0.0,0.1
+06009,Tecomán,unidades_moviles,1,1,0,100.0,0.1
+06010,Villa de Álvarez,taqueria,361,356,72,98.6,27.7
+06010,Villa de Álvarez,antojitos,246,242,7,98.4,18.9
+06010,Villa de Álvarez,comida_rapida,180,174,21,96.7,13.8
+06010,Villa de Álvarez,cafeteria,164,161,24,98.2,12.6
+06010,Villa de Álvarez,otros_alimentos,123,123,5,100.0,9.4
+06010,Villa de Álvarez,otros_para_llevar,88,88,6,100.0,6.7
+06010,Villa de Álvarez,restaurante_carta,51,44,0,86.3,3.9
+06010,Villa de Álvarez,mariscos,46,43,4,93.5,3.5
+06010,Villa de Álvarez,autoservicio,26,19,0,73.1,2.0
+06010,Villa de Álvarez,bar_cantina,13,13,0,100.0,1.0
+06010,Villa de Álvarez,eventos,3,3,0,100.0,0.2
+06010,Villa de Álvarez,centro_nocturno,2,1,0,50.0,0.2
+06010,Villa de Álvarez,unidades_moviles,1,1,0,100.0,0.1

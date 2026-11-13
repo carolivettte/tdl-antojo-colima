@@ -1,0 +1,94 @@
+{
+  "calculado_utc": "2026-11-13T08:32:13+00:00",
+  "fuente": "sniim",
+  "periodo": {
+    "desde": "2026-11-09",
+    "hasta": "2026-11-13T08:32+00:00",
+    "horas": 104.5
+  },
+  "ventana_pedida": {
+    "desde": "2026-11-06",
+    "hasta": "2026-11-13"
+  },
+  "ejecuciones_totales": 14,
+  "ejecuciones_exitosas": 13,
+  "tasa_exito_ejecucion": 0.9286,
+  "ejecuciones_programadas": 3,
+  "tasa_exito_programadas": 1.0,
+  "dias_esperados": 4,
+  "dias_exitosos": 3,
+  "tasa_exito": 0.75,
+  "objetivo": 0.95,
+  "fallas": [
+    {
+      "dia": "2026-11-09",
+      "tipo": "no se ejecuto",
+      "esperada_utc": "2026-11-09T16:15:00+00:00",
+      "restablecida_utc": "2026-11-09T21:35:09.934745+00:00",
+      "horas_reparacion": 5.34
+    }
+  ],
+  "mtbf_h": 99.2,
+  "mttr_h": 5.34,
+  "disponibilidad": 0.9489,
+  "dias": [
+    {
+      "dia": "2026-11-09",
+      "estado": "no se ejecuto",
+      "ejecuciones": 0
+    },
+    {
+      "dia": "2026-11-10",
+      "estado": "ok",
+      "ejecuciones": 1
+    },
+    {
+      "dia": "2026-11-11",
+      "estado": "ok",
+      "ejecuciones": 1
+    },
+    {
+      "dia": "2026-11-12",
+      "estado": "ok",
+      "ejecuciones": 1
+    }
+  ],
+  "ejecuciones_por_estado": [
+    {
+      "fuente": "denue",
+      "tipo": "manual",
+      "estado": "error",
+      "n": 1
+    },
+    {
+      "fuente": "denue",
+      "tipo": "manual",
+      "estado": "ok",
+      "n": 1
+    },
+    {
+      "fuente": "inegi",
+      "tipo": "manual",
+      "estado": "vacio",
+      "n": 1
+    },
+    {
+      "fuente": "sniim",
+      "tipo": "manual",
+      "estado": "ok",
+      "n": 7
+    },
+    {
+      "fuente": "sniim",
+      "tipo": "manual",
+      "estado": "vacio",
+      "n": 1
+    },
+    {
+      "fuente": "sniim",
+      "tipo": "programada",
+      "estado": "ok",
+      "n": 3
+    }
+  ]
+}

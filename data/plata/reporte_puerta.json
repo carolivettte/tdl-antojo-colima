@@ -1,0 +1,27 @@
+[
+  {
+    "fuente": "sniim",
+    "registros_bronce": 5205,
+    "duplicados_exactos_resueltos": 72,
+    "registros_evaluados": 5133,
+    "validos_plata": 5130,
+    "cuarentena": 3,
+    "tasa_validez": 0.9994,
+    "motivos": {
+      "regla de negocio: debe cumplirse mínimo <= frecuente <= máximo": 3
+    },
+    "atipicos_marcados": 296,
+    "evaluado_utc": "2026-11-13T08:32:11+00:00"
+  },
+  {
+    "fuente": "denue",
+    "registros_bronce": 7397,
+    "duplicados_exactos_resueltos": 0,
+    "registros_evaluados": 7397,
+    "validos_plata": 7397,
+    "cuarentena": 0,
+    "tasa_validez": 1.0,
+    "motivos": {},
+    "evaluado_utc": "2026-11-13T08:32:11+00:00"
+  }
+]
