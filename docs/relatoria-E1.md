@@ -15,7 +15,7 @@ Que cada captura viaje sola de bronce a oro con una puerta de calidad que rechac
 | 12 nov | Carol | Revisión sobre el repositorio actualizado; copia limpia, pruebas en Windows (defecto 18) y 8 commits | 55 min |
 | 12 nov | Avlix | Revisión de instrucciones y material E1; planificación de la integración | 105 min (21:00–22:45) |
 | 13 nov | Avlix | Incorporación del paquete; instalación de dependencias; ejecución del pipeline; 23 pruebas con 90 % de cobertura; Ruff y preparación de commits | 130 min efectivos (00:00–02:25; 15 min de interrupción) |
-| 13 nov | Los dos | Pendiente de cierre: revisión cruzada del PR, publicación del tablero y etiqueta `e1` | Se registrará al realizarse |
+| 13 nov | Los dos | Publicación del tablero, ajustes finales del tablero, fiabilidad final y etiqueta e1 | 116 min |
 
 Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](../calidad/tiempo-avlix.csv). El código se escribió con apoyo de un asistente de IA (declarado en la ficha); la revisión, las pruebas locales y las decisiones fueron del equipo.
 
@@ -31,7 +31,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 * **El respaldo fallaba en Windows** (Carol 18): git cambiaba los saltos de línea de bronce y las huellas SHA-256 no coincidían. Se corrigió con `.gitattributes` para que los datos nunca se conviertan.
 * **Los atípicos no se marcaban cuando el precio no se movía** (Carol 16, MAD = 0); lo encontró una prueba automática.
 * **Escribimos la interpretación de faltantes y del PCA antes de ver los datos** (Avlix 6). Los datos dijeron otra cosa: el hueco de la cebolla de 2021–2022 es probablemente MNAR (precios 51 % y 106 % arriba de lo normal en sus bordes) y PC1 solo explica 37 %. Se reescribió con las cifras reales.
-* **No alcanzamos 7 días de bitácora.** La captura empezó el 9 de noviembre y la rúbrica pide del 6 al 13. Medimos lo que hay: 75 % de días exitosos, 92 % de ejecuciones exitosas, A = 94.7 % ([fiabilidad.md](../calidad/fiabilidad.md)).
+* **No alcanzamos 7 días de bitácora.** La captura empezó el 9 de noviembre y la rúbrica pide del 6 al 13. Medimos lo que hay (5 días): 80 % de días exitosos, 93.8 % de ejecuciones exitosas y A = 95.3 %, que ya alcanza el objetivo de E0 ([fiabilidad.md](../calidad/fiabilidad.md)).
 
 ## 5. ¿Qué aprendimos de cada materia?
 
@@ -39,7 +39,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 
 **Análisis Estadístico.** El mismo insumo tuvo un faltante MAR (cebolla 2020, con toda la canasta) y uno probablemente MNAR (2021–2022), y eso solo se vio mirando los precios en los bordes de cada hueco, porque el valor p (0.15) no alcanzaba con 4 puntos. También aprendimos que la descomposición aditiva se justifica con datos: la amplitud no crece con el nivel (correlación −0.73).
 
-**Calidad.** La disponibilidad se calcula con la bitácora, no se declara. Con 4 días medidos, una sola falla baja la tasa diaria a 75 %. Las pruebas encontraron defectos reales (Carol 16 y 18, Avlix 7) antes de que llegaran a `main`.
+**Calidad.** La disponibilidad se calcula con la bitácora, no se declara. Con 5 días medidos, una sola falla deja la tasa diaria en 80 % aunque la disponibilidad (95.3 %) ya cumple el objetivo. Las pruebas encontraron defectos reales (Carol 16 y 18, Avlix 7) antes de que llegaran a `main`.
 
 ## 6. Evidencias
 
