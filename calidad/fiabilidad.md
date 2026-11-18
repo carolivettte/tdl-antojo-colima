@@ -1,22 +1,22 @@
 # Fiabilidad y disponibilidad de la captura
 
-Generado automáticamente por `scripts/fiabilidad.py` el 2026-11-18T16:29:58+00:00 a partir de `data/bitacora/ejecuciones.csv`. Se recalcula después de cada captura.
+Generado automáticamente por `scripts/fiabilidad.py` el 2026-11-18T22:56:35+00:00 a partir de `data/bitacora/ejecuciones.csv`. Se recalcula después de cada captura.
 
-Servicio medido: captura diaria del SNIIM en bronce. Periodo: 2026-11-09 a 2026-11-18T16:29+00:00 UTC (232.5 h).
+Servicio medido: captura diaria del SNIIM en bronce. Periodo: 2026-11-09 a 2026-11-18T22:56+00:00 UTC (238.9 h).
 
-Ventana que pide E1: 2026-11-06 a 2026-11-13. La captura programada empezó a operar el 2026-11-09: los días anteriores no había sistema que medir, así que la medición cubre 9 días y no 7.
+Ventana que pide E1: 2026-11-06 a 2026-11-13. La captura programada empezó a operar el 2026-11-09: los días anteriores no había sistema que medir, así que la medición cubre 10 días y no 7.
 
 | Métrica | Valor | Cómo se calcula |
 |---|---|---|
-| **Tasa de éxito por ejecución** | **96.2 %** | 25 de 26 ejecuciones de todas las fuentes terminaron sin error |
+| **Tasa de éxito por ejecución** | **96.3 %** | 26 de 27 ejecuciones de todas las fuentes terminaron sin error |
 | Tasa de éxito de las ejecuciones programadas | 100.0 % | de 9 ejecuciones programadas del SNIIM |
-| Días esperados | 9 | Un día por cada ventana programada cerrada (16:00–18:00 UTC) |
-| Días exitosos | 8 | Ejecución programada con estado ok |
-| **Tasa de éxito por día** | **88.9 %** | exitosos / esperados (objetivo ≥ 95%: no cumple) |
+| Días esperados | 10 | Un día por cada ventana programada cerrada (16:00–18:00 UTC) |
+| Días exitosos | 9 | Ejecución programada con estado ok |
+| **Tasa de éxito por día** | **90.0 %** | exitosos / esperados (objetivo ≥ 95%: no cumple) |
 | Fallas | 1 | Días sin ejecución programada o con error |
-| **MTBF** | **227.16 h** | tiempo en operación / fallas |
+| **MTBF** | **233.6 h** | tiempo en operación / fallas |
 | **MTTR** | **5.34 h** | tiempo de reparación total / fallas |
-| **Disponibilidad A** | **97.7 %** | MTBF / (MTBF + MTTR) |
+| **Disponibilidad A** | **97.8 %** | MTBF / (MTBF + MTTR) |
 
 ## Fallas
 
@@ -39,6 +39,7 @@ Causas y acciones correctivas: `calidad/incidentes.csv`.
 | 2026-11-15 | ok | 1 |
 | 2026-11-16 | ok | 1 |
 | 2026-11-17 | ok | 1 |
+| 2026-11-18 | ok | 1 |
 
 ## Todas las ejecuciones por fuente, tipo y estado
 
@@ -47,6 +48,6 @@ Causas y acciones correctivas: `calidad/incidentes.csv`.
 | denue | manual | error | 1 |
 | denue | manual | ok | 1 |
 | inegi | manual | vacio | 1 |
-| sniim | manual | ok | 13 |
+| sniim | manual | ok | 14 |
 | sniim | manual | vacio | 1 |
 | sniim | programada | ok | 9 |
