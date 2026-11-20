@@ -26,6 +26,8 @@ jobs:
         # Corre bronce -> plata -> oro y falla si algún origen queda por debajo de 98% de validez
         # (objetivo de calidad 3).
         run: python -m pipeline.ejecutar --verificar
+      - name: Linaje íntegro (cada archivo de bronce coincide con su SHA-256)
+        run: python -m scripts.rastrear --verificar
       - name: Respaldo de bronce restaurable
         run: python -m scripts.respaldo
       - name: Vulnerabilidades en dependencias (pip-audit)
