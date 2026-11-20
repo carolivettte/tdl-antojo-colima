@@ -64,6 +64,36 @@ denue:
     - "Correo_e"
     - "Sitio_internet"
 
+# Fuente especializada de E2 (geoespacial). Dos capas del INEGI:
+#  1) Generadores de afluencia del DENUE: escuelas de todos los niveles, centros de salud y hospitales.
+#     Se guardan SIN nombre ni domicilio: solo clave, clase, tamaño y coordenadas.
+#  2) Límites municipales del Marco Geoestadístico (servicio web oficial en GeoJSON, sin token).
+geo:
+  afluencia:
+    - {tipo: educacion, sector: "61", subsector: "611", rama: "0"}   # servicios educativos, todos los niveles
+    - {tipo: salud, sector: "62", subsector: "621", rama: "6211", clase: "621112"}  # consultorios de medicina general del sector público (centros de salud, UMF IMSS/ISSSTE)
+    - {tipo: salud, sector: "62", subsector: "621", rama: "6214"}    # otros centros de atención sin hospitalización (salud mental, adicciones, planificación familiar)
+    - {tipo: salud, sector: "62", subsector: "622", rama: "0"}       # hospitales
+  columnas_eliminadas:
+    - "Nombre"
+    - "Razon_social"
+    - "Telefono"
+    - "Correo_e"
+    - "Sitio_internet"
+    - "Tipo_vialidad"
+    - "Calle"
+    - "Num_Exterior"
+    - "Num_Interior"
+    - "Edificio"
+    - "EDIFICIO_PISO"
+    - "numero_local"
+    - "Manzana"
+  marco_url: "https://gaia.inegi.org.mx/wscatgeo/v2/geo/mgem/{entidad}"
+  radio_m: 1000              # radio de influencia alrededor de cada punto
+  celda_m: 1000              # tamaño de la cuadrícula para las zonas
+  afluencia_minima: 3        # celdas con menos escuelas/clínicas no se clasifican (sesgo de números pequeños)
+  crs_metrico: "EPSG:32613"  # UTM zona 13N: Colima cae completo en ella; permite medir en metros
+
 inegi:
   base_url: "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR"
   # Series del INPC para la integración de E1. Los identificadores se

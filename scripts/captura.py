@@ -4,15 +4,17 @@ Uso:
     python -m scripts.captura diaria      # lo corre GitHub Actions cada día
     python -m scripts.captura historico   # descarga la serie histórica (una vez)
     python -m scripts.captura denue       # vuelve a tomar la fotografía del DENUE
+    python -m scripts.captura geo         # fuente geoespacial: afluencia del DENUE y límites municipales
 
 Cada fuente corre de forma independiente: si una falla, las demás siguen y
 el fallo queda en data/bitacora/ejecuciones.csv (insumo de fiabilidad en E1).
 """
+
 import sys
 import time
 from datetime import date, timedelta
 
-from extractores import clima, denue, inegi_inpc, sniim
+from extractores import clima, denue, geo, inegi_inpc, sniim
 from extractores.base import logger
 from extractores.bronce import ahora_utc, ocultar_token, registrar_ejecucion
 from extractores.config import cargar_config
@@ -73,8 +75,16 @@ def solo_denue():
     return [correr("denue", "fotografia", denue.capturar)]
 
 
+def geoespacial():
+    """Fotografía de la fuente geoespacial (E2). Cambia poco: basta con correrla una vez al mes."""
+    return [
+        correr("denue_afluencia", "fotografia", geo.capturar_afluencia),
+        correr("marco_geo", "fotografia", geo.capturar_marco),
+    ]
+
+
 if __name__ == "__main__":
     modo = sys.argv[1] if len(sys.argv) > 1 else "diaria"
-    resultados = {"diaria": diaria, "historico": historico, "denue": solo_denue}[modo]()
+    resultados = {"diaria": diaria, "historico": historico, "denue": solo_denue, "geo": geoespacial}[modo]()
     # Falla el job solo si TODAS las fuentes fallaron (así la bitácora siempre se guarda)
     sys.exit(0 if any(resultados) else 1)

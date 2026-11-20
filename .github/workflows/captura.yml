@@ -17,11 +17,11 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: "diaria, historico o denue"
+        description: "diaria, historico, denue o geo"
         required: true
         default: "diaria"
         type: choice
-        options: [diaria, historico, denue]
+        options: [diaria, historico, denue, geo]
       origen:
         description: "quién la dispara: manual o cron externo"
         required: false
@@ -69,6 +69,10 @@ jobs:
         if: always()
         run: python -m scripts.fiabilidad
 
+      - name: Calidad de los datos de oro (ISO/IEC 25012)
+        if: always()
+        run: python -m scripts.iso25012
+
       - name: Subir respaldo (90 días)
         if: always()
         uses: actions/upload-artifact@v4
@@ -78,8 +82,8 @@ jobs:
           retention-days: 90
           if-no-files-found: warn
 
-      - name: Guardar evidencia de robots.txt (solo histórico)
-        if: always() && github.event.inputs.modo == 'historico'
+      - name: Guardar evidencia de robots.txt (histórico y geo)
+        if: always() && (github.event.inputs.modo == 'historico' || github.event.inputs.modo == 'geo')
         run: python -m scripts.verificar_robots || true
 
       - name: Guardar datos y bitácora en el repositorio
@@ -87,7 +91,7 @@ jobs:
         run: |
           git config user.name "tdl-captura-bot"
           git config user.email "tdl-captura-bot@users.noreply.github.com"
-          git add data/bronce data/bitacora data/plata data/oro data/cuarentena docs/E1/diccionario_oro.md calidad/fiabilidad.md docs/etica/robots
+          git add data/bronce data/bitacora data/plata data/oro data/cuarentena docs/E1/diccionario_oro.md calidad/fiabilidad.md calidad/iso25012.md calidad/iso25012.json docs/etica/robots
           git diff --cached --quiet || git commit -m "captura: ${{ github.event.inputs.modo || 'diaria' }} $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase --autostash
           git push
