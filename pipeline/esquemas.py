@@ -4,6 +4,7 @@ Cada regla lleva un mensaje en español que se guarda como motivo de rechazo
 cuando un registro va a cuarentena. Revisa: esquema, tipos, rangos, unicidad
 y reglas de negocio.
 """
+
 import pandera.pandas as pa
 
 from pipeline.catalogos import LATITUD, LONGITUD, MUNICIPIOS, PRECIO_KG, PRODUCTOS_SNIIM, TAMANO, TIPO_NEGOCIO
@@ -59,3 +60,45 @@ ESQUEMA_DENUE = pa.DataFrameSchema(
     strict=False,
     coerce=False,
 )
+
+
+# ------------------------------------------------------------------ fuente geoespacial (E2)
+
+TIPOS_AFLUENCIA = ["educacion", "salud"]
+
+# Columnas que NUNCA deben llegar a plata en la capa de afluencia (nombres y domicilios).
+COLUMNAS_PERSONALES = [
+    "nombre",
+    "razon_social",
+    "telefono",
+    "correo_e",
+    "sitio_internet",
+    "calle",
+    "num_exterior",
+    "num_interior",
+    "edificio",
+    "edificio_piso",
+    "numero_local",
+    "manzana",
+]
+
+ESQUEMA_AFLUENCIA = pa.DataFrameSchema(
+    {
+        "clee": pa.Column(str, pa.Check.str_length(min_value=10, error="CLEE incompleta"), unique=True),
+        "tipo_afluencia": pa.Column(str, pa.Check.isin(TIPOS_AFLUENCIA, error="tipo de afluencia fuera del catálogo")),
+        "tamano": pa.Column(str, pa.Check.isin(sorted(set(TAMANO.values())), error="estrato de personal desconocido")),
+        "municipio": pa.Column(str, pa.Check.isin(list(MUNICIPIOS.values()), error="municipio fuera del estado de Colima")),
+        "municipio_clave": pa.Column(str, pa.Check.str_matches(r"^06\d{3}$", error="clave de municipio inválida")),
+        "latitud": pa.Column(float, pa.Check.in_range(*LATITUD, error="latitud fuera del estado de Colima")),
+        "longitud": pa.Column(float, pa.Check.in_range(*LONGITUD, error="longitud fuera del estado de Colima")),
+    },
+    strict=False,
+    coerce=False,
+)
+
+
+def verificar_privacidad(columnas) -> None:
+    """La puerta rechaza la tabla COMPLETA si trae una columna con datos personales."""
+    encontradas = sorted(c for c in columnas if str(c).lower() in COLUMNAS_PERSONALES)
+    if encontradas:
+        raise ValueError(f"privacidad: la capa de afluencia trae columnas con datos personales: {encontradas}")
