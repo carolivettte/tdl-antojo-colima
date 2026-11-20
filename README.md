@@ -13,20 +13,22 @@ Equipo: Carol Ivette Rodríguez Lepe · Avlix Eduardo Jiménez Cuevas
 | SNIIM (Secretaría de Economía) | Precios de insumos en los Centros de distribución de Colima | Diaria, automática |
 | DENUE (INEGI) | Negocios de comida del estado (sin datos personales) | Fotografía |
 | Banco de Indicadores (INEGI) | INPC de loncherías, taquerías, restaurantes y café | Mensual (E1) |
+| DENUE afluencia (INEGI), E2 | Escuelas, centros de salud y hospitales: generadores de afluencia (sin nombres) | Fotografía (`captura geo`) |
+| Marco Geoestadístico (INEGI), E2 | Límites de los 10 municipios (GeoJSON) | Fotografía (`captura geo`) |
 
-Atribución: precios del SNIIM, Secretaría de Economía; DENUE e INPC, INEGI. Open-Meteo y NASA POWER se descartaron porque su robots.txt prohíbe el acceso.
+Atribución: precios del SNIIM, Secretaría de Economía; DENUE, INPC y Marco Geoestadístico, INEGI. Términos, robots.txt, licencias, privacidad y sesgos: [docs/etica-datos.md](docs/etica-datos.md). Open-Meteo y NASA POWER se descartaron porque su robots.txt prohíbe el acceso.
 
 ## Estructura
 
 ```
 config/        parámetros de las fuentes (fuentes.yaml)
 extractores/   un módulo por fuente + extractor ético base
-scripts/       captura, respaldo de bronce, fiabilidad y verificación de robots.txt
-pipeline/      bronce -> plata -> oro con la puerta de calidad (esquemas Pandera)
+scripts/       captura, respaldo, fiabilidad, robots.txt, rastreo de linaje e ISO/IEC 25012
+pipeline/      bronce -> plata -> oro con la puerta de calidad (Pandera), capa geoespacial y linaje
 data/bronce/   datos crudos por fuente y fecha, con .meta.json (nunca se modifican)
 data/plata/    datos limpios que pasaron la puerta + reporte de la puerta
 data/cuarentena/ registros rechazados con su motivo
-data/oro/      modelo integrado: precios mensuales, índice de costo del taco, competencia
+data/oro/      modelo integrado, capa geoespacial (geo_*) y catálogo de linaje (linaje.csv)
 data/bitacora/ ejecuciones de la captura, puerta de calidad, respaldos y fiabilidad
 laboratorio/   cuadernos: pronóstico (E1), experimento (E2) y multivariado (E3); la limpieza de E1 está en docs/E1/limpieza.ipynb
 tablero/       tablero Streamlit (tablero/app.py)
@@ -42,9 +44,12 @@ pip install -r requirements.txt
 cp .env.example .env                    # y pega tu token en .env (no se sube a GitHub)
 python -m scripts.captura historico     # serie histórica (una vez)
 python -m scripts.captura diaria        # captura del día
+python -m scripts.captura geo           # afluencia del DENUE + Marco Geoestadístico (E2)
 python -m pipeline.ejecutar             # bronce -> plata (puerta de calidad) -> oro -> pronóstico
 python -m scripts.respaldo              # respaldo de bronce con restauración de prueba
 python -m scripts.fiabilidad            # tasa de éxito, MTBF, MTTR y disponibilidad
+python -m scripts.iso25012              # calidad de los datos de oro (ISO/IEC 25012)
+python -m scripts.rastrear precios_mensuales --donde insumo=limon mes=2026-11   # linaje oro -> bronce
 pytest -q --cov=pipeline && ruff check . && pip-audit -r requirements.txt
 
 pip install -r tablero/requirements.txt
