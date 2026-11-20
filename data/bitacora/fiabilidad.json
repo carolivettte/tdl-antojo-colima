@@ -1,19 +1,19 @@
 {
-  "calculado_utc": "2026-11-19T23:02:32+00:00",
+  "calculado_utc": "2026-11-20T16:29:59+00:00",
   "fuente": "sniim",
   "periodo": {
     "desde": "2026-11-09",
-    "hasta": "2026-11-19T23:02+00:00",
-    "horas": 263.0
+    "hasta": "2026-11-20T16:29+00:00",
+    "horas": 280.5
   },
   "ventana_pedida": {
     "desde": "2026-11-06",
     "hasta": "2026-11-13"
   },
-  "ejecuciones_totales": 29,
-  "ejecuciones_exitosas": 28,
-  "tasa_exito_ejecucion": 0.9655,
-  "ejecuciones_programadas": 10,
+  "ejecuciones_totales": 30,
+  "ejecuciones_exitosas": 29,
+  "tasa_exito_ejecucion": 0.9667,
+  "ejecuciones_programadas": 11,
   "tasa_exito_programadas": 1.0,
   "dias_esperados": 11,
   "dias_exitosos": 10,
@@ -28,9 +28,9 @@
       "horas_reparacion": 5.34
     }
   ],
-  "mtbf_h": 257.7,
+  "mtbf_h": 275.16,
   "mttr_h": 5.34,
-  "disponibilidad": 0.9797,
+  "disponibilidad": 0.981,
   "dias": [
     {
       "dia": "2026-11-09",
@@ -123,7 +123,7 @@
       "fuente": "sniim",
       "tipo": "programada",
       "estado": "ok",
-      "n": 10
+      "n": 11
     }
   ]
 }
