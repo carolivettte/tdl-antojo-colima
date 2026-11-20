@@ -1,0 +1,76 @@
+{
+  "fuente": "denue_afluencia",
+  "archivo": "denue_afluencia_colima_20261120T144104Z.csv",
+  "capturado_utc": "2026-11-20T14:41:04.800119+00:00",
+  "registros": 1235,
+  "columnas": [
+    "CLEE",
+    "Id",
+    "Clase_actividad",
+    "Estrato",
+    "Colonia",
+    "CP",
+    "Ubicacion",
+    "Tipo",
+    "Longitud",
+    "Latitud",
+    "tipo_corredor_industrial",
+    "nom_corredor_industrial",
+    "AGEB",
+    "CLASE_ACTIVIDAD_ID",
+    "SECTOR_ACTIVIDAD_ID",
+    "SUBSECTOR_ACTIVIDAD_ID",
+    "RAMA_ACTIVIDAD_ID",
+    "SUBRAMA_ACTIVIDAD_ID",
+    "Tipo_Asentamiento",
+    "Fecha_Alta",
+    "AreaGeo",
+    "tipo_afluencia",
+    "capa_scian"
+  ],
+  "sha256": "897a5423d7b5ca5fdc376db796440dc99e2155b1cd72ed0dce4ea1120bf4e7df",
+  "url": "https://www.inegi.org.mx/app/api/denue/v1/consulta/BuscarAreaAct/06/... (token oculto)",
+  "capas": [
+    {
+      "tipo": "educacion",
+      "sector": "61",
+      "subsector": "611",
+      "rama": "0"
+    },
+    {
+      "tipo": "salud",
+      "sector": "62",
+      "subsector": "621",
+      "rama": "6211",
+      "clase": "621112"
+    },
+    {
+      "tipo": "salud",
+      "sector": "62",
+      "subsector": "621",
+      "rama": "6214"
+    },
+    {
+      "tipo": "salud",
+      "sector": "62",
+      "subsector": "622",
+      "rama": "0"
+    }
+  ],
+  "columnas_eliminadas": [
+    "Nombre",
+    "Razon_social",
+    "Telefono",
+    "Correo_e",
+    "Sitio_internet",
+    "Tipo_vialidad",
+    "Calle",
+    "Num_Exterior",
+    "Num_Interior",
+    "Edificio",
+    "EDIFICIO_PISO",
+    "numero_local",
+    "Manzana"
+  ],
+  "user_agent": "TDL-Observatorio/1.0 (proyecto academico TecNM Colima; contacto: 23460709@colima.tecnm.mx)"
+}

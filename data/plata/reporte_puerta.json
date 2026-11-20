@@ -11,7 +11,7 @@
       "regla de negocio: debe cumplirse mínimo <= frecuente <= máximo": 3
     },
     "atipicos_marcados": 301,
-    "evaluado_utc": "2026-11-19T23:02:30+00:00"
+    "evaluado_utc": "2026-11-20T15:14:55+00:00"
   },
   {
     "fuente": "denue",
@@ -22,6 +22,29 @@
     "cuarentena": 0,
     "tasa_validez": 1.0,
     "motivos": {},
-    "evaluado_utc": "2026-11-19T23:02:30+00:00"
+    "evaluado_utc": "2026-11-20T15:14:55+00:00"
+  },
+  {
+    "fuente": "denue_afluencia",
+    "registros_bronce": 1235,
+    "duplicados_exactos_resueltos": 0,
+    "registros_evaluados": 1235,
+    "validos_plata": 1235,
+    "cuarentena": 0,
+    "tasa_validez": 1.0,
+    "motivos": {},
+    "evaluado_utc": "2026-11-20T15:14:55+00:00"
+  },
+  {
+    "fuente": "marco_geo",
+    "registros_bronce": 10,
+    "duplicados_exactos_resueltos": 0,
+    "registros_evaluados": 10,
+    "validos_plata": 10,
+    "cuarentena": 0,
+    "tasa_validez": 1.0,
+    "motivos": {},
+    "geometrias_reparadas": 0,
+    "evaluado_utc": "2026-11-20T15:14:55+00:00"
   }
 ]

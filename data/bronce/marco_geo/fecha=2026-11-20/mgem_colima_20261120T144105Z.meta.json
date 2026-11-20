@@ -1,0 +1,24 @@
+{
+  "fuente": "marco_geo",
+  "archivo": "mgem_colima_20261120T144105Z.geojson",
+  "capturado_utc": "2026-11-20T14:41:05.715188+00:00",
+  "registros": 10,
+  "columnas": [
+    "cve_cab",
+    "cve_ent",
+    "cve_mun",
+    "cvegeo",
+    "nomgeo",
+    "pob_femenina",
+    "pob_masculina",
+    "pob_total",
+    "total_viviendas_habitadas"
+  ],
+  "sha256": "a345fd583e0b9c35ecc84c1494c40b5999338c8a33b134c9ad28e4e1d2635571",
+  "metadatos_fuente": {
+    "Fuente_informacion_vectorial": "INEGI. Marco Geoestadístico, diciembre de 2025",
+    "Fuente_informacion_estadistica": "INEGI. Censo de Población y Vivienda, 2020"
+  },
+  "url": "https://gaia.inegi.org.mx/wscatgeo/v2/geo/mgem/06",
+  "user_agent": "TDL-Observatorio/1.0 (proyecto academico TecNM Colima; contacto: 23460709@colima.tecnm.mx)"
+}
