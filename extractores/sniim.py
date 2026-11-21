@@ -23,9 +23,15 @@ def normalizar(texto):
     return "".join(c for c in t if not unicodedata.combining(c)).lower().strip()
 
 
+# Parser de HTML: lxml, elegido con el diseño de experimentos de E2 (laboratorio/E2_experimento.ipynb).
+# Con celdas sin </td>, html.parser junta los textos y la fila pasa el filtro con contenido equivocado;
+# lxml aplica los cierres implícitos de HTML5. Además es ~1.4 veces más rápido al leer las páginas.
+PARSER_HTML = "lxml"
+
+
 def leer_catalogo(html):
     """Devuelve (productos, destinos) como listas de (texto, id) del formulario."""
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, PARSER_HTML)
     productos, destinos = [], []
     for sel in soup.find_all("select"):
         sid = normalizar(sel.get("id", "") + sel.get("name", ""))
@@ -56,7 +62,7 @@ def solo_destino(df, texto):
 
 def parsear_resultados(html):
     """Lee la tabla de resultados del SNIIM tal como viene (texto crudo)."""
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, PARSER_HTML)
     tabla = soup.select_one("table#tblResultados")
     if tabla is None:
         return pd.DataFrame(columns=CAMPOS)
