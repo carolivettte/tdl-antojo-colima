@@ -25,3 +25,4 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-20,07:50,08:05,0,pruebas,Clon limpio del repositorio; entorno y captura real geo (1213 puntos de afluencia y 10 municipios)
 2026-11-20,08:05,08:42,15,pruebas,Pipeline con datos reales; defecto 22 (faltaban consultorios publicos); recaptura con 1235 puntos y misma huella SHA-256 del Marco
 2026-11-20,08:42,08:52,0,codificacion,Linaje oro a bronce con SHA-256; rastreador; pestana Mapa del tablero; ISO 25012; diccionario de oro y declaracion de etica; defectos 24 a 29
+2026-11-20,08:52,09:21,0,revision,Verificacion local de la parte geoespacial (robots.txt; pipeline; ISO 25012; rastreo; pruebas y ruff) y 6 commits en carol/e2-geo
