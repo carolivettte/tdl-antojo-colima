@@ -1,0 +1,140 @@
+{
+  "calculado_utc": "2026-11-21T04:59:08+00:00",
+  "resultados": [
+    {
+      "caracteristica": "Exactitud",
+      "categoria": "Inherente",
+      "metrica": "% de valores dentro de su dominio",
+      "valor": 100.0,
+      "umbral": ">= 99",
+      "cumple": true,
+      "evidencia": "precio_mediana > 0: 100.0%; mes con formato aaaa-mm: 100.0%; coordenada dentro de Colima: 100.0%; municipio_clave 06###: 100.0%"
+    },
+    {
+      "caracteristica": "Completitud",
+      "categoria": "Inherente",
+      "metrica": "% de celdas obligatorias llenas",
+      "valor": 100.0,
+      "umbral": ">= 98",
+      "cumple": true,
+      "evidencia": "Celdas obligatorias llenas en todas las tablas de oro. Con faltantes: geo_zonas 99.97%"
+    },
+    {
+      "caracteristica": "Consistencia",
+      "categoria": "Inherente",
+      "metrica": "% de reglas entre columnas y fuentes que se cumplen",
+      "valor": 99.08,
+      "umbral": ">= 98",
+      "cumple": true,
+      "evidencia": "mínimo ≤ mediana ≤ máximo: 100.0%; taquerías = fijas + semifijas: 100.0%; afluencia = escuelas + salud: 100.0%; municipio DENUE = municipio Marco: 98.9%"
+    },
+    {
+      "caracteristica": "Credibilidad",
+      "categoria": "Inherente",
+      "metrica": "% de referencias de bronce de fuentes oficiales",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "Archivos de bronce de fuentes oficiales (SNIIM-SE, INEGI): 31 de 31 referencias."
+    },
+    {
+      "caracteristica": "Actualidad",
+      "categoria": "Inherente",
+      "metrica": "% de fuentes con última ingesta dentro de su vigencia",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 11.9 días (máx. 365); denue_afluencia: 0.6 días (máx. 365); marco_geo: 0.6 días (máx. 365); sniim: 0.3 días (máx. 7)"
+    },
+    {
+      "caracteristica": "Accesibilidad",
+      "categoria": "Inherente y del sistema",
+      "metrica": "% de archivos de oro legibles en UTF-8",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "12 de 12 archivos de oro en UTF-8, formatos abiertos, públicos en el repositorio y en el tablero."
+    },
+    {
+      "caracteristica": "Conformidad",
+      "categoria": "Inherente y del sistema",
+      "metrica": "Validez mínima de la puerta Pandera (%)",
+      "valor": 99.94,
+      "umbral": ">= 98",
+      "cumple": true,
+      "evidencia": "Validez de la puerta Pandera por fuente: sniim: 99.94%; denue: 100.00%; denue_afluencia: 100.00%; marco_geo: 100.00%"
+    },
+    {
+      "caracteristica": "Confidencialidad",
+      "categoria": "Inherente y del sistema",
+      "metrica": "Columnas personales en oro",
+      "valor": 0.0,
+      "umbral": "<= 0",
+      "cumple": true,
+      "evidencia": "Columnas personales en oro: ninguna"
+    },
+    {
+      "caracteristica": "Eficiencia",
+      "categoria": "Inherente y del sistema",
+      "metrica": "Tamaño de la capa oro (MB)",
+      "valor": 0.97,
+      "umbral": "<= 25",
+      "cumple": true,
+      "evidencia": "0.97 MB para 4,534 filas (213 bytes por fila)."
+    },
+    {
+      "caracteristica": "Precisión",
+      "categoria": "Inherente y del sistema",
+      "metrica": "% de coordenadas con ≥ 5 decimales",
+      "valor": 99.97,
+      "umbral": ">= 99",
+      "cumple": true,
+      "evidencia": "Coordenadas con ≥ 5 decimales (≈ 1 m): necesarias para asignar el punto al municipio y a la celda de 1 km."
+    },
+    {
+      "caracteristica": "Trazabilidad",
+      "categoria": "Inherente y del sistema",
+      "metrica": "% de filas de oro rastreables a bronce",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "4,503 de 4,503 filas de oro apuntan a bronce (directo o vía derivado_de); 7 de 7 archivos de bronce con SHA-256 íntegro."
+    },
+    {
+      "caracteristica": "Comprensibilidad",
+      "categoria": "Inherente y del sistema",
+      "metrica": "% de columnas documentadas",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "115 de 115 columnas de oro con descripción en el diccionario."
+    },
+    {
+      "caracteristica": "Disponibilidad",
+      "categoria": "Dependiente del sistema",
+      "metrica": "Disponibilidad A de la captura (%)",
+      "valor": 98.14,
+      "umbral": ">= 95",
+      "cumple": true,
+      "evidencia": "A = MTBF / (MTBF + MTTR) de la captura diaria (scripts/fiabilidad.py), calculada el 2026-11-20."
+    },
+    {
+      "caracteristica": "Portabilidad",
+      "categoria": "Dependiente del sistema",
+      "metrica": "% de archivos en formatos abiertos",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "12 de 12 archivos de oro en CSV o GeoJSON (RFC 7946, WGS84); sin formatos propietarios."
+    },
+    {
+      "caracteristica": "Recuperabilidad",
+      "categoria": "Dependiente del sistema",
+      "metrica": "% de archivos de bronce con huella para reconstruir",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "32 de 32 archivos de bronce con .meta.json y SHA-256: oro se reconstruye desde bronce con `python -m pipeline.ejecutar`; respaldos con scripts/respaldo.py."
+    }
+  ]
+}

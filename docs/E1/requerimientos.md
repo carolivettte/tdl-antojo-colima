@@ -23,6 +23,9 @@ Métodos de verificación: **P** = prueba automática (pytest, corre en CI), **A
 | RF-13 | El tablero debe mostrar el pronóstico elegido, la tabla de errores, la cuarentena con motivos y la fiabilidad. | Las cuatro secciones aparecen al abrir el tablero publicado. | D | [tablero/app.py](../../tablero/app.py) · enlace del tablero en [ENTREGA.md](ENTREGA.md) |
 | RF-15 | El parseo del HTML del SNIIM debe poder verificarse sin conexión a red. | Con las páginas reales guardadas en `tests/fixtures/` y la red bloqueada, se eligen los 8 insumos y se leen las filas de Colima; cualquier intento de conexión hace fallar la prueba. | P | `tests/test_sniim_html.py` (7 pruebas) · observación del docente en E0 |
 | RF-14 | El DENUE debe guardarse sin datos personales. | Bronce y plata no contienen razón social, teléfono, correo ni sitio web. | P | `test_denue_elimina_datos_personales` |
+| RF-16 *(E2)* | Los límites municipales del Marco Geoestadístico deben pasar una puerta de calidad propia. | Clave fuera de Colima, geometría vacía o inválida sin reparar, duplicado o municipio faltante → cuarentena con motivo; geometría reparable se repara y se cuenta. | P | `test_marco_completo_pasa_sin_cuarentena` · `test_marco_detecta_fuera_de_colima_faltante_y_repara_invalida` |
+| RF-17 *(E2)* | La capa de afluencia y el mapa no deben contener nombres ni domicilios. | El pipeline se detiene si llega una columna personal; `geo_puntos.csv` no tiene `nombre`. | P | `test_privacidad_rechaza_columnas_personales` · `test_construir_geo_produce_tablas_sin_nombres_y_con_linaje` |
+| RF-18 *(E2)* | Cada fila de oro debe rastrearse hasta su archivo de bronce y su fecha de ingesta. | Columna `archivos_bronce` con fecha de ingesta en toda tabla de oro (o `derivado_de`); `linaje.csv` detecta un bronce alterado por su SHA-256. | P · A | `test_catalogo_detecta_bronce_integro_y_alterado` · `test_precios_mensuales_llevan_linaje_y_el_mes_imputado_hereda_de_sus_vecinos` · `test_tabla_derivada_hereda_linaje_por_mes` · `python -m scripts.rastrear --verificar` en CI |
 
 ## No funcionales
 
@@ -37,7 +40,7 @@ Métodos de verificación: **P** = prueba automática (pytest, corre en CI), **A
 | RNF-07 | Ética · uso de fuentes | El extractor debe respetar robots.txt, identificarse y no saturar los sitios. | Rutas prohibidas por robots.txt no se consultan; User-Agent con contacto; pausa ≥ 1.5 s; respeta `Retry-After` en 429. | P | `test_robots_bloquea_rutas_prohibidas` · `test_user_agent_honesto` · `test_respeta_retry_after_en_429` |
 | RNF-08 | Mantenibilidad · capacidad de prueba | El pipeline debe tener pruebas automáticas suficientes. | Cobertura de líneas de `pipeline/` ≥ 80 %; si baja, el CI falla. | P | `pytest --cov=pipeline --cov-fail-under=80` en [ci.yml](../../.github/workflows/ci.yml) |
 | RNF-09 | Mantenibilidad · analizabilidad | El código debe seguir un estilo único. | `ruff check .` sin errores (incluye los cuadernos). | P | paso ruff en [ci.yml](../../.github/workflows/ci.yml) |
-| RNF-10 | Trazabilidad | Todo dato de oro debe poder rastrearse hasta su archivo de bronce. | Plata conserva `archivo_origen` y `capturado_utc`; oro se reconstruye completo desde bronce en cada corrida. | I | [plata.py](../../pipeline/plata.py) · [diccionario_oro.md](diccionario_oro.md) |
+| RNF-10 | Trazabilidad | Todo dato de oro debe poder rastrearse hasta su archivo de bronce. | Plata conserva `archivo_origen` y `capturado_utc`; desde E2, el 100 % de las filas de oro llevan `archivos_bronce` y su fecha de ingesta (ver RF-18). | I · A | [plata.py](../../pipeline/plata.py) · [linaje.py](../../pipeline/linaje.py) · [iso25012.md](../../calidad/iso25012.md) (trazabilidad) |
 | RNF-11 | Eficiencia | La corrida diaria completa (captura, pipeline, pronóstico y respaldo) no debe tardar más de 10 minutos. | Duración del job de Actions < 10 min. | A | historial de la [pestaña Actions](https://github.com/carolivettte/tdl-antojo-colima/actions) |
 
 ## Revisión contra las características de un buen requerimiento
@@ -66,6 +69,9 @@ Cada requerimiento se revisó con cuatro preguntas. Si alguna fallaba, se reescr
 | RF-13 | El cliente consulta el tablero, no el repositorio | Rúbrica: terminado cuando |
 | RF-15 | Si el SNIIM cambia su página, debe detectarse en las pruebas antes de que la captura falle | Observación del docente en E0 · RNF-08 |
 | RF-14 | La ley de datos personales y el compromiso ético de E0 | Objetivo 2 |
+| RF-16 | Un límite equivocado asigna negocios al municipio vecino | E2: fuente especializada geoespacial |
+| RF-17 | Muchos consultorios llevan el nombre del médico (persona física) | E2: [etica-datos.md](../etica-datos.md) §4 |
+| RF-18 | El docente pide que todo registro de oro se rastree hasta bronce y su fecha de ingesta | E2: linaje |
 | RNF-01 | El cliente necesita el dato cuando lo consulta | Objetivo 1 · rúbrica: fiabilidad |
 | RNF-02 | Una falla larga deja huecos que luego hay que imputar | Rúbrica: fiabilidad (MTTR) |
 | RNF-03 | Si la validez cae, algo cambió en la fuente | Objetivo 3 |

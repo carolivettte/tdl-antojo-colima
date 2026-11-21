@@ -150,6 +150,9 @@ def construir_pronostico(datos=DATA, horizonte: int = HORIZONTE) -> pd.DataFrame
     )
     salida = pd.concat([observado, pron], ignore_index=True)
     salida["modelo"] = elegido
+    # Linaje: el pronóstico se deriva de indice_costo_taco; rastrear.py sigue esa referencia hasta bronce.
+    salida["derivado_de"] = "indice_costo_taco"
+    tabla["derivado_de"] = "indice_costo_taco"
     (datos / "oro").mkdir(parents=True, exist_ok=True)
     salida.round(2).to_csv(datos / "oro" / "pronostico.csv", index=False)
     tabla.to_csv(datos / "oro" / "comparacion_modelos.csv", index=False)

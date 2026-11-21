@@ -1,0 +1,11 @@
+sesion,semilla,orden,configuracion,procesos_valor,parser_valor,formato_valor,lote_valor,tiempo_s,tasa_error,filas_leidas,filas_esperadas,paginas,peso_salida_kb,inicio_utc
+viernes noche confirmacion,122399445,1,mejor,4,lxml,csv,10,5.833,5.003,63928,66625,220,5943.9,2026-11-21T04:36:33+00:00
+viernes noche confirmacion,122399445,2,mejor,4,lxml,csv,10,5.7212,5.003,63928,66625,220,5943.9,2026-11-21T04:36:39+00:00
+viernes noche confirmacion,122399445,3,actual,1,html.parser,csv,10,19.7098,8.495,63928,66625,220,6476.0,2026-11-21T04:36:45+00:00
+viernes noche confirmacion,122399445,4,mejor,4,lxml,csv,10,5.7491,5.003,63928,66625,220,5943.9,2026-11-21T04:37:05+00:00
+viernes noche confirmacion,122399445,5,mejor,4,lxml,csv,10,5.6186,5.003,63928,66625,220,5943.9,2026-11-21T04:37:10+00:00
+viernes noche confirmacion,122399445,6,mejor,4,lxml,csv,10,5.6093,5.003,63928,66625,220,5943.9,2026-11-21T04:37:16+00:00
+viernes noche confirmacion,122399445,7,actual,1,html.parser,csv,10,19.741,8.495,63928,66625,220,6476.0,2026-11-21T04:37:22+00:00
+viernes noche confirmacion,122399445,8,actual,1,html.parser,csv,10,19.8289,8.495,63928,66625,220,6476.0,2026-11-21T04:37:42+00:00
+viernes noche confirmacion,122399445,9,actual,1,html.parser,csv,10,19.7465,8.495,63928,66625,220,6476.0,2026-11-21T04:38:02+00:00
+viernes noche confirmacion,122399445,10,actual,1,html.parser,csv,10,19.7984,8.495,63928,66625,220,6476.0,2026-11-21T04:38:22+00:00

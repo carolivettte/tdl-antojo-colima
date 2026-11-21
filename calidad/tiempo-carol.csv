@@ -14,9 +14,15 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-09,12:15,12:20,0,integracion,Diagnostico de la ejecucion programada y horario provisional cada 30 minutos
 2026-11-09,15:10,16:20,10,integracion,Diagnostico con la API de GitHub; disparador externo con cron-job.org y token limitado; documentacion de la ingesta
 2026-11-09,16:20,17:00,5,revision,Revision final del repositorio; registro PSP; alta de docentes como colaboradores; etiqueta e0 y entrega
-2026-11-11,11:00,11:40,0,planeacion,Lectura de la tarea E1 contra la rubrica; plan de trabajo, reparto con Avilix y orden de los commits
-2026-11-11,15:40,16:20,0,revision,Revision de la puerta de calidad, capa plata y oro, CI, respaldo, fiabilidad y tablero generados con apoyo de IA
+2026-11-11,11:00,11:40,0,planeacion,Lectura de la tarea E1 contra la rubrica; plan de trabajo; reparto con Avilix y orden de los commits
+2026-11-11,15:40,16:20,0,revision,Revision de la puerta de calidad; capa plata y oro; CI; respaldo; fiabilidad y tablero generados con apoyo de IA
 2026-11-12,17:55,18:10,0,revision,Revision de la parte de E1 sobre el repositorio actualizado; ajustes antes del PR
-2026-11-12,21:50,22:30,0,pruebas,Copia limpia del repo, pruebas locales, defecto 18 (respaldo en Windows) y commits de E1
-2026-11-13,10:23,12:39,20,revision,Publicacion del tablero en Streamlit, corrida manual de fiabilidad, ajustes del tablero y cierre de E1
+2026-11-12,21:50,22:30,0,pruebas,Copia limpia del repo; pruebas locales; defecto 18 (respaldo en Windows) y commits de E1
+2026-11-13,10:23,12:39,20,revision,Publicacion del tablero en Streamlit; corrida manual de fiabilidad; ajustes del tablero y cierre de E1
 2026-11-13,12:43,14:00,0,revision,Revision final contra el PDF y la lista del docente; cifras de la puerta; cuaderno en docs/E1; pruebas del SNIIM con paginas reales sin red (observacion de E0); commits y etiqueta e1
+2026-11-20,06:50,07:20,0,planeacion,Planeacion de E2 contra el PDF y la lista del docente; division del trabajo; eleccion de la fuente geoespacial (DENUE afluencia y Marco Geoestadistico) y del indice de zonas sin inventar puestos
+2026-11-20,07:20,07:50,0,codificacion,Captura geoespacial (afluencia y Marco); puerta del Marco y uniones espaciales; prueba de humo con datos sinteticos
+2026-11-20,07:50,08:05,0,pruebas,Clon limpio del repositorio; entorno y captura real geo (1213 puntos de afluencia y 10 municipios)
+2026-11-20,08:05,08:42,15,pruebas,Pipeline con datos reales; defecto 22 (faltaban consultorios publicos); recaptura con 1235 puntos y misma huella SHA-256 del Marco
+2026-11-20,08:42,08:52,0,codificacion,Linaje oro a bronce con SHA-256; rastreador; pestana Mapa del tablero; ISO 25012; diccionario de oro y declaracion de etica; defectos 24 a 29
+2026-11-20,08:52,09:21,0,revision,Verificacion local de la parte geoespacial (robots.txt; pipeline; ISO 25012; rastreo; pruebas y ruff) y 6 commits en carol/e2-geo

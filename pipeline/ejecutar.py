@@ -1,4 +1,4 @@
-"""Ejecuta el pipeline completo: bronce -> plata (puerta de calidad) -> oro -> pronóstico.
+"""Ejecuta el pipeline completo: bronce -> plata (puerta de calidad) -> oro (con la capa geoespacial) -> pronóstico -> linaje.
 
 Uso:
     python -m pipeline.ejecutar            # lo corre GitHub Actions después de cada captura
@@ -10,7 +10,10 @@ El umbral es el objetivo de calidad 3 de E0: al menos 98% de registros válidos.
 import sys
 
 from extractores.base import logger
-from pipeline.oro import construir_oro
+from extractores.config import DATA, RAIZ
+from pipeline.geo import construir_geo
+from pipeline.linaje import escribir_linaje
+from pipeline.oro import actualizar_diccionario, construir_oro
 from pipeline.plata import construir_plata
 from pipeline.pronostico import construir_pronostico
 
@@ -28,6 +31,9 @@ def main(verificar: bool = False) -> int:
             logger.info(f"[CUARENTENA] {fuente}: {n} por '{motivo}'")
     tablas = construir_oro()
     logger.info(f"[ORO] tablas: {tablas}")
+    geo = construir_geo()
+    if geo:
+        logger.info(f"[GEO] tablas: {geo}")
     try:
         modelos = construir_pronostico()
         elegido = modelos[modelos["elegido"]].iloc[0]
@@ -35,6 +41,14 @@ def main(verificar: bool = False) -> int:
     except Exception:
         # Si el pronóstico falla, el tablero conserva el último publicado y el error queda en el log.
         logger.exception("[PRONOSTICO] no se pudo actualizar")
+    linaje = escribir_linaje(DATA, RAIZ)
+    logger.info(
+        f"[LINAJE] {linaje['filas_trazables']}/{linaje['filas_oro_con_linaje']} filas de oro trazables "
+        f"({linaje['pct_trazable']}%), {linaje['archivos_integros']}/{linaje['archivos_bronce']} archivos de bronce íntegros"
+    )
+    actualizar_diccionario()
+    if linaje["tablas_sin_linaje"]:
+        logger.warning(f"[LINAJE] tablas sin linaje: {linaje['tablas_sin_linaje']}")
     if verificar:
         bajos = {
             f: r["tasa_validez"]

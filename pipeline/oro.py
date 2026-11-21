@@ -12,6 +12,10 @@ Tablas:
   precios_mensuales.csv     precio mensual por insumo (reducción diario -> mensual)
   indice_costo_taco.csv     índice de la canasta taquera (base promedio 2021 = 100)
   competencia_municipio.csv negocios por municipio y tipo (DENUE)
+
+Linaje (E2): toda tabla lleva archivos_bronce (archivos de data/bronce de los que sale cada fila,
+separados por ";") y su fecha de ingesta (capturado_utc, o ingesta_min / ingesta_max si agrega
+varios archivos). El catálogo completo con SHA-256 queda en data/oro/linaje.csv (pipeline/linaje.py).
 """
 
 from pathlib import Path
@@ -20,15 +24,38 @@ import pandas as pd
 
 from extractores.config import DATA, RAIZ
 from pipeline.catalogos import MUNICIPIOS, PRODUCTOS_SNIIM
+from pipeline.linaje import separar_origenes, unir_origenes
 
 ORO = DATA / "oro"
 DICCIONARIO = RAIZ / "docs" / "E1" / "diccionario_oro.md"
 ANIO_BASE = 2021
 
 
-def dim_insumo() -> pd.DataFrame:
+def dim_insumo(plata: pd.DataFrame | None = None) -> pd.DataFrame:
     filas = [{"insumo": i, "tipo": t, "canasta": c, "producto_sniim": p} for p, (i, t, c) in PRODUCTOS_SNIIM.items()]
-    return pd.DataFrame(filas).sort_values(["canasta", "tipo", "insumo"]).reset_index(drop=True)
+    salida = pd.DataFrame(filas).sort_values(["canasta", "tipo", "insumo"]).reset_index(drop=True)
+    if plata is not None and len(plata):
+        lin = linaje_por(plata, "insumo")
+        salida = salida.merge(lin, on="insumo", how="left")
+    return salida
+
+
+def linaje_por(df: pd.DataFrame, claves) -> pd.DataFrame:
+    """archivos_bronce + rango de fechas de ingesta por grupo, a partir de las columnas de plata."""
+    captura = pd.to_datetime(df["capturado_utc"], utc=True, errors="coerce")
+    tmp = df.assign(_captura=captura)
+    salida = (
+        tmp.groupby(claves)
+        .agg(
+            archivos_bronce=("archivo_origen", unir_origenes),
+            ingesta_min=("_captura", "min"),
+            ingesta_max=("_captura", "max"),
+        )
+        .reset_index()
+    )
+    for c in ("ingesta_min", "ingesta_max"):
+        salida[c] = salida[c].dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+    return salida
 
 
 def precios_mensuales(plata: pd.DataFrame) -> pd.DataFrame:
@@ -53,6 +80,9 @@ def precios_mensuales(plata: pd.DataFrame) -> pd.DataFrame:
         )
         .reset_index()
     )
+    con_linaje = {"archivo_origen", "capturado_utc"} <= set(df.columns)
+    if con_linaje:
+        agg = agg.merge(linaje_por(df, ["insumo", "mes"]), on=["insumo", "mes"], how="left")
     partes = []
     for insumo, g in agg.groupby("insumo"):
         meses = pd.period_range(g["mes"].min(), g["mes"].max(), freq="M")
@@ -66,6 +96,16 @@ def precios_mensuales(plata: pd.DataFrame) -> pd.DataFrame:
         serie.index = serie.index.to_timestamp()
         g["precio_mediana"] = serie.interpolate(method="time").values
         g["metodo"] = g["imputado"].map({True: "interpolacion_lineal", False: "observado"})
+        # Un mes imputado sale de los meses observados vecinos: su linaje es la unión de ambos.
+        for c, como in (("archivos_bronce", None), ("ingesta_min", "min"), ("ingesta_max", "max")) if con_linaje else ():
+            antes, despues = g[c].ffill(), g[c].bfill()
+            if como is None:
+                g[c] = [
+                    unir_origenes(pd.Series(separar_origenes(a) + separar_origenes(b)))
+                    for a, b in zip(antes, despues, strict=True)
+                ]
+            else:
+                g[c] = pd.concat([antes, despues], axis=1).agg(como, axis=1)
         partes.append(g.reset_index())
     salida = pd.concat(partes, ignore_index=True)
     salida = salida.merge(dim_insumo()[["insumo", "tipo", "canasta"]], on="insumo", how="left")
@@ -84,6 +124,8 @@ def precios_mensuales(plata: pd.DataFrame) -> pd.DataFrame:
         "imputado",
         "metodo",
     ]
+    if con_linaje:
+        cols += ["archivos_bronce", "ingesta_min", "ingesta_max"]
     return salida[cols].sort_values(["insumo", "mes"]).round(2).reset_index(drop=True)
 
 
@@ -103,6 +145,13 @@ def indice_costo_taco(mensual: pd.DataFrame, anio_base: int = ANIO_BASE) -> pd.D
     salida["variacion_anual_pct"] = salida["indice"].pct_change(12) * 100
     salida["costo_canasta_kg"] = tabla.sum(axis=1).values
     salida["insumos_imputados"] = salida["mes"].map(imputados).astype(object).fillna("")
+    if "archivos_bronce" in mensual.columns:
+        lin = mensual.groupby("mes").agg(
+            archivos_bronce=("archivos_bronce", lambda s: unir_origenes(pd.Series([a for v in s for a in separar_origenes(v)]))),
+            ingesta_min=("ingesta_min", "min"),
+            ingesta_max=("ingesta_max", "max"),
+        )
+        salida = salida.merge(lin, left_on="mes", right_index=True, how="left")
     return salida.round(2)
 
 
@@ -118,6 +167,8 @@ def competencia_municipio(denue: pd.DataFrame) -> pd.DataFrame:
     salida["pct_micro"] = (salida["micro"] / salida["negocios"] * 100).round(1)
     total = salida.groupby("municipio_clave")["negocios"].transform("sum")
     salida["pct_del_municipio"] = (salida["negocios"] / total * 100).round(1)
+    if "archivo_origen" in df.columns:
+        salida = salida.merge(linaje_por(df, ["municipio_clave", "tipo_negocio"]), on=["municipio_clave", "tipo_negocio"])
     return salida.sort_values(["municipio_clave", "negocios"], ascending=[True, False]).reset_index(drop=True)
 
 
@@ -136,7 +187,10 @@ def dim_municipio(denue: pd.DataFrame, plata_sniim: pd.DataFrame) -> pd.DataFram
                 "mercado_sniim": clave in con_precios,
             }
         )
-    return pd.DataFrame(filas)
+    salida = pd.DataFrame(filas)
+    if len(denue) and "archivo_origen" in denue.columns:
+        salida = salida.merge(linaje_por(denue, "municipio_clave"), on="municipio_clave", how="left")
+    return salida
 
 
 def inpc_mensual(carpeta_bronce: Path) -> pd.DataFrame:
@@ -157,6 +211,9 @@ DESCRIPCIONES = {
         "tipo": "Subcategoría: fruta, verdura o chile.",
         "canasta": "Categoría: canasta del tipo de negocio al que pertenece (taquera).",
         "producto_sniim": "Nombre original del producto en el SNIIM (resolución de nombres).",
+        "archivos_bronce": "Linaje: archivos de data/bronce de los que sale la fila (separados por ;).",
+        "ingesta_min": "Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados.",
+        "ingesta_max": "Linaje: última fecha de ingesta (UTC) de los registros de bronce usados.",
     },
     "dim_municipio": {
         "_tabla": "Jerarquía geográfica municipio -> estado con lo que aporta cada fuente.",
@@ -165,6 +222,9 @@ DESCRIPCIONES = {
         "estado": "Entidad federativa.",
         "negocios_denue": "Negocios de preparación de alimentos registrados en el DENUE.",
         "mercado_sniim": "True si el SNIIM reporta precios de un mercado en ese municipio.",
+        "archivos_bronce": "Linaje: archivos de data/bronce de los que sale la fila (separados por ;).",
+        "ingesta_min": "Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados.",
+        "ingesta_max": "Linaje: última fecha de ingesta (UTC) de los registros de bronce usados.",
     },
     "precios_mensuales": {
         "_tabla": "Precio mensual por insumo en los Centros de distribución de Colima (reducción de diario a mensual).",
@@ -180,6 +240,9 @@ DESCRIPCIONES = {
         "n_atipicos": "Registros del mes marcados como atípicos (z robusto > 3.5).",
         "imputado": "True si el mes no tuvo publicación y se rellenó.",
         "metodo": "observado o interpolacion_lineal.",
+        "archivos_bronce": "Linaje: archivos de data/bronce de los que sale la fila (separados por ;).",
+        "ingesta_min": "Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados.",
+        "ingesta_max": "Linaje: última fecha de ingesta (UTC) de los registros de bronce usados.",
     },
     "indice_costo_taco": {
         "_tabla": "Índice de Costo del Taco: canasta de 8 insumos con pesos iguales, base promedio 2021 = 100.",
@@ -189,6 +252,9 @@ DESCRIPCIONES = {
         "variacion_anual_pct": "Cambio porcentual contra el mismo mes del año anterior.",
         "costo_canasta_kg": "Suma de la mediana mensual de los 8 insumos (1 kg de cada uno, MXN).",
         "insumos_imputados": "Insumos cuyo precio de ese mes fue imputado.",
+        "archivos_bronce": "Linaje: archivos de data/bronce de los que sale la fila (separados por ;).",
+        "ingesta_min": "Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados.",
+        "ingesta_max": "Linaje: última fecha de ingesta (UTC) de los registros de bronce usados.",
     },
     "competencia_municipio": {
         "_tabla": "Negocios de comida por municipio y tipo de negocio (DENUE, sin datos personales).",
@@ -200,8 +266,105 @@ DESCRIPCIONES = {
         "semifijos": "Establecimientos semifijos (puestos).",
         "pct_micro": "Porcentaje de micronegocios del tipo en el municipio.",
         "pct_del_municipio": "Porcentaje que representa el tipo dentro del municipio.",
+        "archivos_bronce": "Linaje: archivos de data/bronce de los que sale la fila (separados por ;).",
+        "ingesta_min": "Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados.",
+        "ingesta_max": "Linaje: última fecha de ingesta (UTC) de los registros de bronce usados.",
     },
 }
+
+LINAJE_COLS = {
+    "fuente": "Fuente de origen con su organismo (atribución exigida por los términos del INEGI).",
+    "archivos_bronce": "Linaje: archivos de data/bronce de los que sale la fila (separados por ;).",
+    "capturado_utc": "Linaje: fecha y hora UTC de ingesta del archivo de bronce.",
+}
+DESCRIPCIONES.update(
+    {
+        "geo_municipios": {
+            "_tabla": "Indicadores espaciales por municipio: límites del Marco Geoestadístico + puntos del DENUE.",
+            "municipio_clave": "Clave INEGI del municipio (Marco Geoestadístico).",
+            "municipio": "Nombre del municipio.",
+            "area_km2": "Área continental en km², medida en UTM 13N (EPSG:32613).",
+            "escuela": "Escuelas (SCIAN 611) dentro del polígono.",
+            "salud": "Consultorios públicos, centros sin hospitalización y hospitales dentro del polígono.",
+            "taqueria_fija": "Taquerías fijas del DENUE dentro del polígono.",
+            "taqueria_semifija": "Taquerías semifijas del DENUE dentro del polígono.",
+            "taquerias": "Total de taquerías registradas.",
+            "afluencia": "Escuelas + salud (generadores de afluencia).",
+            "taquerias_km2": "Taquerías por km².",
+            "afluencia_km2": "Generadores de afluencia por km².",
+            "afluencia_por_taqueria": "Afluencia por taquería registrada.",
+            "pct_semifijas": "Porcentaje de taquerías que son semifijas.",
+            **LINAJE_COLS,
+        },
+        "geo_zonas": {
+            "_tabla": "Cuadrícula de 1 km: afluencia contra competencia registrada (índice relativo, no conteo).",
+            "celda": "Identificador de la celda (columna_fila en km de UTM 13N).",
+            "municipio_clave": "Municipio donde cae el centro de la celda.",
+            "latitud": "Latitud del centro de la celda (WGS84).",
+            "longitud": "Longitud del centro de la celda (WGS84).",
+            "escuela": "Escuelas en la celda.",
+            "salud": "Centros de salud y hospitales en la celda.",
+            "afluencia": "Escuelas + salud.",
+            "taqueria_fija": "Taquerías fijas en la celda.",
+            "taqueria_semifija": "Taquerías semifijas en la celda.",
+            "taquerias_registradas": "Fijas + semifijas.",
+            "presion_demanda": "afluencia / (taquerías registradas + 1).",
+            "categoria_zona": "alta, media o baja por terciles; afluencia insuficiente si hay menos de 3 puntos.",
+            **LINAJE_COLS,
+        },
+        "geo_puntos": {
+            "_tabla": "Puntos para el mapa, sin nombres ni domicilios.",
+            "clee": "Clave única del establecimiento en el DENUE.",
+            "categoria": "taqueria_fija, taqueria_semifija, escuela o salud.",
+            "municipio_clave": "Municipio que declara el DENUE.",
+            "latitud": "Latitud (WGS84).",
+            "longitud": "Longitud (WGS84).",
+            "municipio_clave_marco": "Municipio donde cae el punto según el Marco Geoestadístico.",
+            "municipio_marco": "Nombre de ese municipio.",
+            **LINAJE_COLS,
+        },
+        "linaje": {
+            "_tabla": "Catálogo de linaje: cada archivo de bronce que alimenta cada tabla de oro.",
+            "tabla_oro": "Tabla de oro.",
+            "fuente": "Fuente del archivo de bronce.",
+            "archivo_bronce": "Nombre del archivo de bronce.",
+            "ruta_bronce": "Ruta en el repositorio.",
+            "capturado_utc": "Fecha y hora UTC de ingesta.",
+            "registros_bronce": "Registros del archivo al capturarlo.",
+            "sha256_registrado": "SHA-256 guardado en el .meta.json al capturar.",
+            "sha256_actual": "SHA-256 recalculado en esta corrida.",
+            "integro": "True si ambos SHA-256 coinciden.",
+        },
+        "pronostico": {
+            "_tabla": "Serie observada y pronóstico del Índice de Costo del Taco (ver contrato abajo).",
+            "mes": "Mes aaaa-mm.",
+            "valor": "Índice observado o pronosticado.",
+            "tipo": "observado o pronostico.",
+            "li_95": "Límite inferior del intervalo de 95 %.",
+            "ls_95": "Límite superior del intervalo de 95 %.",
+            "modelo": "Modelo elegido.",
+            "derivado_de": "Linaje: tabla de oro de la que se deriva (hereda su archivos_bronce).",
+        },
+        "comparacion_modelos": {
+            "_tabla": "Errores de cada modelo en los 12 meses de prueba.",
+            "modelo": "SES, Holt, Holt-Winters o ARIMA.",
+            "mae": "Error absoluto medio.",
+            "rmse": "Raíz del error cuadrático medio.",
+            "mape": "Error porcentual absoluto medio.",
+            "aic": "Criterio de información de Akaike.",
+            "detalle": "Orden del ARIMA.",
+            "elegido": "True en el de menor RMSE.",
+            "derivado_de": "Linaje: tabla de oro de la que se deriva.",
+        },
+    }
+)
+
+
+def actualizar_diccionario(datos: Path = DATA, diccionario: Path = DICCIONARIO) -> None:
+    """Regenera el diccionario con TODAS las tablas de oro (incluidas las geoespaciales y el linaje)."""
+    orden = list(DESCRIPCIONES)
+    rutas = sorted((datos / "oro").glob("*.csv"), key=lambda r: orden.index(r.stem) if r.stem in orden else 99)
+    escribir_diccionario({r.stem: pd.read_csv(r, dtype=str) for r in rutas}, diccionario)
 
 
 CONTRATO_PRONOSTICO = [
@@ -251,7 +414,7 @@ def construir_oro(datos: Path = DATA, diccionario: Path = DICCIONARIO) -> dict[s
 
     mensual = precios_mensuales(plata_sniim)
     tablas = {
-        "dim_insumo": dim_insumo(),
+        "dim_insumo": dim_insumo(plata_sniim),
         "dim_municipio": dim_municipio(denue, plata_sniim),
         "precios_mensuales": mensual,
         "indice_costo_taco": indice_costo_taco(mensual),

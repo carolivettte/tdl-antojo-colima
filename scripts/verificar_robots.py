@@ -3,6 +3,7 @@
 Es la evidencia del análisis ético: qué decía robots.txt el día que se consultó.
 Uso: python -m scripts.verificar_robots
 """
+
 from __future__ import annotations
 
 from datetime import date
@@ -17,6 +18,7 @@ cfg = cargar_config()
 URLS = {
     "sniim": cfg["sniim"]["base_url"],
     "inegi": cfg["denue"]["base_url"],
+    "inegi-marco-geo": cfg["geo"]["marco_url"],
     "open-meteo-archivo": cfg["clima"]["archivo_url"],
     "open-meteo": cfg["clima"]["pronostico_url"],
 }

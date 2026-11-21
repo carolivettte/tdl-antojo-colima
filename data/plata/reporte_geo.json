@@ -1,0 +1,31 @@
+{
+  "puntos": 3278,
+  "puntos_dentro_de_algun_municipio": 3278,
+  "puntos_fuera_de_los_limites": 0,
+  "consistencia_municipio_pct": 98.9,
+  "radio": {
+    "radio_m": 1000,
+    "puntos_afluencia": 1235,
+    "con_al_menos_una_taqueria": 1230,
+    "pct_con_taqueria": 99.6,
+    "mediana_taquerias": 38.0,
+    "sin_taqueria_registrada": 5
+  },
+  "zonas_1km": 254,
+  "zonas_con_afluencia": 143,
+  "afluencia_minima_para_clasificar": 3,
+  "zonas_por_categoria": {
+    "afluencia insuficiente": 80,
+    "alta": 48,
+    "media": 48,
+    "baja": 47,
+    "sin afluencia": 31
+  },
+  "validacion_indice": {
+    "spearman_afluencia_vs_semifijas": 0.397,
+    "p_semifijas": 5.1853024637261774e-11,
+    "spearman_afluencia_vs_fijas": 0.717,
+    "p_fijas": 2.4162049060033724e-41
+  },
+  "crs_metrico": "EPSG:32613"
+}

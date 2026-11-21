@@ -122,3 +122,11 @@ def test_de_la_pagina_real_a_plata_pasa_la_puerta_de_calidad():
     assert list(validos["insumo"]) == ["limon", "limon"]
     assert validos["precio_frec"].tolist() == [36.0, 36.0]
     assert validos["municipio_clave"].unique().tolist() == ["06002"]
+
+
+def test_celdas_sin_cierre_se_leen_bien_con_el_parser_elegido_en_e2():
+    """La página real con las celdas sin </td>: el parser de E2 (lxml) debe leerla igual que la original."""
+    original = sniim.parsear_resultados(RESULTADOS)
+    danada = sniim.parsear_resultados(RESULTADOS.replace("</td>", "").replace("</TD>", ""))
+    assert sniim.PARSER_HTML == "lxml"
+    pd.testing.assert_frame_equal(danada, original)

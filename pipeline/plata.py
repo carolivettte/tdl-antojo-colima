@@ -8,6 +8,7 @@ Flujo por fuente:
   5. Guardar válidos en data/plata/ y rechazados en data/cuarentena/ con motivo.
 Nada se borra en silencio: cada registro que entra sale en plata o en cuarentena.
 """
+
 import json
 import re
 from datetime import datetime, timezone
@@ -19,15 +20,26 @@ import pandera.pandas as pa
 
 from extractores.config import DATA
 from pipeline.catalogos import MERCADOS_SNIIM, MUNICIPIOS, PRODUCTOS_SNIIM, TAMANO, TIPO_NEGOCIO
-from pipeline.esquemas import ESQUEMA_DENUE, ESQUEMA_SNIIM
+from pipeline.esquemas import ESQUEMA_AFLUENCIA, ESQUEMA_DENUE, ESQUEMA_SNIIM, verificar_privacidad
 
 BRONCE = DATA / "bronce"
 PLATA = DATA / "plata"
 CUARENTENA = DATA / "cuarentena"
 BITACORA_PUERTA = DATA / "bitacora" / "puerta_calidad.csv"
 COLUMNAS_CUARENTENA_SNIIM = [
-    "motivo", "fecha", "producto_sniim", "insumo", "presentacion", "origen", "mercado",
-    "precio_min", "precio_max", "precio_frec", "obs", "archivo_origen", "capturado_utc",
+    "motivo",
+    "fecha",
+    "producto_sniim",
+    "insumo",
+    "presentacion",
+    "origen",
+    "mercado",
+    "precio_min",
+    "precio_max",
+    "precio_frec",
+    "obs",
+    "archivo_origen",
+    "capturado_utc",
 ]
 _MARCA = re.compile(r"_(\d{8}T\d{6}Z)\.csv$")
 
@@ -69,6 +81,7 @@ def validar(df: pd.DataFrame, esquema: pa.DataFrameSchema) -> tuple[pd.DataFrame
 
 
 # ---------------------------------------------------------------- SNIIM
+
 
 def preparar_sniim(crudo: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Tipos e integración de nombres; devuelve (preparados, rechazados al convertir)."""
@@ -177,6 +190,7 @@ def plata_sniim(carpeta_bronce: Path = BRONCE) -> tuple[pd.DataFrame, pd.DataFra
 
 # ---------------------------------------------------------------- DENUE
 
+
 def preparar_denue(crudo: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     df = crudo.copy()
     ubic = df["Ubicacion"].fillna("").str.split(",")
@@ -226,7 +240,57 @@ def plata_denue(carpeta_bronce: Path = BRONCE) -> tuple[pd.DataFrame, pd.DataFra
     return validos, cuarentena, _reporte("denue", len(crudo), n_exactos, len(validos), cuarentena)
 
 
+# ---------------------------------------------------------------- afluencia (fuente geoespacial, E2)
+
+
+def preparar_afluencia(crudo: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Escuelas, centros de salud y hospitales del DENUE, sin nombres ni domicilios."""
+    verificar_privacidad(crudo.columns)
+    df = crudo.copy()
+    ubic = df["Ubicacion"].fillna("").str.split(",")
+    mun_texto = ubic.str[1].str.strip()
+    mun_clave = df["AreaGeo"].fillna("").str[2:5]
+    mun_por_clave = mun_clave.map(MUNICIPIOS)
+    inconsistente = mun_por_clave.notna() & (mun_texto != mun_por_clave)
+    rechazos = [_rechazos(df, inconsistente, "municipio del texto no coincide con la clave geográfica (AreaGeo)")]
+    ok = df[~inconsistente]
+    salida = pd.DataFrame(
+        {
+            "clee": ok["CLEE"],
+            "tipo_afluencia": ok["tipo_afluencia"],
+            "capa_scian": ok["capa_scian"],
+            "clase_scian": ok["CLASE_ACTIVIDAD_ID"],
+            "clase_actividad": ok["Clase_actividad"],
+            "estrato": ok["Estrato"],
+            "tamano": ok["Estrato"].map(TAMANO),
+            "colonia": ok["Colonia"].str.strip().str.title(),
+            "cp": ok["CP"],
+            "municipio": mun_por_clave[~inconsistente].fillna(mun_texto[~inconsistente]),
+            "municipio_clave": "06" + mun_clave[~inconsistente],
+            "latitud": _numero(ok["Latitud"]),
+            "longitud": _numero(ok["Longitud"]),
+            "archivo_origen": ok["archivo_origen"],
+            "capturado_utc": ok["capturado_utc"],
+        },
+        index=ok.index,
+    )
+    return salida, pd.concat(rechazos)
+
+
+def plata_afluencia(carpeta_bronce: Path = BRONCE) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+    crudo = leer_bronce("denue_afluencia", carpeta_bronce)
+    if crudo.empty:
+        return pd.DataFrame(), pd.DataFrame(), _reporte("denue_afluencia", 0, 0, 0, pd.DataFrame())
+    crudo = crudo[crudo["capturado_utc"] == crudo["capturado_utc"].max()]  # fotografía más reciente
+    preparados, rech_tipos = preparar_afluencia(crudo)
+    unicos, conflictos, n_exactos = resolver_duplicados(preparados, ["clee"], ["latitud", "longitud"])
+    validos, rech_puerta = validar(unicos, ESQUEMA_AFLUENCIA)
+    cuarentena = pd.concat([_a_texto(rech_tipos), _a_texto(conflictos), _a_texto(rech_puerta)], ignore_index=True)
+    return validos, cuarentena, _reporte("denue_afluencia", len(crudo), n_exactos, len(validos), cuarentena)
+
+
 # ---------------------------------------------------------------- utilidades
+
 
 def _a_texto(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
@@ -257,14 +321,26 @@ def construir_plata(carpeta_bronce: Path = BRONCE, salida: Path = DATA) -> dict:
     (salida / "cuarentena").mkdir(parents=True, exist_ok=True)
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     reportes = []
-    for fuente, funcion, nombre in (("sniim", plata_sniim, "sniim_precios"), ("denue", plata_denue, "denue_negocios")):
+    fuentes = (
+        ("sniim", plata_sniim, "sniim_precios"),
+        ("denue", plata_denue, "denue_negocios"),
+        ("denue_afluencia", plata_afluencia, "denue_afluencia"),
+    )
+    for fuente, funcion, nombre in fuentes:
         validos, cuarentena, rep = funcion(carpeta_bronce)
+        if rep["registros_bronce"] == 0 and fuente == "denue_afluencia":
+            continue  # la fuente geoespacial todavía no tiene captura
         if len(validos):
             _a_texto(validos).to_csv(salida / "plata" / f"{nombre}.csv", index=False)
         cuarentena = cuarentena.assign(evaluado_utc=ahora)
         cuarentena.to_csv(salida / "cuarentena" / f"{fuente}_cuarentena.csv", index=False)
         rep["evaluado_utc"] = ahora
         reportes.append(rep)
+    from pipeline.geo import plata_marco  # import local: geo depende de plata
+
+    rep_marco = plata_marco(carpeta_bronce, salida, ahora)
+    if rep_marco:
+        reportes.append(rep_marco)
     (salida / "plata" / "reporte_puerta.json").write_text(json.dumps(reportes, ensure_ascii=False, indent=2), encoding="utf-8")
     _bitacora_puerta(reportes, salida / "bitacora" / "puerta_calidad.csv")
     return {r["fuente"]: r for r in reportes}
@@ -273,7 +349,21 @@ def construir_plata(carpeta_bronce: Path = BRONCE, salida: Path = DATA) -> dict:
 def _bitacora_puerta(reportes: list[dict], ruta: Path) -> None:
     ruta.parent.mkdir(parents=True, exist_ok=True)
     filas = pd.DataFrame(
-        [{k: r[k] for k in ("evaluado_utc", "fuente", "registros_bronce", "duplicados_exactos_resueltos",
-                            "registros_evaluados", "validos_plata", "cuarentena", "tasa_validez")} for r in reportes]
+        [
+            {
+                k: r[k]
+                for k in (
+                    "evaluado_utc",
+                    "fuente",
+                    "registros_bronce",
+                    "duplicados_exactos_resueltos",
+                    "registros_evaluados",
+                    "validos_plata",
+                    "cuarentena",
+                    "tasa_validez",
+                )
+            }
+            for r in reportes
+        ]
     )
     filas.to_csv(ruta, mode="a", header=not ruta.exists(), index=False)

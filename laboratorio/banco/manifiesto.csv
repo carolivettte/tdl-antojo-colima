@@ -1,0 +1,221 @@
+pagina,producto,trimestre,dano,filas_esperadas,filas_colima_reales,huella_filas
+pagina_0000.html,Aguacate Hass - Primera,2020Q1,ninguno,273,21,67b21918d51c21c1fc4d6b504a72b58c3b4506d5c5bdd602d55d143da5b49fc8
+pagina_0001.html,Aguacate Hass - Primera,2020Q2,ninguno,156,12,80029f83ce43989c2462ffb64e0bd66be5b32ab9df14aa7a0de0d5bfb5ac6985
+pagina_0002.html,Aguacate Hass - Primera,2020Q3,ninguno,65,5,88409165b65d5655b257d058133462a23b093e0cf415ccf6c7500994f38dc2ee
+pagina_0003.html,Aguacate Hass - Primera,2020Q4,sin_cierres,325,25,814ae142d1bd29d1533a057fa8354eaea71cf7ebe66d9bfc76f86fb435f833d0
+pagina_0004.html,Aguacate Hass - Primera,2021Q1,ninguno,273,21,1085041c5c268d1b9848defec8a4288654e1874f74ee40a226a761322e756cfa
+pagina_0005.html,Aguacate Hass - Primera,2021Q2,ninguno,325,25,381b2f5fed6ef40c3b6795427d3d0adb3e83cb4d414fde466ee80bfb25859c9c
+pagina_0006.html,Aguacate Hass - Primera,2021Q3,ninguno,338,26,b7b6272e55a4e41034ed34b568de8ff199d387f0f18f065412599639e288acce
+pagina_0007.html,Aguacate Hass - Primera,2021Q4,ninguno,338,26,5588d0c9f3a7a13a81cd69138e563e87d33e49dfbde97e3f5da3d8217240386c
+pagina_0008.html,Aguacate Hass - Primera,2022Q1,ninguno,325,25,adf570d8374173ef51b5c8e776dd5035f93916bf23c74a34552465df3ab9b626
+pagina_0009.html,Aguacate Hass - Primera,2022Q2,ninguno,325,25,b73aeed254c35bd0d82d927d52eecc8cb789edf4675c095f3bb54d21c7b0ad65
+pagina_0010.html,Aguacate Hass - Primera,2022Q3,ninguno,338,26,01edc2e13f97970bb26bbc615dfd95306e30cc243d2c57a94cc1b962b15e1cb6
+pagina_0011.html,Aguacate Hass - Primera,2022Q4,ninguno,325,25,3c585c4b091a9832a81d52d995afa0d11790842a462ba4ff8a5726595ca21ffb
+pagina_0012.html,Aguacate Hass - Primera,2023Q1,ninguno,338,26,c60a4c2c653c56d376a4016851259c6f6122be7ca97be5dddccfeb3fc7dafd9c
+pagina_0013.html,Aguacate Hass - Primera,2023Q2,ninguno,312,24,ef4d17b32363b0e98df2931d20f03ba9bdc10f48410519e62833d1e1e6518e24
+pagina_0014.html,Aguacate Hass - Primera,2023Q3,ninguno,338,26,e6ccce238c6e325b3afa05347e412eb2fc201cd155b0d010548779d47bf468c8
+pagina_0015.html,Aguacate Hass - Primera,2023Q4,sin_id,338,26,34aeb87ae67fd77382414b815129863c749067c22eeb629c72a454d3f6be1d90
+pagina_0016.html,Aguacate Hass - Primera,2024Q1,ninguno,325,25,39c14ac56578a062f5b92b59464fc92fedc7e20ccfae34a484adfde018f3d036
+pagina_0017.html,Aguacate Hass - Primera,2024Q2,ninguno,338,26,33fcedff50255d04027a7444d5fcbc55260d520cc89f73836993e89af47b1271
+pagina_0018.html,Aguacate Hass - Primera,2024Q3,ninguno,338,26,836ed447301d142433b230cb24570f7634f1436d88838a8d00a7296cddabf188
+pagina_0019.html,Aguacate Hass - Primera,2024Q4,ninguno,338,26,133e96aaaf21096e34489162cc86a5f8d5a4f4bceb459535113245aadb08797d
+pagina_0020.html,Aguacate Hass - Primera,2025Q1,ninguno,325,25,1cc835c609ecb3f7f0140f47a327983b644cd30bb38d1f41fe13274d9c4919c6
+pagina_0021.html,Aguacate Hass - Primera,2025Q2,sin_cierres,325,25,197759ef94224e1c7467b9db9492d51dcd2e19efbdac4dc36bee6deda03dac63
+pagina_0022.html,Aguacate Hass - Primera,2025Q3,ninguno,351,27,91bf7431fc680aa6f7420dec0a23ad66d3a073f82e5034afa2a75228b121fb73
+pagina_0023.html,Aguacate Hass - Primera,2025Q4,ninguno,338,26,4f2ab4ee8b9288f081cafc41122ef10d45dfa68a5f98b9540e9bf5958a09f860
+pagina_0024.html,Aguacate Hass - Primera,2026Q1,ninguno,338,26,a21ff704a96fadb8b55b2862a93110ea153b9393b52f1cb596a0c527581de4da
+pagina_0025.html,Aguacate Hass - Primera,2026Q2,ninguno,325,25,19e1e3fd8d59d7af01609807100adc477cddd4624ad365ac0fcf090f1785905b
+pagina_0026.html,Aguacate Hass - Primera,2026Q3,ninguno,338,26,fd6bab3e7ed3e5cc60aff94f8e67857d82c03901460f36f499ae5b35a7c21437
+pagina_0027.html,Aguacate Hass - Primera,2026Q4,mojibake,143,11,76d120d06406a06c83b0969b213fed2562ca6e1a21b2e9ce64ec4a2060e0efc0
+pagina_0028.html,Cebolla Bola - Primera,2020Q1,ninguno,273,21,8c4c71af9d5a67e81c2e664d1c98c1cc7841f88877b6ac1f9c3250a8181fdb8f
+pagina_0029.html,Cebolla Bola - Primera,2020Q2,ninguno,39,3,46d6359852fb1dc477952cb66be61f9b60a5547b09fb83ad4383348820f6e8d6
+pagina_0030.html,Cebolla Bola - Primera,2020Q4,ninguno,104,8,b068ad6c3d00f3994d998d4af419d45b4c2e95cb3d721247497a9fe1abe61271
+pagina_0031.html,Cebolla Bola - Primera,2021Q1,ninguno,273,21,2fad75b15bd0d701f3ad775d9bd94da164a93126030afe9432dc3df799d2db98
+pagina_0032.html,Cebolla Bola - Primera,2021Q2,ninguno,325,25,c9721c1e50b846dbfa143ee0575e8d5c51e370d0898376dd583b64ea18ea6154
+pagina_0033.html,Cebolla Bola - Primera,2021Q3,ninguno,338,26,4d9a1fc205bbb93fa60b6874ad5eb1a6e27a7f308a2509ee0fe38c23dccf098e
+pagina_0034.html,Cebolla Bola - Primera,2021Q4,ninguno,169,13,a3a50e23dc9bc25921c0b91e1ea8bad82c79477641c1535c7adeecb9f4bcc8bd
+pagina_0035.html,Cebolla Bola - Primera,2022Q3,mojibake,65,5,e4810465a6a9d63efaf43608a70417d3686726f1fdf4d330fc1d2dab484c7583
+pagina_0036.html,Cebolla Bola - Primera,2022Q4,ninguno,325,25,6fc6964d5eb63c94cc3dc097e8723f7d9bf5e191ad8bfb8b231ca4ac860bc398
+pagina_0037.html,Cebolla Bola - Primera,2023Q1,ninguno,338,26,dfdc27a9c886b134c437320a8a9ca19aa70a069db24aca71f143226a3b916cfb
+pagina_0038.html,Cebolla Bola - Primera,2023Q2,ninguno,312,24,8e79a040d435e0a5d3874cfe63d2f893fa32a6bc5e2fe4ddfa766dff97cd9617
+pagina_0039.html,Cebolla Bola - Primera,2023Q3,ninguno,338,26,7e745f20af9e41c909619951b90ea6b248acb2e042ddacd5143261a0702719c3
+pagina_0040.html,Cebolla Bola - Primera,2023Q4,ninguno,338,26,d7879fc4c0740c0086ddb08c9e861ecfe9ad014a25132550d064a496161cb13a
+pagina_0041.html,Cebolla Bola - Primera,2024Q1,sin_cierres,325,25,1686e2b30a4de79453b66882cd2a690fa796c9e74165bc7c26b163aa3f91ba0c
+pagina_0042.html,Cebolla Bola - Primera,2024Q2,ninguno,338,26,f3c6d7bca4289a0d82757c8e33019d915ec61753bf7781b7e0b7fcee167a2d11
+pagina_0043.html,Cebolla Bola - Primera,2024Q3,sin_cierres,338,26,73b532975555518a5dd8555247cdad46d9a4c98e94b7c410822b3f33930cc2fc
+pagina_0044.html,Cebolla Bola - Primera,2024Q4,ninguno,338,26,5e06ba0a4f708f1d9dda3531d77eb91ef782dcc046ef1eddb9321f856d280cfd
+pagina_0045.html,Cebolla Bola - Primera,2025Q1,ninguno,325,25,9b241e18b11285670665524c51ff47ab78cc3561809fb96c9bfa4518a09714df
+pagina_0046.html,Cebolla Bola - Primera,2025Q2,ninguno,338,26,64cb2fcf4dd8579aadc7196cdeaf8df70b00e06d4758728e5c95597e3460b1eb
+pagina_0047.html,Cebolla Bola - Primera,2025Q3,ninguno,351,27,234580c82271d5d5df22688ce56fd91e7ff42f3e5f1efe1474df0723bc9d2a9a
+pagina_0048.html,Cebolla Bola - Primera,2025Q4,ninguno,338,26,9acc07d3d3f9f6124708a3b6f12b22d6344a96f15bb8d00afefd1c3ef1046190
+pagina_0049.html,Cebolla Bola - Primera,2026Q1,sin_id,338,26,8d8b68907cb690d22abbe78ab2d05016fa7b3e2f90eb55f1d5b455fe552ec0ff
+pagina_0050.html,Cebolla Bola - Primera,2026Q2,truncada,325,25,7062845264dd568732b5890c35ac5d1e1811c7105b724c14a0b904f577d0bb04
+pagina_0051.html,Cebolla Bola - Primera,2026Q3,ninguno,338,26,6d8b447dcedb3f6130c8d4ebd6af7032f2a757b5103285d267a01415bf403909
+pagina_0052.html,Cebolla Bola - Primera,2026Q4,ninguno,143,11,9749f1a9fa95d9afe88c2bfcb47de8c59b60f5748b1ce81cd17a0729d33ca3f3
+pagina_0053.html,Chile Jalapeño - Primera,2020Q1,ninguno,273,21,9b01bd0242b93e82f9f4e396c7f905113411e2604a9e385d9117ba95074a5765
+pagina_0054.html,Chile Jalapeño - Primera,2020Q2,ninguno,156,12,9bc78b06874984696a9216a6f4eae9b591e258b36734ec682be28e92c37fd07b
+pagina_0055.html,Chile Jalapeño - Primera,2020Q3,ninguno,65,5,f2b902dc7f0e255099a2260997c9087d9d38321f345be8550355ed39679a2459
+pagina_0056.html,Chile Jalapeño - Primera,2020Q4,ninguno,325,25,bdfd1f5b7f2a8f5002deceac13e29f9db575d94fd4bd904298ce61e82b986de4
+pagina_0057.html,Chile Jalapeño - Primera,2021Q1,ninguno,273,21,4de32e96a9b33062771475c1b97f5b05eb5bd4efaf77e02f75018eff40df2063
+pagina_0058.html,Chile Jalapeño - Primera,2021Q2,ninguno,325,25,cd7a21fd6d6b764c385da4dd08be13506174f42e136bea6ad55eb845ad877842
+pagina_0059.html,Chile Jalapeño - Primera,2021Q3,ninguno,338,26,821b57b8848a049900fe0826b16c2763668e61af7ac5db3b49da41f1999b2d0f
+pagina_0060.html,Chile Jalapeño - Primera,2021Q4,mojibake,338,26,795f3e0a9098c6d6d7d2ba75bee6ba793b73de89ee2720ff2fb8c773faf6042c
+pagina_0061.html,Chile Jalapeño - Primera,2022Q1,ninguno,325,25,50b1ad2c64c2b4d03e42933d040cf1c0d403d62a4db0ebd79bab91391b3bc122
+pagina_0062.html,Chile Jalapeño - Primera,2022Q2,ninguno,325,25,f5968bf3c6f1dd16f558fb40ea082aab88387450ee2dbd263f7d2a3385b16b48
+pagina_0063.html,Chile Jalapeño - Primera,2022Q3,ninguno,338,26,fdbb35d10545e2dbb62e92bce76f77c9c131d283a558e2dc9d3c3f1b646f924d
+pagina_0064.html,Chile Jalapeño - Primera,2022Q4,ninguno,325,25,c47669880dfb196c3c4938446137bc949548cc8592b097a6cd5f0c39620de986
+pagina_0065.html,Chile Jalapeño - Primera,2023Q1,ninguno,338,26,dfa1d3a7045c8f82157ec0401f6ef641c4dd181448ed007327c0481f5090166d
+pagina_0066.html,Chile Jalapeño - Primera,2023Q2,ninguno,312,24,58e1fd7c5eb57044cf81aedef28de3894c78e4a58989cf8e10d92a1761aaeb8c
+pagina_0067.html,Chile Jalapeño - Primera,2023Q3,ninguno,338,26,67c7e10cb4b1a6b0c7d97a7932c1ee8824ed0a2039d9dd58dc2862d6185caebe
+pagina_0068.html,Chile Jalapeño - Primera,2023Q4,sin_cierres,338,26,46b5a84fc83fcc584aa692347d4e3220d9be3b965fe859bd423873c93787f809
+pagina_0069.html,Chile Jalapeño - Primera,2024Q1,sin_id,325,25,430dd5bb814a219bbe24bf1b554ba891b905e7dd6e8a93fd6348755d6f9a4cd0
+pagina_0070.html,Chile Jalapeño - Primera,2024Q2,ninguno,338,26,cc941ef2cd9225648c8b49a5ea4896d5f79e8966e479de35d219a24f1a329256
+pagina_0071.html,Chile Jalapeño - Primera,2024Q3,ninguno,338,26,bc69c4e29301eb1a807bfac8a2a1244007ec30243140b5c405037b28cb7c6f1e
+pagina_0072.html,Chile Jalapeño - Primera,2024Q4,truncada,338,26,740bfd6fed30ba98a754630c6eff43b9a5421e7c2ab078e0bf82ef060a1b186c
+pagina_0073.html,Chile Jalapeño - Primera,2025Q1,ninguno,325,25,e3477d7d4174c40577b6d8c244806a21a54ef6eeccbbeb9c74b68928e0e69538
+pagina_0074.html,Chile Jalapeño - Primera,2025Q2,ninguno,338,26,23ac666f093f40b248cf5678c0f394199229ce2d6f998d1a4d0cfab7e98da6e4
+pagina_0075.html,Chile Jalapeño - Primera,2025Q3,mojibake,351,27,9ce6b6edc63021023b9430cb9923ee03f7eec149a5a1525ca88bf0b2b1aa3598
+pagina_0076.html,Chile Jalapeño - Primera,2025Q4,ninguno,338,26,6349568003040d2314f6406b42f79020834f014acae18c1495b5b12589804027
+pagina_0077.html,Chile Jalapeño - Primera,2026Q1,ninguno,338,26,2c3e31e06e9d7f08442c75b06f4d95c14a5568bb008715d0b17633b4ef0b56be
+pagina_0078.html,Chile Jalapeño - Primera,2026Q2,ninguno,325,25,dc2067864e8bd62669f7df6361b0c82d1c9e426d3174771d62b456bc5f894f08
+pagina_0079.html,Chile Jalapeño - Primera,2026Q3,ninguno,338,26,e325ea24faa4845097faa165dc72cdf326536ee459a696821c708e1d9a1cbf65
+pagina_0080.html,Chile Jalapeño - Primera,2026Q4,ninguno,143,11,56c51dc0c53f2cb5fcc17986a10356678ba6e1e35d9a8c876d1c62b4957093ac
+pagina_0081.html,Chile Serrano - Primera,2020Q1,ninguno,273,21,0b14f4e994f2319bb6fe453b27f45b7c21967478c0183b31373f8e1d32ea9824
+pagina_0082.html,Chile Serrano - Primera,2020Q2,ninguno,156,12,f4bb9fce3545c6ad0af35bf7eaf1878164241139dc1317ad6f02369835e95c10
+pagina_0083.html,Chile Serrano - Primera,2020Q3,ninguno,65,5,f65f5c9dcbf7f9f75dd01c7989c74d861ca6fd3bcd78fae85b6f1b5315aeb64b
+pagina_0084.html,Chile Serrano - Primera,2020Q4,ninguno,325,25,5c2b5974c37af7d4f0ea7ab2a2f7b3580a3567eb70541582a7388e471d9a7e8f
+pagina_0085.html,Chile Serrano - Primera,2021Q1,ninguno,273,21,89af09ea16eede016f34a3a5be928a8831c03b69fa2f7aad7d841478a6db28de
+pagina_0086.html,Chile Serrano - Primera,2021Q2,ninguno,325,25,dc122d1855d9d988fb0789722d4853628fc9d0a6b665ec1911232b0761f4eddc
+pagina_0087.html,Chile Serrano - Primera,2021Q3,ninguno,338,26,b4098891a93bc4b1b1525eff748004cbe1bd921a448a16dd18625e9638b0a285
+pagina_0088.html,Chile Serrano - Primera,2021Q4,ninguno,338,26,4b46467bd380012a6c54c2b79533e3b0e9305bb59312167938746746049b4875
+pagina_0089.html,Chile Serrano - Primera,2022Q1,ninguno,325,25,c36bcc8a4ac4e3a69a96429233ad424ee297e03ecdc3fc7da6385e26ef63d10d
+pagina_0090.html,Chile Serrano - Primera,2022Q2,ninguno,325,25,733661037a96a0ecb4f64cc3c28d08337562119dfc5a791554c1cbc5a49b6266
+pagina_0091.html,Chile Serrano - Primera,2022Q3,ninguno,338,26,78caa5886316bd255dad09d1bbedcb0fa5dfe36448fa26c0d7fede43908dce5d
+pagina_0092.html,Chile Serrano - Primera,2022Q4,ninguno,325,25,fd77102348629f9de6dadbe8d4e25ddbd3666d1386e44c0715d69dee605dba62
+pagina_0093.html,Chile Serrano - Primera,2023Q1,ninguno,338,26,fb6bc6b7b44eb46cb8e2100607d5a7df26a7039153329586b8155a70b6d7419d
+pagina_0094.html,Chile Serrano - Primera,2023Q2,ninguno,312,24,2b29c5d35b2ae2e05f3c70559b0f99fc88f7e406d959bd6607a5ad249ffb50b1
+pagina_0095.html,Chile Serrano - Primera,2023Q3,ninguno,338,26,6bb59f5cce5f6a485292858d89e1e5a578ef73630da415385beb68679304dc25
+pagina_0096.html,Chile Serrano - Primera,2023Q4,ninguno,338,26,179a50892c13805b7c0e9428388a9586fec81a06944a870a22169f33f39f1f09
+pagina_0097.html,Chile Serrano - Primera,2024Q1,truncada,325,25,88687fddb7f2d521ad0d262ba97f9a8241834904104c2eb4608cad7955f3c06b
+pagina_0098.html,Chile Serrano - Primera,2024Q2,ninguno,338,26,cdc15ac23e55f2765f99f6a5505a3a733f8bdb9da9bf9688d418fa877b6cad2e
+pagina_0099.html,Chile Serrano - Primera,2024Q3,ninguno,338,26,b887d7b7e645e7a9a3551636b616bf1734914a9b8e7b9d11e773d1556a4ba41a
+pagina_0100.html,Chile Serrano - Primera,2024Q4,ninguno,338,26,2f80ad89c1e66fb1cc21fd2633080513b1c1e093d8352e9f8abf6c6e47a5731f
+pagina_0101.html,Chile Serrano - Primera,2025Q1,ninguno,325,25,8f1abaf4f3e6cb0b5e54d0fbc7e1882e1a384891757657f4ddaed8d3fb81308f
+pagina_0102.html,Chile Serrano - Primera,2025Q2,ninguno,338,26,0ced7ffecc469933f1b5a63f788a865c9828bc97905279a6187a428e59a1876d
+pagina_0103.html,Chile Serrano - Primera,2025Q3,ninguno,351,27,3f3c47a8e801f258e3073fce480a60bd19df0ae74813a1c55a57fe9eea9ce185
+pagina_0104.html,Chile Serrano - Primera,2025Q4,ninguno,338,26,8e62c341b0af36bfa88146fa624ad952eab5cce3918793a82d07a153aa00afce
+pagina_0105.html,Chile Serrano - Primera,2026Q1,ninguno,338,26,1868c10845bec065f6218fd9ebc5fd778628dbd53e91e5fbe5e82f745767a0a4
+pagina_0106.html,Chile Serrano - Primera,2026Q2,ninguno,325,25,9a7a528b5ef3086092560810ff6ddacd5343f60227d308dba9484a8fadf6afa5
+pagina_0107.html,Chile Serrano - Primera,2026Q3,ninguno,338,26,79907a501bffe3f34b2c05375c047ea4fbd323962e9c73ebdf10010f8addfd73
+pagina_0108.html,Chile Serrano - Primera,2026Q4,ninguno,143,11,b7707d9e9a0a8d451f638ac6e84598ade06a146acbd505f33ee73afd670e6c89
+pagina_0109.html,Limón c/semilla # 5 - Primera,2020Q2,ninguno,130,10,45fd73fa24cbeb7e63f7daf40d25c4249ce43c3fc2b18ad6248745cf85c0454d
+pagina_0110.html,Limón c/semilla # 5 - Primera,2020Q3,ninguno,65,5,9479814d504aec7017236c703d5e54150d42cbdc55f7467c1300efff07a85eb9
+pagina_0111.html,Limón c/semilla # 5 - Primera,2020Q4,ninguno,299,23,39dc8ce289df604059ea99d810ad516418286498de6f24e22dfbf4624f6afc82
+pagina_0112.html,Limón c/semilla # 5 - Primera,2021Q1,ninguno,208,16,ee2a58a69216daf944ae0e93af0a6fc779197f2b7033994941e62773563b727d
+pagina_0113.html,Limón c/semilla # 5 - Primera,2021Q2,ninguno,325,25,4805b8c4bf6024ffcb8b3ebd2d88c3d1a00703d89aa2239933c885b6c5a5cf33
+pagina_0114.html,Limón c/semilla # 5 - Primera,2021Q3,ninguno,338,26,8a79a5afeaefbc1486f386529fd8b9e6fac6ff11e16a8e176239bfff6f0f5029
+pagina_0115.html,Limón c/semilla # 5 - Primera,2021Q4,ninguno,338,26,b8b62e903aa48dd99861dcd96afca01e0f3eabacb80487ebfd0efd253ec66b33
+pagina_0116.html,Limón c/semilla # 5 - Primera,2022Q1,ninguno,325,25,073228f326339ccd24ac574912700428e36b4bee323cadf9f794ed0cbb49a146
+pagina_0117.html,Limón c/semilla # 5 - Primera,2022Q2,ninguno,325,25,fe8c3ae909a38cb794883ba02e70f80426c72b0a211db4468d85ae5a984170ba
+pagina_0118.html,Limón c/semilla # 5 - Primera,2022Q3,ninguno,338,26,ea5e2f414f928cd64aad525c5e16a483f6a4adfbcf7af4996b507b2b45981e70
+pagina_0119.html,Limón c/semilla # 5 - Primera,2022Q4,ninguno,325,25,fa784704df2e4073aaa0db45e5e3802c2e31f038a3498034413691e2d8917ed6
+pagina_0120.html,Limón c/semilla # 5 - Primera,2023Q1,ninguno,338,26,f8db3fc558c10b08a93855098f89e6ce754a277809ca69fc215d98817fa2314d
+pagina_0121.html,Limón c/semilla # 5 - Primera,2023Q2,ninguno,312,24,c38fc4a03ec27a01a60a52c1a9d6a86a3b08ba78d01dcc0439a56cfd4402f863
+pagina_0122.html,Limón c/semilla # 5 - Primera,2023Q3,ninguno,338,26,88c6e30598fec34af140e6f4ef997d96042a2e44c1ca21ac6ec0e5cc03dee0db
+pagina_0123.html,Limón c/semilla # 5 - Primera,2023Q4,ninguno,338,26,e24cd753b572a7695ead4f087fa17d4ef18fb9677a32976297b20cb43a531a9e
+pagina_0124.html,Limón c/semilla # 5 - Primera,2024Q1,ninguno,325,25,52dc8f45114dc39bbcb9e8aa9277c5276dbd238574172a0ec5c85ac1fcf8f4b0
+pagina_0125.html,Limón c/semilla # 5 - Primera,2024Q2,ninguno,338,26,1bd8423f44c38657b9b377a68b68014e544b71fc1239f6df07dafb1dc3f8689f
+pagina_0126.html,Limón c/semilla # 5 - Primera,2024Q3,ninguno,338,26,80926e8b1bb224bacc622943482cb31dec1e3a044d6e6fb4d02f1fa8bce16c73
+pagina_0127.html,Limón c/semilla # 5 - Primera,2024Q4,ninguno,338,26,99cd1466275362e0b1b8b966565ce424c0e9d662087b0e38f05dc02075bf8faa
+pagina_0128.html,Limón c/semilla # 5 - Primera,2025Q1,ninguno,325,25,7b260298062b9c9bed53dbfad976ed29b06e4c80d042115355ec01e8fa345f78
+pagina_0129.html,Limón c/semilla # 5 - Primera,2025Q2,ninguno,338,26,238267575a847058709876ff65e077f871f7a006dbfdff855e2d40e419635129
+pagina_0130.html,Limón c/semilla # 5 - Primera,2025Q3,sin_id,351,27,3d9f7f5d18a2f7bde7f4db321576be43d27da37c567564079d9e41762b46d74f
+pagina_0131.html,Limón c/semilla # 5 - Primera,2025Q4,ninguno,338,26,7f64055504be272ab81a3c769166101920d566fe4a18131892cbab6ec411dffb
+pagina_0132.html,Limón c/semilla # 5 - Primera,2026Q1,ninguno,338,26,4f146ec94674ec6b8bd9467b1f2e01f33aeb34679220b10213e2c75a49a55c88
+pagina_0133.html,Limón c/semilla # 5 - Primera,2026Q2,ninguno,325,25,705b366b229c5a8ce83362f80cc23e83a996e712463e237063fa02025d3bad9e
+pagina_0134.html,Limón c/semilla # 5 - Primera,2026Q3,ninguno,338,26,98e3d79913ca8b64a39145d520a79e3c86d389de553b4ae9a5ac4799c5a2fd50
+pagina_0135.html,Limón c/semilla # 5 - Primera,2026Q4,ninguno,143,11,0e556e208d945df89c5dac1145dd19d618c82450195590ce54adb466c5f68591
+pagina_0136.html,Papa Alpha - Primera,2020Q1,ninguno,273,21,e03eca56aaf46816e44aaa4452fdee1b3ee99f237175c06ef1be44e86642f109
+pagina_0137.html,Papa Alpha - Primera,2020Q2,ninguno,156,12,fac26715e155449d46661c6b82293229e816164594bd681afaf8b6499a72d083
+pagina_0138.html,Papa Alpha - Primera,2020Q3,ninguno,65,5,db925c0226c677f3a8e7bd7f27fa5abed95f68872010bd1e48e6682ace0854c6
+pagina_0139.html,Papa Alpha - Primera,2020Q4,ninguno,325,25,69200e17cb9c0bb849c45db38a5d5573a56ff760ae2d1842762fc1e6c843ec8d
+pagina_0140.html,Papa Alpha - Primera,2021Q1,ninguno,273,21,8c2cc087907374289d8e8f27d048059cea0474bf8bb91067581cd329547e7f74
+pagina_0141.html,Papa Alpha - Primera,2021Q2,ninguno,325,25,e6b3cf13bded79993e68e2b45742b1d3b7aa8e0943e9f4b03320fc92ffe1dcd8
+pagina_0142.html,Papa Alpha - Primera,2021Q3,ninguno,338,26,497a40c3d01df6a95a6f724ed51dbdbe84d97e5e22acf050fa049a3d6cac084f
+pagina_0143.html,Papa Alpha - Primera,2021Q4,ninguno,338,26,6a97e0003982e7313c33a9e2c0f1eb43924c63428f7d2b2a23cb5eabf44a2e38
+pagina_0144.html,Papa Alpha - Primera,2022Q1,ninguno,325,25,b1d8f98a75cc1e9d9371519de72d63342c0b3f859d32b5fb82f2afcfc68af176
+pagina_0145.html,Papa Alpha - Primera,2022Q2,ninguno,325,25,0d41076269be68459c562b9f443474615ee09ed7f5db2f1c562cca2bd675803e
+pagina_0146.html,Papa Alpha - Primera,2022Q3,ninguno,338,26,5224ef4914e051641398d143f08ec346653f6fcc1a212579757c9f9cafdfda5e
+pagina_0147.html,Papa Alpha - Primera,2022Q4,ninguno,325,25,afa353ebb4ee0c5c5bc10f88dbe4aa99bb4db589f1b0c397551335d8a4cd8127
+pagina_0148.html,Papa Alpha - Primera,2023Q1,ninguno,338,26,00b4d8f454007ec54a099631c412fbc4f5bc8e87a49ef679435f755c00dcce3f
+pagina_0149.html,Papa Alpha - Primera,2023Q2,ninguno,312,24,337bb28dd045473cb457941f3e6508eae15f9689628c7eb21eeb1e3369445c37
+pagina_0150.html,Papa Alpha - Primera,2023Q3,ninguno,338,26,b30701c765594ace21a7d4a9a68a4de62608ba2386f8c903c4769ae85f085f01
+pagina_0151.html,Papa Alpha - Primera,2023Q4,ninguno,338,26,aabcfd1cf0edc006465f3d5fbfc843d1d648c91209fb62fcb08fcc5d0bd5e5d2
+pagina_0152.html,Papa Alpha - Primera,2024Q1,ninguno,325,25,61d9879caf6847315513eeaddef31939d3d1b53258587801a634e8352dd9a79f
+pagina_0153.html,Papa Alpha - Primera,2024Q2,ninguno,338,26,60458bba539a87d040b7cdbad6f00cf7b7b0327aea6383fcc3f08e301a138e87
+pagina_0154.html,Papa Alpha - Primera,2024Q3,truncada,338,26,f05c3bd404e48d62b314939f3e4079895e415c62be5e49af619764212467f8c4
+pagina_0155.html,Papa Alpha - Primera,2024Q4,ninguno,338,26,b807b3b631caf411ad67c1edc5a8848b4e53ffabe0ffe57a61a8c999ff5c8b95
+pagina_0156.html,Papa Alpha - Primera,2025Q1,ninguno,325,25,18955543f261b29aee27d82a333434c8ea2bfbd7fa06ab0a66c78dcf8df7be8b
+pagina_0157.html,Papa Alpha - Primera,2025Q2,ninguno,338,26,2f17f65d9e30a1d9841eccbe23dedf00e983fef27ce67c2d85cf1e47080ff344
+pagina_0158.html,Papa Alpha - Primera,2025Q3,ninguno,351,27,8ed367852bb842d2ef9391fca3d111e5291de2f646f53cf6fb1a3806a2a26019
+pagina_0159.html,Papa Alpha - Primera,2025Q4,ninguno,338,26,702d9a52fc52c42dcd71ab00d8f148288563cfece3c650b09bcd5db76dd62861
+pagina_0160.html,Papa Alpha - Primera,2026Q1,ninguno,338,26,78c9481e6c950c1fcd68dfc131b40ebcd76832558fd4d35caa4dfc74619b0af6
+pagina_0161.html,Papa Alpha - Primera,2026Q2,truncada,325,25,f8bca08e2fdf04a5c8cdfb958498f9e0c2a7fa61fedb67a4baaadcbc802f8cd1
+pagina_0162.html,Papa Alpha - Primera,2026Q3,ninguno,338,26,afbce2f009f061457292a2c77b83b995adbf64c0056c718de496852971a830a1
+pagina_0163.html,Papa Alpha - Primera,2026Q4,ninguno,143,11,a063ce12bcdefcf7cb3e485a39d616e746b7f841892cfa0345ef561034c57ef4
+pagina_0164.html,Tomate Saladette - Primera,2020Q1,ninguno,273,21,3aa3698e6a1261734c57cf89cfd44f976c38bb9b23ad7d7fcf0d80188a2db95e
+pagina_0165.html,Tomate Saladette - Primera,2020Q2,ninguno,156,12,61a9e4d0ebb6f078136986855c2ecaccc69ffe214d30b59030fab3e763e70a5c
+pagina_0166.html,Tomate Saladette - Primera,2020Q3,sin_id,65,5,eb2261491156261385d381b902addbcc2fcfcb84e2274592741ad07a53355736
+pagina_0167.html,Tomate Saladette - Primera,2020Q4,ninguno,325,25,1a6844310715d0a0edf45ebdbb0dac6e0c158e5b412c272428879bc1d8d25c29
+pagina_0168.html,Tomate Saladette - Primera,2021Q1,ninguno,260,20,11ea6ce61a5ae86a647357715886d92b0ed0ddaf0dd991843b78a5fc28a306f7
+pagina_0169.html,Tomate Saladette - Primera,2021Q2,ninguno,325,25,d45ce710d645374fa789db8f1941e47665fb8c348c8c9f5b2b01c2346dac29fe
+pagina_0170.html,Tomate Saladette - Primera,2021Q3,sin_id,338,26,d78ad87bdbbe315be57357fda58fc9ecd06b04a72bf74fd5a1cc88c6170a48d6
+pagina_0171.html,Tomate Saladette - Primera,2021Q4,ninguno,338,26,3ab089c90eb4d6e6a27e7af429652d79e559c735d33e74ae62a6a62e758a991b
+pagina_0172.html,Tomate Saladette - Primera,2022Q1,ninguno,325,25,0fecf1ad524af55b923976fe9da1e8c7a5682ed850057cabd68da48440243f53
+pagina_0173.html,Tomate Saladette - Primera,2022Q2,ninguno,325,25,cc0bd3da4e343688367b988f26bd3f7828e1df682ca23ec60881847d93f5f74a
+pagina_0174.html,Tomate Saladette - Primera,2022Q3,ninguno,338,26,93368e05345422484ae4dcf22d96656ad6a6ce9b2ee002bc66721d1a6837a937
+pagina_0175.html,Tomate Saladette - Primera,2022Q4,ninguno,325,25,cb76490c4c9bb5768272e9f2f8da8211b50e19200bd9f8cc4d1ac0c08ab02ff1
+pagina_0176.html,Tomate Saladette - Primera,2023Q1,ninguno,338,26,38042580081fb3db06b5f6eacde24e7733f0351f231426de8f07ff2ee2818922
+pagina_0177.html,Tomate Saladette - Primera,2023Q2,ninguno,312,24,3c55b32860838e36f98651af357d4f9d5b8f6fabeb78aecd431c218a55d92999
+pagina_0178.html,Tomate Saladette - Primera,2023Q3,ninguno,338,26,4944c124cceb00074a2e167637f0ef0f9aebab7e99764fc187de4fcf5ecabba9
+pagina_0179.html,Tomate Saladette - Primera,2023Q4,ninguno,338,26,ffc9454516f02cb9a78d02a45412084a9bac46271097966a6a7f0004a25d91bd
+pagina_0180.html,Tomate Saladette - Primera,2024Q1,ninguno,325,25,480818ee75be2f46ef91fe04a3d19d6d89d563c45e185f25cfe739784e5a722b
+pagina_0181.html,Tomate Saladette - Primera,2024Q2,ninguno,338,26,4dbe18aefb8e35e2b662d07e55175435907f399ff0654863be944a2f6c2c0b1c
+pagina_0182.html,Tomate Saladette - Primera,2024Q3,ninguno,338,26,4bcd7de9304329b46235b25596345b2adf24317dbd12204c8073ebcb204d11a0
+pagina_0183.html,Tomate Saladette - Primera,2024Q4,ninguno,338,26,932d5138ca1b7ce0bd67bace573484641a8b273c0c81ba9535f8e03c6ff60192
+pagina_0184.html,Tomate Saladette - Primera,2025Q1,mojibake,325,25,31b3b5cb2dbb4704db24eba319566766616ff0fb0c280f9af050be38b2d57f8f
+pagina_0185.html,Tomate Saladette - Primera,2025Q2,sin_cierres,338,26,ee16db842193de19b5a6afa85026925ba72ff6f92bef2ba9b9e5ce8f6aca75c6
+pagina_0186.html,Tomate Saladette - Primera,2025Q3,truncada,351,27,56471f85e6f6537598899be0c9fec38c29f9cdd55f273bb8314857f24ef182dd
+pagina_0187.html,Tomate Saladette - Primera,2025Q4,ninguno,338,26,a522739ec0b404d1f430ccac1726292db6505c2fa703b8054ca6261f14601e4f
+pagina_0188.html,Tomate Saladette - Primera,2026Q1,ninguno,338,26,d9236a487c8bf26b926cb547329999d25c6bbb7cff5099b9a4f5658cea3c4c4d
+pagina_0189.html,Tomate Saladette - Primera,2026Q2,ninguno,325,25,aec6c7899a614dc567881426c8b7a47dc2b719d48275d9a6e973613d77beb076
+pagina_0190.html,Tomate Saladette - Primera,2026Q3,ninguno,338,26,6a3914429cd527cfc8ea8e3b706b721ce95737a15342b1fb22b92469feb9cf9f
+pagina_0191.html,Tomate Saladette - Primera,2026Q4,ninguno,143,11,ebedd87b501eb500fd8b6021673bc0ab1515d6ec079acbe56170f70cd0636fb0
+pagina_0192.html,Tomate Verde - Primera,2020Q1,ninguno,273,21,693921175777a1e860be230a1414c2806ed17277905a0d227bb48ec7921dff7a
+pagina_0193.html,Tomate Verde - Primera,2020Q2,mojibake,156,12,3472cd4c9feb26d70e72d22d3f9f3f675acd64e16ae4d821c39e556fcb45f30f
+pagina_0194.html,Tomate Verde - Primera,2020Q3,ninguno,65,5,89ee464274431b3b988777b971f13c1d10e8ac5ce9393acf4a899cf3657dec19
+pagina_0195.html,Tomate Verde - Primera,2020Q4,ninguno,325,25,a8a1b2e739b3c0667bdd35f221a95d0901e401bac7791d4acc0d16c5181e1978
+pagina_0196.html,Tomate Verde - Primera,2021Q1,ninguno,273,21,1ec86b588a2d57fff211ae5c06fb2e6327fcc1212b9d144e08e3436812b24d93
+pagina_0197.html,Tomate Verde - Primera,2021Q2,ninguno,325,25,c0e6b987e1e0abab6e4413de37150e48d075f68a956e0e417d41a3186841a1af
+pagina_0198.html,Tomate Verde - Primera,2021Q3,ninguno,338,26,42e8f1d9bc4f6a2696493577eb684c24f418d98f0d7947c9ce0cb2d32bd49c43
+pagina_0199.html,Tomate Verde - Primera,2021Q4,sin_cierres,338,26,639196aef8e184e4b7434d4ec7d17bad906851ef2aaa0880010afad8421642b8
+pagina_0200.html,Tomate Verde - Primera,2022Q1,ninguno,325,25,be1c8db2ff9de3dca3be569d4c91d286e43a187c14e9d7508ed5f5889786e183
+pagina_0201.html,Tomate Verde - Primera,2022Q2,ninguno,325,25,b7ff02e1310693919a424eb975de4a8054bf7b34a456c0d29442b481a68d31df
+pagina_0202.html,Tomate Verde - Primera,2022Q3,ninguno,338,26,10c9b1fe2481977cfb2ee6bea8dbd4dd966955d8f5437930e6478e0d6616afb8
+pagina_0203.html,Tomate Verde - Primera,2022Q4,ninguno,325,25,21a6f0188cef11eb55ff0a38937688a364f8f778c2d48ed6ef42daeeeee0a9e5
+pagina_0204.html,Tomate Verde - Primera,2023Q1,ninguno,338,26,e01b287f712c4f1f8ca7602811b5422be0ba71b5e7b4923b62cf993a8ffd6c72
+pagina_0205.html,Tomate Verde - Primera,2023Q2,ninguno,312,24,d4264429323c71f04dc6f7015b3974d6f9d2856613b383d4413d7ba8ba7d9654
+pagina_0206.html,Tomate Verde - Primera,2023Q3,ninguno,338,26,4d565649ec63d595c89538120b7b46b7a3282b7b7bd5130477bb03512968b4a2
+pagina_0207.html,Tomate Verde - Primera,2023Q4,ninguno,338,26,c244d9cb6f54b9953c60ac7adfaae33c5177e70e7159102fc7dbc8fc459b21f6
+pagina_0208.html,Tomate Verde - Primera,2024Q1,ninguno,325,25,94ff808418beafc6a3f2f2cc136082203da612fc9c7681165d351cd7f04be617
+pagina_0209.html,Tomate Verde - Primera,2024Q2,ninguno,338,26,63effa1d67efed1cc9d6e12a2ae76b86c9aa6bb30353bf4b0cad86e6d3c17630
+pagina_0210.html,Tomate Verde - Primera,2024Q3,ninguno,338,26,b3d960781b9a0bb0ebf73b33a147e0fb62f399754ef6dd3445cd7ce4b542151c
+pagina_0211.html,Tomate Verde - Primera,2024Q4,ninguno,338,26,8a5c959c5eb548284b567ab23157be099319d5b5c9b5edce198eb7fef7f1e68c
+pagina_0212.html,Tomate Verde - Primera,2025Q1,ninguno,325,25,c4bb793ffd81a8d8acc43b2d82eb472ea6be0ce0b0cb8ff3dae9c2c85b4c94f3
+pagina_0213.html,Tomate Verde - Primera,2025Q2,ninguno,338,26,7d2c3a84dffab4b38f8dab62c13541f10ef2b0263a43c5df3ed8b53772f7eb49
+pagina_0214.html,Tomate Verde - Primera,2025Q3,ninguno,351,27,65e1c0fb14f5f03218da2fb397b6c3b30d970066465e716cb66a5abf8ac40023
+pagina_0215.html,Tomate Verde - Primera,2025Q4,ninguno,338,26,13d5c397cd505e52e9242d5a5af161a4d6a85c5778956d8513e5368da7d91b11
+pagina_0216.html,Tomate Verde - Primera,2026Q1,ninguno,338,26,3b4dd3cc0d072f6736c34bc06fb3a8e92c24b7d843cd0585ecac399afc62669e
+pagina_0217.html,Tomate Verde - Primera,2026Q2,ninguno,325,25,376f37d71d7c9ee949fd665ce1b8f715bf3bc295b840d4795bf2ff5f9f05f2df
+pagina_0218.html,Tomate Verde - Primera,2026Q3,truncada,338,26,0b69e13d9f89a33f62f8b73580a0e35937927fa93fdc761e4fc1a4a4501e1279
+pagina_0219.html,Tomate Verde - Primera,2026Q4,ninguno,143,11,2fdbf1eac14917b71f28d94ab4352fcf4d999d26454652d5e790e21b4c6e03bd

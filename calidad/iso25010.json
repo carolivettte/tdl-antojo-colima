@@ -1,0 +1,77 @@
+{
+  "calculado_utc": "2026-11-21T04:52:33+00:00",
+  "resultados": [
+    {
+      "caracteristica": "Adecuación funcional",
+      "subcaracteristica": "Corrección funcional",
+      "metrica": "% de RF con prueba que pasan",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "11 de 11 RF verificados por prueba pasan (de 18 RF; los demás se verifican por análisis, inspección o demostración). Suite completa: 48 de 48 pruebas pasan."
+    },
+    {
+      "caracteristica": "Eficiencia de desempeño",
+      "subcaracteristica": "Comportamiento temporal",
+      "metrica": "Segundos para leer 220 páginas (configuración elegida)",
+      "valor": 5.71,
+      "umbral": "<= 10",
+      "cumple": true,
+      "evidencia": "Lectura de las 220 páginas del banco con la configuración elegida en el experimento (4 procesos, lxml, CSV): 5.71 s contra 19.76 s de la configuración anterior, 3.46 veces más rápido (corrida de confirmación, [E2_experimento.ipynb](../laboratorio/E2_experimento.ipynb)). Pipeline completo bronce → oro → linaje: 6.2 s (terminó bien)."
+    },
+    {
+      "caracteristica": "Compatibilidad",
+      "subcaracteristica": "Interoperabilidad",
+      "metrica": "% de archivos de oro legibles sin pandas",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "12 de 12 archivos de oro se leen con el módulo csv y json de la biblioteca estándar (sin pandas), con el mismo número de columnas en cada fila; el GeoJSON cumple RFC 7946 (WGS84)."
+    },
+    {
+      "caracteristica": "Capacidad de interacción",
+      "subcaracteristica": "Reconocimiento de adecuación",
+      "metrica": "% de pestañas del tablero que cargan y se explican",
+      "valor": 100.0,
+      "umbral": ">= 100",
+      "cumple": true,
+      "evidencia": "5 de 5 pestañas (Pronóstico, Insumos, Competencia, Mapa, Calidad de datos) cargan sin error y tienen texto que explica qué muestran y sus límites."
+    },
+    {
+      "caracteristica": "Fiabilidad",
+      "subcaracteristica": "Disponibilidad",
+      "metrica": "Disponibilidad A de la captura (%)",
+      "valor": 97.97,
+      "umbral": ">= 95",
+      "cumple": true,
+      "evidencia": "Disponibilidad A = MTBF / (MTBF + MTTR) de la captura diaria = 97.97 % (MTBF 257.7 h, MTTR 5.3 h, calculado el 2026-11-19)."
+    },
+    {
+      "caracteristica": "Seguridad",
+      "subcaracteristica": "Confidencialidad",
+      "metrica": "Secretos en archivos versionados",
+      "valor": 0.0,
+      "umbral": "<= 0",
+      "cumple": true,
+      "evidencia": "Revisados 152 archivos de texto versionados: 0 cadenas con forma de token (sin contar 1 token ficticio de las pruebas) y `.env` no está en git. Las URL de los .meta.json guardan el token como ***. En CI, gitleaks revisa todo el historial."
+    },
+    {
+      "caracteristica": "Mantenibilidad",
+      "subcaracteristica": "Capacidad de prueba",
+      "metrica": "Cobertura de líneas de pipeline/ (%)",
+      "valor": 88.79,
+      "umbral": ">= 80",
+      "cumple": true,
+      "evidencia": "Cobertura de líneas de pipeline/ con pytest-cov: 88.79 %. Hallazgos de ruff (estilo y errores comunes): 0."
+    },
+    {
+      "caracteristica": "Portabilidad",
+      "subcaracteristica": "Adaptabilidad",
+      "metrica": "Archivos .py con rutas de una máquina",
+      "valor": 0.0,
+      "umbral": "<= 0",
+      "cumple": true,
+      "evidencia": "0 de 40 archivos .py con rutas absolutas de una máquina (ninguno); todas las rutas salen de la raíz del repositorio con pathlib. Esta medición corrió en Windows 11 con Python 3.12.10; CI corre las mismas pruebas en Ubuntu."
+    }
+  ]
+}

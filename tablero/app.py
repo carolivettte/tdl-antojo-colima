@@ -14,6 +14,7 @@ from pathlib import Path
 
 import altair as alt
 import pandas as pd
+import pydeck as pdk
 import streamlit as st
 
 DATA = Path(__file__).resolve().parents[1] / "data"
@@ -51,6 +52,14 @@ def leer(ruta: str, **kw) -> pd.DataFrame:
 indice = leer("oro/indice_costo_taco.csv")
 precios = leer("oro/precios_mensuales.csv")
 competencia = leer("oro/competencia_municipio.csv", dtype={"municipio_clave": str})
+geo_mun = leer("oro/geo_municipios.csv", dtype={"municipio_clave": str})
+geo_zonas = leer("oro/geo_zonas.csv", dtype={"municipio_clave": str})
+geo_puntos = leer("oro/geo_puntos.csv", dtype={"municipio_clave": str})
+reporte_geo = (
+    json.loads((DATA / "plata/reporte_geo.json").read_text(encoding="utf-8"))
+    if (DATA / "plata/reporte_geo.json").exists()
+    else {}
+)
 pronostico = leer("oro/pronostico.csv")
 modelos = leer("oro/comparacion_modelos.csv")
 cuarentena = leer("cuarentena/sniim_cuarentena.csv")
@@ -113,7 +122,7 @@ if len(indice):
         "Sin señal clara: el intervalo incluye subir y bajar.",
     )
 
-tab_pron, tab_ins, tab_comp, tab_cal = st.tabs(["Pronóstico", "Insumos", "Competencia", "Calidad de datos"])
+tab_pron, tab_ins, tab_comp, tab_mapa, tab_cal = st.tabs(["Pronóstico", "Insumos", "Competencia", "Mapa", "Calidad de datos"])
 
 # ---------------- Pronóstico ----------------
 with tab_pron:
@@ -220,6 +229,161 @@ with tab_comp:
             )
             .properties(height=320),
             use_container_width=True,
+        )
+        st.caption(
+            "Negocios de preparación de alimentos registrados en el DENUE (INEGI) por municipio. El DENUE solo cuenta "
+            "establecimientos fijos y semifijos: los puestos ambulantes no aparecen, así que la competencia real es mayor. "
+            "La pestaña Mapa muestra dónde es más probable que existan."
+        )
+
+# ---------------- Mapa (fuente geoespacial, E2) ----------------
+# Paleta categórica validada (orden fijo) y rampa secuencial de un solo tono para magnitudes.
+COLOR_PUNTO = {
+    "taqueria_fija": ("Taquería fija", "#2a78d6"),
+    "taqueria_semifija": ("Taquería semifija", "#eb6834"),
+    "escuela": ("Escuela", "#1baf7a"),
+    "salud": ("Centro de salud u hospital", "#eda100"),
+}
+RAMPA = ["#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"]
+COLOR_ZONA = {"baja": "#86b6ef", "media": "#2a78d6", "alta": "#104281", "afluencia insuficiente": "#c3c2b7"}
+
+
+def rgb(hexa: str, alfa: int = 210) -> list[int]:
+    return [int(hexa[i : i + 2], 16) for i in (1, 3, 5)] + [alfa]
+
+
+def leyenda(items: list[tuple[str, str]]) -> None:
+    st.markdown(
+        " &nbsp; ".join(
+            f"<span style='display:inline-block;width:10px;height:10px;border-radius:50%;background:{c};"
+            f"margin-right:4px'></span>{t}"
+            for t, c in items
+        ),
+        unsafe_allow_html=True,
+    )
+
+
+VISTA = pdk.ViewState(latitude=19.1, longitude=-103.95, zoom=8.3)
+
+with tab_mapa:
+    if not len(geo_mun):
+        st.info("Todavía no hay capa geoespacial: corre `python -m scripts.captura geo` y luego el pipeline.")
+    else:
+        capa = st.radio(
+            "Qué ver",
+            ["Zonas de 1 km", "Puntos", "Municipios"],
+            horizontal=True,
+            help="Zonas: afluencia contra competencia registrada. Puntos: cada negocio o escuela, sin nombres. "
+            "Municipios: densidades por km² con los límites del Marco Geoestadístico.",
+        )
+        if capa == "Zonas de 1 km":
+            z = geo_zonas[geo_zonas["categoria_zona"].isin(COLOR_ZONA)].copy()
+            z["color"] = z["categoria_zona"].map(lambda c: rgb(COLOR_ZONA[c], 190))
+            capa_pdk = pdk.Layer(
+                "ScatterplotLayer",
+                z,
+                get_position="[longitud, latitud]",
+                get_fill_color="color",
+                get_radius=480,
+                stroked=True,
+                get_line_color=[252, 252, 251, 255],
+                line_width_min_pixels=1,
+                pickable=True,
+            )
+            tooltip = {
+                "html": "<b>Zona {celda}</b><br/>Categoría: <b>{categoria_zona}</b><br/>Escuelas: {escuela} · "
+                "Salud: {salud}<br/>Taquerías registradas: {taquerias_registradas} "
+                "(semifijas {taqueria_semifija})<br/>Presión de demanda: {presion_demanda}"
+            }
+            leyenda(
+                [
+                    (f"Oportunidad {k}" if k in ("baja", "media", "alta") else "1–2 escuelas/clínicas (sin clasificar)", v)
+                    for k, v in COLOR_ZONA.items()
+                ]
+            )
+            st.caption(
+                "Cada círculo es una celda de 1 km con al menos una escuela o centro de salud; las celdas con menos de 3 "
+                "quedan en gris sin clasificar, para que un par de escuelas aisladas no parezcan zona caliente. "
+                "**Alta** = mucha afluencia por cada taquería registrada: zona probable de competencia no registrada "
+                "(ambulantes) **o** de oportunidad. Es un índice relativo por terciles, no un conteo de puestos."
+            )
+        elif capa == "Puntos":
+            elegir = st.multiselect(
+                "Capas",
+                list(COLOR_PUNTO),
+                default=["taqueria_semifija", "escuela", "salud"],
+                format_func=lambda k: COLOR_PUNTO[k][0],
+            )
+            p = geo_puntos[geo_puntos["categoria"].isin(elegir)].copy()
+            p["color"] = p["categoria"].map(lambda c: rgb(COLOR_PUNTO[c][1]))
+            p["etiqueta"] = p["categoria"].map(lambda c: COLOR_PUNTO[c][0])
+            capa_pdk = pdk.Layer(
+                "ScatterplotLayer",
+                p,
+                get_position="[longitud, latitud]",
+                get_fill_color="color",
+                get_radius=90,
+                radius_min_pixels=3,
+                stroked=True,
+                get_line_color=[252, 252, 251, 255],
+                line_width_min_pixels=1,
+                pickable=True,
+            )
+            tooltip = {"html": "<b>{etiqueta}</b><br/>{municipio_marco}<br/>CLEE {clee}"}
+            leyenda([COLOR_PUNTO[k] for k in elegir])
+            st.caption("Sin nombres ni domicilios: solo la clave del DENUE (CLEE), la categoría y la coordenada.")
+        else:
+            metricas = {
+                "taquerias_km2": "Taquerías por km²",
+                "afluencia_km2": "Escuelas y centros de salud por km²",
+                "afluencia_por_taqueria": "Afluencia por taquería registrada",
+                "pct_semifijas": "% de taquerías semifijas",
+            }
+            m = st.selectbox("Indicador", list(metricas), format_func=metricas.get)
+            gj = json.loads((DATA / "oro/geo_municipios.geojson").read_text(encoding="utf-8"))
+            valores = pd.Series([f["properties"].get(m) for f in gj["features"]], dtype=float)
+            cortes = valores.quantile([0.2, 0.4, 0.6, 0.8]).tolist()
+            for f, v in zip(gj["features"], valores, strict=True):
+                paso = sum(v > c for c in cortes) if pd.notna(v) else 0
+                f["properties"]["color"] = rgb(RAMPA[paso], 200)
+                f["properties"]["valor"] = "s/d" if pd.isna(v) else f"{v:,.2f}"
+            capa_pdk = pdk.Layer(
+                "GeoJsonLayer",
+                gj,
+                get_fill_color="properties.color",
+                get_line_color=[252, 252, 251, 255],
+                line_width_min_pixels=2,
+                pickable=True,
+            )
+            tooltip = {"html": f"<b>{{nomgeo}}</b><br/>{metricas[m]}: {{valor}}"}
+            st.caption(f"{metricas[m]}: más oscuro = mayor (quintiles). Límites: INEGI, Marco Geoestadístico.")
+        st.pydeck_chart(
+            pdk.Deck(
+                layers=[capa_pdk],
+                initial_view_state=VISTA,
+                map_provider="carto",
+                map_style="light",
+                tooltip={**tooltip, "style": {"backgroundColor": "#fcfcfb", "color": "#0b0b0b", "fontSize": "12px"}},
+            ),
+            use_container_width=True,
+        )
+        if reporte_geo:
+            v = reporte_geo.get("validacion_indice", {})
+            r = reporte_geo.get("radio", {})
+            g1, g2, g3 = st.columns(3)
+            g1.metric("Puntos dentro de un municipio", f"{reporte_geo['puntos_dentro_de_algun_municipio']:,}")
+            g2.metric("Escuelas/clínicas con taquería a 1 km", f"{r.get('pct_con_taqueria', 0)}%")
+            g3.metric("Spearman afluencia vs semifijas", v.get("spearman_afluencia_vs_semifijas", "s/d"))
+        st.markdown("**Tabla por municipio**")
+        st.dataframe(
+            geo_mun.drop(columns=["fuente", "archivos_bronce", "capturado_utc"], errors="ignore"),
+            hide_index=True,
+            use_container_width=True,
+        )
+        st.caption(
+            "Sesgo declarado: el DENUE registra negocios fijos y semifijos, no ambulantes. No inventamos puestos; "
+            "la afluencia (escuelas y centros de salud) indica dónde es probable que existan. "
+            "Detalle en docs/etica-datos.md."
         )
 
 # ---------------- Calidad ----------------
