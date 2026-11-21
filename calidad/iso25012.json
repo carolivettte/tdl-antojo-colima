@@ -1,5 +1,5 @@
 {
-  "calculado_utc": "2026-11-20T15:15:05+00:00",
+  "calculado_utc": "2026-11-21T04:55:20+00:00",
   "resultados": [
     {
       "caracteristica": "Exactitud",
@@ -44,7 +44,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 11.3 días (máx. 365); denue_afluencia: 0.0 días (máx. 365); marco_geo: 0.0 días (máx. 365); sniim: 0.7 días (máx. 7)"
+      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 11.9 días (máx. 365); denue_afluencia: 0.6 días (máx. 365); marco_geo: 0.6 días (máx. 365); sniim: 1.2 días (máx. 7)"
     },
     {
       "caracteristica": "Accesibilidad",
