@@ -13,3 +13,9 @@ fecha,inicio,fin,interrupcion_min,fase,actividad
 2026-11-09,16:30,17:00,5,revision,Registro PSP final y revision final del repositorio antes de la etiqueta e0
 2026-11-12,21:00,22:45,0,revision,Revision de instrucciones y material E1; planificacion de la integracion
 2026-11-13,00:00,02:25,15,integracion,Incorporacion del paquete E1; instalacion de dependencias; ejecucion del pipeline y pruebas con cobertura; revision de estilo y preparacion de commits y documentacion
+2026-11-20,09:22,09:36,0,diseno,Diseno del experimento de E2 (factores; niveles; replicas y bloqueo por sesion) y generacion del banco local de 220 paginas del SNIIM
+2026-11-20,09:36,09:42,0,pruebas,Sesion 1 del experimento: 2^3 y bifactorial bloque 1
+2026-11-20,13:50,14:13,0,pruebas,Sesion 2 del experimento: 2^3; bifactorial y 2^4 bloque 2
+2026-11-20,21:45,21:54,0,pruebas,Sesion 3 del experimento: 2^3 y bifactorial bloque 3
+2026-11-20,22:36,22:39,0,pruebas,Corrida de confirmacion (5 y 5 corridas intercaladas)
+2026-11-20,22:40,23:00,0,revision,Analisis del experimento; cambio del parser del extractor a lxml; medicion ISO 25010; tabla normativa; plantilla de auditoria; defectos 30 a 39
