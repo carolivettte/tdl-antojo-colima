@@ -230,6 +230,11 @@ with tab_comp:
             .properties(height=320),
             use_container_width=True,
         )
+        st.caption(
+            "Negocios de preparación de alimentos registrados en el DENUE (INEGI) por municipio. El DENUE solo cuenta "
+            "establecimientos fijos y semifijos: los puestos ambulantes no aparecen, así que la competencia real es mayor. "
+            "La pestaña Mapa muestra dónde es más probable que existan."
+        )
 
 # ---------------- Mapa (fuente geoespacial, E2) ----------------
 # Paleta categórica validada (orden fijo) y rampa secuencial de un solo tono para magnitudes.
