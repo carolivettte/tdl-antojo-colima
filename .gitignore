@@ -9,3 +9,7 @@ venv/
 .DS_Store
 respaldos/
 .coverage
+
+# Banco del experimento E2: se regenera con python -m laboratorio.banco_sniim generar
+laboratorio/banco/paginas/
+laboratorio/banco/esperado.json
