@@ -1,19 +1,19 @@
 {
-  "calculado_utc": "2026-11-20T22:39:22+00:00",
+  "calculado_utc": "2026-11-21T16:30:15+00:00",
   "fuente": "sniim",
   "periodo": {
     "desde": "2026-11-09",
-    "hasta": "2026-11-20T22:39+00:00",
-    "horas": 286.7
+    "hasta": "2026-11-21T16:30+00:00",
+    "horas": 304.5
   },
   "ventana_pedida": {
     "desde": "2026-11-06",
     "hasta": "2026-11-13"
   },
-  "ejecuciones_totales": 31,
-  "ejecuciones_exitosas": 30,
-  "tasa_exito_ejecucion": 0.9677,
-  "ejecuciones_programadas": 11,
+  "ejecuciones_totales": 36,
+  "ejecuciones_exitosas": 35,
+  "tasa_exito_ejecucion": 0.9722,
+  "ejecuciones_programadas": 12,
   "tasa_exito_programadas": 1.0,
   "dias_esperados": 12,
   "dias_exitosos": 11,
@@ -28,9 +28,9 @@
       "horas_reparacion": 5.34
     }
   ],
-  "mtbf_h": 281.32,
+  "mtbf_h": 299.16,
   "mttr_h": 5.34,
-  "disponibilidad": 0.9814,
+  "disponibilidad": 0.9825,
   "dias": [
     {
       "dia": "2026-11-09",
@@ -107,10 +107,22 @@
       "n": 1
     },
     {
+      "fuente": "denue_afluencia",
+      "tipo": "manual",
+      "estado": "ok",
+      "n": 2
+    },
+    {
       "fuente": "inegi",
       "tipo": "manual",
       "estado": "vacio",
       "n": 1
+    },
+    {
+      "fuente": "marco_geo",
+      "tipo": "manual",
+      "estado": "ok",
+      "n": 2
     },
     {
       "fuente": "sniim",
@@ -128,7 +140,7 @@
       "fuente": "sniim",
       "tipo": "programada",
       "estado": "ok",
-      "n": 11
+      "n": 12
     }
   ]
 }
