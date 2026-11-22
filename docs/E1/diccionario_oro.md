@@ -14,9 +14,9 @@ Filas: **8**
 | `tipo` | str | Subcategoría: fruta, verdura o chile. | chile |
 | `canasta` | str | Categoría: canasta del tipo de negocio al que pertenece (taquera). | taquera |
 | `producto_sniim` | str | Nombre original del producto en el SNIIM (resolución de nombres). | Chile Jalapeño - Primera |
-| `archivos_bronce` | str | Linaje: archivos de data/bronce de los que sale la fila (separados por ;). | sniim_diario_20261113T215740Z.csv;sniim_diario_20261117T232942Z.csv;sniim_diario_20261120T223919Z.csv;sniim_diario_20261121T213807Z.csv;sniim_historico_20261109T080451Z.csv |
+| `archivos_bronce` | str | Linaje: archivos de data/bronce de los que sale la fila (separados por ;). | sniim_diario_20261113T215740Z.csv;sniim_diario_20261117T232942Z.csv;sniim_diario_20261120T223919Z.csv;sniim_diario_20261122T163010Z.csv;sniim_historico_20261109T080451Z.csv |
 | `ingesta_min` | str | Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados. | 2026-11-09T08:04:51Z |
-| `ingesta_max` | str | Linaje: última fecha de ingesta (UTC) de los registros de bronce usados. | 2026-11-21T21:38:07Z |
+| `ingesta_max` | str | Linaje: última fecha de ingesta (UTC) de los registros de bronce usados. | 2026-11-22T16:30:10Z |
 
 ## `dim_municipio.csv`
 
