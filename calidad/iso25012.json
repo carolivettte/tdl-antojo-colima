@@ -1,5 +1,5 @@
 {
-  "calculado_utc": "2026-11-24T02:53:45+00:00",
+  "calculado_utc": "2026-11-24T16:30:13+00:00",
   "resultados": [
     {
       "caracteristica": "Exactitud",
@@ -44,7 +44,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 14.8 días (máx. 365); denue_afluencia: 3.5 días (máx. 365); marco_geo: 3.5 días (máx. 365); sniim: 0.0 días (máx. 7)"
+      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 15.3 días (máx. 365); denue_afluencia: 4.1 días (máx. 365); marco_geo: 4.1 días (máx. 365); sniim: 0.0 días (máx. 7)"
     },
     {
       "caracteristica": "Accesibilidad",
@@ -113,7 +113,7 @@
       "caracteristica": "Disponibilidad",
       "categoria": "Dependiente del sistema",
       "metrica": "Disponibilidad A de la captura (%)",
-      "valor": 98.53,
+      "valor": 98.58,
       "umbral": ">= 95",
       "cumple": true,
       "evidencia": "A = MTBF / (MTBF + MTTR) de la captura diaria (scripts/fiabilidad.py), calculada el 2026-11-24."
@@ -134,7 +134,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "38 de 38 archivos de bronce con .meta.json y SHA-256: oro se reconstruye desde bronce con `python -m pipeline.ejecutar`; respaldos con scripts/respaldo.py."
+      "evidencia": "39 de 39 archivos de bronce con .meta.json y SHA-256: oro se reconstruye desde bronce con `python -m pipeline.ejecutar`; respaldos con scripts/respaldo.py."
     }
   ]
 }
