@@ -35,7 +35,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 * **El índice de zonas premiaba al azar** (Carol 24). 25 de 75 zonas "alta" tenían 2 escuelas o menos. Ahora una celda necesita al menos 3 para clasificarse.
 * **El banco de pruebas no terminaba** (Avlix 31 y 32). Al quitar `</tr>`, `html.parser` anidaba miles de filas, y con 128 mil filas cada corrida pasaba de 2 minutos. Se limitó el daño a `</td>` y el banco se redujo a 66,625 filas.
 * **El primer Tukey no encontraba diferencias** (Avlix 34). La variación entre sesiones inflaba el error; se aplicó sobre log(tiempo) ajustado por bloque.
-* **Pendiente:** la auditoría cruzada. A la fecha de la ficha, los docentes no han asignado equipos. La plantilla y 6 hallazgos de autoauditoría ya están en [auditoria-E2.md](../calidad/auditoria-E2.md).
+* **La auditoría cruzada se mueve a E3.** El profesor Mónico informó que todo lo de la auditoría se pospone hasta E3 y que él subirá los formularios para llenarla. En E2 dejamos lista la preparación y 6 hallazgos de autoauditoría en [auditoria-E2.md](../calidad/auditoria-E2.md).
 
 ## 5. ¿Qué aprendimos de cada materia?
 
@@ -47,7 +47,7 @@ Detalle: [tiempo-carol.csv](../calidad/tiempo-carol.csv) · [tiempo-avlix.csv](.
 
 ## 6. Evidencias
 
-* Commits de Carol `6f3ec3a`, `10a149f`, `a808af0`, `1d757b3`, `dc0db76` y `3d56753` en la rama `carol/e2-geo`. Los de Avlix están en la rama `avlix/e2-experimento`.
+* Commits de Carol `6f3ec3a`, `10a149f`, `a808af0`, `1d757b3`, `dc0db76`, `3d56753`, `160b544` y `c3ed21e`; de Avlix `1b52e0d`, `08edb17`, `7c74a02`, `ce9903f` y `5cbf3b7`; integrados a `main` en el PR #21 (`72e1d2f`) con el CI en verde.
 * [E2_experimento.ipynb](../laboratorio/E2_experimento.ipynb) · [laboratorio/resultados/](../laboratorio/resultados/) (66 corridas y 10 de confirmación).
 * [reporte_geo.json](../data/plata/reporte_geo.json) · [linaje.csv](../data/oro/linaje.csv) · pestaña Mapa del [tablero](https://tdl-antojo-colima.streamlit.app/).
 * [iso25010.md](../calidad/iso25010.md) · [iso25012.md](../calidad/iso25012.md) · [normativa.md](../calidad/normativa.md) · [etica-datos.md](etica-datos.md).
