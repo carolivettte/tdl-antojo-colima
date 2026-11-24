@@ -45,7 +45,7 @@ El extractor ético (`extractores/base.py`) **lee `robots.txt` antes de cada ses
 |---|---|---|---|
 | `www.economia-sniim.gob.mx` | Prohíbe `/Analisis/`, `/Sicia*`, `/2010/` y archivos `.xls` | `/NUEVO/Consultas/MercadosNacionales/...` (no prohibida) | Permitido |
 | `www.inegi.org.mx` | `Allow: /app` y otras; solo prohíbe `/auth/register/` | `/app/api/denue/v1/consulta/...` (permitida) | Permitido para DENUE y DENUE afluencia |
-| `gaia.inegi.org.mx` | Copia en `docs/etica/robots/inegi-marco-geo_AAAA-MM-DD.txt`; el extractor lo leyó antes de capturar (bitácora del 20-nov-2026: "robots.txt de https://gaia.inegi.org.mx: leído") y no se detuvo | `/wscatgeo/v2/geo/mgem/06` | Permitido |
+| `gaia.inegi.org.mx` | **No publica `robots.txt`** (HTTP 404 el 20-nov-2026, copia en `docs/etica/robots/inegi-marco-geo_2026-11-20.txt`). Según el estándar de robots.txt (RFC 9309), un 404 significa que no hay restricciones. Aun así, el extractor lo consultó antes de capturar, hizo una sola petición y se rige por los términos de uso del INEGI | `/wscatgeo/v2/geo/mgem/06` | Permitido |
 | `api.open-meteo.com`, `archive-api.open-meteo.com` | `Disallow: /` | — | **Descartada** (E0) |
 | `power.larc.nasa.gov` | `Disallow: /api/` | — | **Descartada** (E0) |
 

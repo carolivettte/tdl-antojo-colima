@@ -1,5 +1,7 @@
 # Entrega E2 · Experimento, fuente especializada y auditoría
 
+> **AVISO IMPORTANTE · LA AUDITORÍA CRUZADA SE MUEVE A E3.** El profesor Mónico informó al grupo que **todo lo relacionado con la auditoría cruzada se pospone hasta la entrega E3**, y que él subirá los formularios correspondientes que se deberán llenar para esa auditoría. Por eso **las secciones 1 y 2 de [calidad/auditoria-E2.md](../../calidad/auditoria-E2.md) (la auditoría que otro equipo hace de nuestro sistema y la que nosotros hacemos a otro equipo) quedan sin llenar en la etiqueta `e2`**: no es una omisión del equipo, es una indicación del docente. Se completarán en E3 con los formularios oficiales. Lo que sí se entrega en E2 es la preparación: severidades, alcance, lista de verificación de 11 puntos y la autoauditoría previa (sección 3 de ese documento), con 6 hallazgos ya atendidos.
+
 Equipo: Carol Ivette Rodríguez Lepe · Avlix Eduardo Jiménez Cuevas · Etiqueta: `e2` · Repositorio: https://github.com/carolivettte/tdl-antojo-colima · Tablero: https://tdl-antojo-colima.streamlit.app/
 
 ## Resumen en tres líneas
@@ -14,7 +16,7 @@ Equipo: Carol Ivette Rodríguez Lepe · Avlix Eduardo Jiménez Cuevas · Etiquet
 |---|---|
 | El equipo dice con evidencia qué combinación es la mejor y cuánto mejora | [E2_experimento.ipynb §4 y §7](../../laboratorio/E2_experimento.ipynb): 4 procesos + `lxml` + CSV, 3.36 veces más rápida (IC 95 %: 3.18 a 3.54), confirmada con 3.46 veces |
 | El observatorio muestra su fuente especializada | Tablero, pestaña **Mapa** (zonas de 1 km, puntos sin nombres, municipios) · [pipeline/geo.py](../../pipeline/geo.py) en cada corrida diaria |
-| Existe un reporte de auditoría de su sistema hecho por otro equipo | [calidad/auditoria-E2.md §1](../../calidad/auditoria-E2.md): **pendiente**. A la fecha de esta ficha, los docentes no han asignado el equipo auditor; la sección se llena en cuanto llegue el reporte |
+| Existe un reporte de auditoría de su sistema hecho por otro equipo | **Se mueve a E3 por indicación del profesor Mónico**, quien subirá los formularios para hacerla. Preparación entregada en [calidad/auditoria-E2.md](../../calidad/auditoria-E2.md) (ver el aviso al inicio de esta ficha) |
 
 ## Lista del docente (Ingeniería de Datos, 20 % de la unidad 4)
 
@@ -55,7 +57,7 @@ Cuaderno: [laboratorio/E2_experimento.ipynb](../../laboratorio/E2_experimento.ip
 | ISO/IEC 25010 (30) | [iso25010.md](../../calidad/iso25010.md) · `python -m scripts.iso25010` | **8 de 8** con una métrica medida al ejecutar el sistema. **Eficiencia de desempeño = el experimento**: 5.7 s contra 19.8 s para 220 páginas. **Fiabilidad = la de E1**: A = 97.97 %. La medición también encontró y corrigió una pestaña del tablero sin explicación (defecto 36) |
 | ISO/IEC 25012 (25) | [iso25012.md](../../calidad/iso25012.md) · `python -m scripts.iso25012` (corre en cada captura) | **15 de 15** sobre la capa oro, incluidas exactitud, completitud, consistencia (99.1 %, con la regla municipio DENUE = municipio Marco), credibilidad, actualidad, confidencialidad (0 columnas personales) y trazabilidad (100 %) |
 | Antecedentes normativos (10) | [normativa.md](../../calidad/normativa.md) | ISO/IEC 9126 y 14598 → SQuaRE (25010:2011 y 2023, 25012, 25022/23/24, 25030, 25040), con dónde se aplica cada una. ISO 9001:2026 (vigente desde el 16 de septiembre de 2026; la de 2015 vale hasta el 30 de septiembre de 2029), cláusula por cláusula con su evidencia |
-| Auditoría cruzada (25) | [auditoria-E2.md](../../calidad/auditoria-E2.md) | Severidades definidas (crítico, mayor, menor), alcance según el PDF (estado de E1 con 25010 y 25012), lista de verificación de 11 puntos para auditar al otro equipo y **6 hallazgos de autoauditoría** con evidencia y acción. **Pendiente:** el reporte del equipo auditor y el nuestro sobre el equipo asignado; los docentes aún no asignan equipos |
+| Auditoría cruzada (25) | [auditoria-E2.md](../../calidad/auditoria-E2.md) | **Se mueve a E3 por indicación del profesor Mónico**, con los formularios que él subirá. En E2 se entrega la preparación: severidades definidas (crítico, mayor, menor), alcance según el PDF (estado de E1 con 25010 y 25012), lista de verificación de 11 puntos para auditar al otro equipo y **6 hallazgos de autoauditoría** con evidencia y acción |
 | Registros PSP | [tiempo-carol.csv](../../calidad/tiempo-carol.csv) · [defectos-carol.csv](../../calidad/defectos-carol.csv) · [tiempo-avlix.csv](../../calidad/tiempo-avlix.csv) · [defectos-avlix.csv](../../calidad/defectos-avlix.csv) | Defectos 22 a 29 de Carol y 30 a 40 de Avlix |
 
 ## Relatoría

@@ -1,5 +1,7 @@
 # Auditoría cruzada E2
 
+> **AVISO IMPORTANTE · LA AUDITORÍA CRUZADA SE MUEVE A E3.** El profesor Mónico informó al grupo que **todo lo relacionado con la auditoría cruzada se pospone hasta la entrega E3**, y que él subirá los formularios correspondientes que se deberán llenar para esa auditoría. Por eso **las secciones 1 y 2 de este documento (la auditoría que otro equipo hace de nuestro sistema y la que nosotros hacemos a otro equipo) quedan sin llenar en la etiqueta `e2`**: no es una omisión del equipo, es una indicación del docente. Se completarán en E3 con los formularios oficiales. Lo que sí se entrega en E2 es la preparación: severidades, alcance, lista de verificación de 11 puntos y la autoauditoría previa (sección 3), con 6 hallazgos ya atendidos.
+
 Quality Lead E2: Avlix Eduardo Jiménez Cuevas. Proceso basado en ISO 9001 (cláusula 9.2, auditoría interna) e ISO/IEC 25040 (evaluación): criterios definidos antes de auditar, evidencia verificable para cada hallazgo, severidad y recomendación con responsable.
 
 **Severidad**
@@ -18,7 +20,7 @@ Quality Lead E2: Avlix Eduardo Jiménez Cuevas. Proceso basado en ISO 9001 (clá
 
 ## 1. Auditoría de nuestro sistema por otro equipo
 
-*Equipo auditor:* **pendiente de asignación por los docentes** · *Fecha:* — · *Versión auditada:* etiqueta `e1`
+*Equipo auditor:* **se asigna en E3 (indicación del profesor Mónico)** · *Fecha:* — · *Versión auditada:* etiqueta `e1`
 
 | ID | Hallazgo | Criterio | Severidad | Evidencia | Recomendación | Responsable | Estado |
 |---|---|---|---|---|---|---|---|
@@ -30,7 +32,7 @@ Quality Lead E2: Avlix Eduardo Jiménez Cuevas. Proceso basado en ISO 9001 (clá
 
 ## 2. Auditoría que hacemos al otro equipo
 
-*Equipo auditado:* **pendiente de asignación** · *Repositorio:* — · *Versión auditada:* su etiqueta `e1` · *Fecha:* —
+*Equipo auditado:* **se asigna en E3 (indicación del profesor Mónico)** · *Repositorio:* — · *Versión auditada:* su etiqueta `e1` · *Fecha:* —
 
 Lista de verificación que se aplicará:
 
