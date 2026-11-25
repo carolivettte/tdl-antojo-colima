@@ -2,4 +2,4 @@ modelo,mae,rmse,mape,aic,detalle,elegido,derivado_de
 ARIMA,9.459,10.714,7.803,504.619,"orden (2, 1, 0)",True,indice_costo_taco
 SES,9.338,11.876,7.909,518.098,,False,indice_costo_taco
 Holt,9.339,11.945,7.918,524.044,,False,indice_costo_taco
-Holt-Winters,12.204,15.028,10.265,533.906,,False,indice_costo_taco
+Holt-Winters,12.195,15.019,10.258,533.906,,False,indice_costo_taco
