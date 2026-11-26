@@ -43,3 +43,4 @@ inicio_utc,fin_utc,fuente,modo,estado,registros,duracion_s,mensaje
 2026-11-24T16:29:42.504014+00:00,2026-11-24T16:30:09.513878+00:00,sniim,diaria,ok,24,27.0,
 2026-11-25T00:37:14.470302+00:00,2026-11-25T00:37:49.618866+00:00,sniim,diaria,ok,16,35.1,
 2026-11-25T16:29:41.326692+00:00,2026-11-25T16:30:09.863893+00:00,sniim,diaria,ok,16,28.5,
+2026-11-26T00:17:08.563780+00:00,2026-11-26T00:17:18.586711+00:00,sniim,diaria,error,0,10.0,PermissionError: robots.txt no permite https://www.economia-sniim.gob.mx/NUEVO/Consultas/MercadosNacionales/PreciosDeMercado/Agricolas/ConsultaFrutasYHortalizas.aspx

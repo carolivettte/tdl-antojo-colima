@@ -1,5 +1,5 @@
 {
-  "calculado_utc": "2026-11-25T16:30:14+00:00",
+  "calculado_utc": "2026-11-26T00:17:24+00:00",
   "resultados": [
     {
       "caracteristica": "Exactitud",
@@ -44,7 +44,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 16.3 días (máx. 365); denue_afluencia: 5.1 días (máx. 365); marco_geo: 5.1 días (máx. 365); sniim: 0.0 días (máx. 7)"
+      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 16.7 días (máx. 365); denue_afluencia: 5.4 días (máx. 365); marco_geo: 5.4 días (máx. 365); sniim: 0.3 días (máx. 7)"
     },
     {
       "caracteristica": "Accesibilidad",
@@ -113,10 +113,10 @@
       "caracteristica": "Disponibilidad",
       "categoria": "Dependiente del sistema",
       "metrica": "Disponibilidad A de la captura (%)",
-      "valor": 98.67,
+      "valor": 98.69,
       "umbral": ">= 95",
       "cumple": true,
-      "evidencia": "A = MTBF / (MTBF + MTTR) de la captura diaria (scripts/fiabilidad.py), calculada el 2026-11-25."
+      "evidencia": "A = MTBF / (MTBF + MTTR) de la captura diaria (scripts/fiabilidad.py), calculada el 2026-11-26."
     },
     {
       "caracteristica": "Portabilidad",
