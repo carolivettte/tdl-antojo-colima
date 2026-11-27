@@ -14,9 +14,9 @@ Filas: **8**
 | `tipo` | str | Subcategoría: fruta, verdura o chile. | chile |
 | `canasta` | str | Categoría: canasta del tipo de negocio al que pertenece (taquera). | taquera |
 | `producto_sniim` | str | Nombre original del producto en el SNIIM (resolución de nombres). | Chile Jalapeño - Primera |
-| `archivos_bronce` | str | Linaje: archivos de data/bronce de los que sale la fila (separados por ;). | sniim_diario_20261113T215740Z.csv;sniim_diario_20261117T232942Z.csv;sniim_diario_20261120T223919Z.csv;sniim_diario_20261124T163009Z.csv;sniim_diario_20261127T003425Z.csv;sniim_historico_20261109T080451Z.csv |
+| `archivos_bronce` | str | Linaje: archivos de data/bronce de los que sale la fila (separados por ;). | sniim_diario_20261113T215740Z.csv;sniim_diario_20261117T232942Z.csv;sniim_diario_20261120T223919Z.csv;sniim_diario_20261124T163009Z.csv;sniim_diario_20261127T163009Z.csv;sniim_historico_20261109T080451Z.csv |
 | `ingesta_min` | str | Linaje: primera fecha de ingesta (UTC) de los registros de bronce usados. | 2026-11-09T08:04:51Z |
-| `ingesta_max` | str | Linaje: última fecha de ingesta (UTC) de los registros de bronce usados. | 2026-11-27T00:34:25Z |
+| `ingesta_max` | str | Linaje: última fecha de ingesta (UTC) de los registros de bronce usados. | 2026-11-27T16:30:09Z |
 
 ## `dim_municipio.csv`
 
@@ -187,15 +187,15 @@ Filas: **41**
 
 Serie observada y pronóstico del Índice de Costo del Taco (ver contrato abajo).
 
-Filas: **82**
+Filas: **83**
 
 | Columna | Tipo | Descripción | Ejemplo |
 |---|---|---|---|
 | `mes` | str | Mes aaaa-mm. | 2020-04 |
 | `valor` | str | Índice observado o pronosticado. | 90.85 |
 | `tipo` | str | observado o pronostico. | observado |
-| `li_95` | str | Límite inferior del intervalo de 95 %. | 91.15 |
-| `ls_95` | str | Límite superior del intervalo de 95 %. | 131.38 |
+| `li_95` | str | Límite inferior del intervalo de 95 %. | 132.33 |
+| `ls_95` | str | Límite superior del intervalo de 95 %. | 177.03 |
 | `modelo` | str | Modelo elegido. | ARIMA |
 | `derivado_de` | str | Linaje: tabla de oro de la que se deriva (hereda su archivos_bronce). | indice_costo_taco |
 
@@ -208,10 +208,10 @@ Filas: **4**
 | Columna | Tipo | Descripción | Ejemplo |
 |---|---|---|---|
 | `modelo` | str | SES, Holt, Holt-Winters o ARIMA. | ARIMA |
-| `mae` | str | Error absoluto medio. | 9.459 |
-| `rmse` | str | Raíz del error cuadrático medio. | 10.714 |
-| `mape` | str | Error porcentual absoluto medio. | 7.803 |
-| `aic` | str | Criterio de información de Akaike. | 504.619 |
+| `mae` | str | Error absoluto medio. | 12.023 |
+| `rmse` | str | Raíz del error cuadrático medio. | 13.991 |
+| `mape` | str | Error porcentual absoluto medio. | 9.38 |
+| `aic` | str | Criterio de información de Akaike. | 511.165 |
 | `detalle` | str | Orden del ARIMA. | orden (2, 1, 0) |
 | `elegido` | str | True en el de menor RMSE. | True |
 | `derivado_de` | str | Linaje: tabla de oro de la que se deriva. | indice_costo_taco |

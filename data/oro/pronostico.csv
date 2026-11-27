@@ -78,6 +78,7 @@ mes,valor,tipo,li_95,ls_95,modelo,derivado_de
 2026-08,108.9,observado,,,ARIMA,indice_costo_taco
 2026-09,117.24,observado,,,ARIMA,indice_costo_taco
 2026-10,113.82,observado,,,ARIMA,indice_costo_taco
-2026-11,111.27,pronostico,91.15,131.38,ARIMA,indice_costo_taco
-2026-12,112.42,pronostico,84.37,140.48,ARIMA,indice_costo_taco
-2027-01,113.2,pronostico,82.2,144.2,ARIMA,indice_costo_taco
+2026-11,159.72,observado,,,ARIMA,indice_costo_taco
+2026-12,154.68,pronostico,132.33,177.03,ARIMA,indice_costo_taco
+2027-01,139.97,pronostico,110.71,169.23,ARIMA,indice_costo_taco
+2027-02,139.97,pronostico,108.49,171.44,ARIMA,indice_costo_taco

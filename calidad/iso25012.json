@@ -1,5 +1,5 @@
 {
-  "calculado_utc": "2026-11-27T00:34:31+00:00",
+  "calculado_utc": "2026-11-27T16:30:15+00:00",
   "resultados": [
     {
       "caracteristica": "Exactitud",
@@ -44,7 +44,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 17.7 días (máx. 365); denue_afluencia: 6.4 días (máx. 365); marco_geo: 6.4 días (máx. 365); sniim: 0.0 días (máx. 7)"
+      "evidencia": "Antigüedad de la última ingesta por fuente: denue: 18.3 días (máx. 365); denue_afluencia: 7.1 días (máx. 365); marco_geo: 7.1 días (máx. 365); sniim: 0.0 días (máx. 7)"
     },
     {
       "caracteristica": "Accesibilidad",
@@ -80,7 +80,7 @@
       "valor": 0.97,
       "umbral": "<= 25",
       "cumple": true,
-      "evidencia": "0.97 MB para 4,544 filas (213 bytes por fila)."
+      "evidencia": "0.97 MB para 4,545 filas (213 bytes por fila)."
     },
     {
       "caracteristica": "Precisión",
@@ -98,7 +98,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "4,503 de 4,503 filas de oro apuntan a bronce (directo o vía derivado_de); 9 de 9 archivos de bronce con SHA-256 íntegro."
+      "evidencia": "4,504 de 4,504 filas de oro apuntan a bronce (directo o vía derivado_de); 9 de 9 archivos de bronce con SHA-256 íntegro."
     },
     {
       "caracteristica": "Comprensibilidad",
@@ -113,7 +113,7 @@
       "caracteristica": "Disponibilidad",
       "categoria": "Dependiente del sistema",
       "metrica": "Disponibilidad A de la captura (%)",
-      "valor": 98.77,
+      "valor": 98.81,
       "umbral": ">= 95",
       "cumple": true,
       "evidencia": "A = MTBF / (MTBF + MTTR) de la captura diaria (scripts/fiabilidad.py), calculada el 2026-11-27."
@@ -134,7 +134,7 @@
       "valor": 100.0,
       "umbral": ">= 100",
       "cumple": true,
-      "evidencia": "43 de 43 archivos de bronce con .meta.json y SHA-256: oro se reconstruye desde bronce con `python -m pipeline.ejecutar`; respaldos con scripts/respaldo.py."
+      "evidencia": "44 de 44 archivos de bronce con .meta.json y SHA-256: oro se reconstruye desde bronce con `python -m pipeline.ejecutar`; respaldos con scripts/respaldo.py."
     }
   ]
 }
