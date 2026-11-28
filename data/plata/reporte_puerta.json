@@ -1,8 +1,8 @@
 [
   {
     "fuente": "sniim",
-    "registros_bronce": 5757,
-    "duplicados_exactos_resueltos": 584,
+    "registros_bronce": 5773,
+    "duplicados_exactos_resueltos": 600,
     "registros_evaluados": 5173,
     "validos_plata": 5170,
     "cuarentena": 3,
@@ -11,7 +11,7 @@
       "regla de negocio: debe cumplirse mínimo <= frecuente <= máximo": 3
     },
     "atipicos_marcados": 308,
-    "evaluado_utc": "2026-11-28T00:01:14+00:00"
+    "evaluado_utc": "2026-11-28T16:30:04+00:00"
   },
   {
     "fuente": "denue",
@@ -22,7 +22,7 @@
     "cuarentena": 0,
     "tasa_validez": 1.0,
     "motivos": {},
-    "evaluado_utc": "2026-11-28T00:01:14+00:00"
+    "evaluado_utc": "2026-11-28T16:30:04+00:00"
   },
   {
     "fuente": "denue_afluencia",
@@ -33,7 +33,7 @@
     "cuarentena": 0,
     "tasa_validez": 1.0,
     "motivos": {},
-    "evaluado_utc": "2026-11-28T00:01:14+00:00"
+    "evaluado_utc": "2026-11-28T16:30:04+00:00"
   },
   {
     "fuente": "marco_geo",
@@ -45,6 +45,6 @@
     "tasa_validez": 1.0,
     "motivos": {},
     "geometrias_reparadas": 0,
-    "evaluado_utc": "2026-11-28T00:01:14+00:00"
+    "evaluado_utc": "2026-11-28T16:30:04+00:00"
   }
 ]
